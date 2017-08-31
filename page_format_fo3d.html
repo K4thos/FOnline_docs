@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Формат fo3d</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_format_fo3d.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_format_fo3d.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_format_fo3d.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+
+<li class="navelem"><a class="el" href="page_formats.html">Форматы
+файлов</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Формат fo3d</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h2>Общая информация</h2>
+
+<p>Формат fo3d - это текстовый формат описания трехмерных объектов.
+Редактируется, соответственно, с помощью любого текстового
+редактора.</p>
+
+<p>По ходу описания будут встречаться ссылки в квадратных скобках -
+[X], их содержание расположено ниже, перед примерами.</p>
+
+<p>Для передачи данных используются различные модификаторы (ключи и
+значения). Строка с начала комментария (';', '#') игнорируются до
+ее окончания. Регистр модификаторов значения не имеет.</p>
+
+<p>Для удобства соотношения некоторых номеров и имен смотрите
+скрипт _animations.fos.</p>
+
+<p>Условные обозначения передаваемых параметров:<br />
+FileName - имя файла или пути и файла, путь может быть как полным,
+так и относительным;<br />
+IntegerValue - целое значение (0, 1, 22);<br />
+FloatValue - вещественное значение (0.0, 1.2, 22.1);<br />
+IntegerArray - массив целых чисел, перечисляется через знак '-',
+без пробелов, то есть 1-2-5-8;<br />
+FloatArray - массив вещественных чисел, перечисляется через знак
+'-', без пробелов, то есть 1.3-2.6-5.2-8.0, так же есть возможность
+их указания как целые числа (1-2.5-4-7);<br />
+String - строка, без пробелов;<br />
+Anim1Weapon [1] - тип оружия для анимации;<br />
+AnimationName [1] - имя анимации.<br /></p>
+
+<h3>Модификаторы</h3>
+
+<div class="fragment">
+<div class="line">Model FileName [2]</div>
+</div>
+<!-- fragment -->
+<p>Указывает на базовую модель, поддерживаемые форматы: x, 3ds.
+Если файл содержит анимацию и дополнительно не указан модификатор
+model_animation, то будет использоваться данная анимация.</p>
+
+<div class="fragment">
+<div class="line">Include FileName From1 To1 From2 To2 FromN
+ToN</div>
+</div>
+<!-- fragment -->
+<p>Указание файла, который будет вставлен в данном месте. Данный
+механизм предназначен для облегчения описания множества однотипных
+fo3d файлов. Суть состоит в том, что текст шаблона добавляется в
+место вызова модификатора, а затем там заменяются определенные
+идентификаторы. Идентификаторы перечисляются сразу после названия
+файла шаблона, сначала какое слово будет заменяться, затем на
+которое. В шаблоне заменяемый идентификатор должен быть расположен
+между знаками процента ('%'). Данный модификатор использует всю
+строку для определения передаваемых параметров, не используйте в
+ней другие модификаторы.</p>
+
+<div class="fragment">
+<div class="line">DisableShadow [2]</div>
+</div>
+<!-- fragment -->
+<p>Отключение отрисовки тени.</p>
+
+<div class="fragment">
+<div class="line">CalculateTangentSpace [2]</div>
+</div>
+<!-- fragment -->
+<p>Включение расчета касательного пространства, тангента и
+бинормали, которые можно использовать в эффектах, см. файл
+IOStructures.inc.</p>
+
+<div class="fragment">
+<div class="line">MoveX, MoveY, MoveZ FloatValue [3][6]</div>
+</div>
+<!-- fragment -->
+<p>Перемещение модели по одной из оси. По-умолчанию равны 0.0.</p>
+
+<div class="fragment">
+<div class="line">RotX, RotY, RotX FloatValue [3][6]</div>
+</div>
+<!-- fragment -->
+<p>Вращение модели по одной из оси. В градусах. По-умолчанию равны
+0.0.</p>
+
+<div class="fragment">
+<div class="line">Scale, ScaleX, ScaleY, ScaleZ FloatValue
+[3][6]</div>
+</div>
+<!-- fragment -->
+<p>Масштабирование модели по одной из оси или сразу по всем трем
+(Scale). По-умолчанию равны 1.0.</p>
+
+<div class="fragment">
+<div class="line">Speed FloatValue [3][6]</div>
+</div>
+<!-- fragment -->
+<p>Изменение скорости воспроизведения анимации. По-умолчанию равно
+1.0.</p>
+
+<div class="fragment">
+<div class="line">DisableLayer IntegerArray [3][8]</div>
+</div>
+<!-- fragment -->
+<p>Включение игнорирование обработки определенных слоев. Значения
+перечисляются через знак '-'.<br />
+Воспринимаются именованные константы из файла DefineNames.fos.</p>
+
+<div class="fragment">
+<div class="line">DisableSubset IntegerArray [3][8]</div>
+</div>
+<!-- fragment -->
+<p>Включение игнорирование отрисовки определенных частей модели
+(материалов). Значения перечисляются через знак '-'.<br />
+Воспринимаются именованные константы из файла DefineNames.fos.</p>
+
+<div class="fragment">
+<div class="line">Mesh IntegerValue [4]</div>
+</div>
+<!-- fragment -->
+<p>Установка значения текущего меша, на которые будут действовать
+такие модификаторы, как Texture, Effect.<br />
+Воспринимаются именованные константы из файла DefineNames.fos.</p>
+
+<div class="fragment">
+<div class="line">Subset IntegerValue [4]</div>
+</div>
+<!-- fragment -->
+<p>Установка значения части меша. При установке отрицательного
+значения дальнейшие модификаторы будут влиять на все части текущего
+меша, а не какой-то определенной.</p>
+
+<div class="fragment">
+<div class="line">Texture 0..9 FileName [5][9]</div>
+</div>
+<!-- fragment -->
+<p>Установка определенной текстуры для аналогичных переменных в
+самом эффекте. Но, значение 0 так же указывает на базовую текстуру
+(цветовую, диффузную) текущего меша и части.<br />
+Воспринимаются именованные константы из файла DefineNames.fos.</p>
+
+<div class="fragment">
+<div class="line">Effect FileName [5][9]</div>
+</div>
+<!-- fragment -->
+<p>Установка определенного эффекта для текущего выбранного меша и
+части.</p>
+
+<div class="fragment">
+<div class="line">EffDef String String
+String/FloatArray/IntegerValue</div>
+</div>
+<!-- fragment -->
+<p>Передать определенное значение в эффект. Модификатор действует
+на эффект, указанный в последнем использованном модификаторе
+Effect. Передаются тип (String, Floats, Dword), имя параметра в
+файле эффекте и значение (в зависимости от типа - строка, массив
+вещественных чисел, целое значение).<br />
+Воспринимаются именованные константы из файла DefineNames.fos (для
+Dword).</p>
+
+<div class="fragment">
+<div class="line">Layer IntegerValue [7]</div>
+</div>
+<!-- fragment -->
+<p>Установка определенного слоя.<br />
+Воспринимаются именованные константы из файла DefineNames.fos.</p>
+
+<div class="fragment">
+<div class="line">Value IntegerValue [7]</div>
+</div>
+<!-- fragment -->
+<p>Установка определенного значения слоя. Когда значение слоя будет
+равно данному, то все модификаторы, описанные в нем, начинают
+действовать.<br />
+Воспринимаются именованные константы из файла DefineNames.fos.</p>
+
+<div class="fragment">
+<div class="line">Attach FileName [3][7]</div>
+</div>
+<!-- fragment -->
+<p>Присоединение определенной модели к базовой. Допустимые форматы:
+x, 3ds, fo3d (то есть возможно рекурсивное подключение, будьте
+внимательны). По умолчанию модели линкуются между собой по
+совпадающим именам костей у обоих. Если требуется точное указание к
+какой кости линковать рутовую кость, то используйте модификатор
+Link (см. ниже).</p>
+
+<div class="fragment">
+<div class="line">Link String [3][7]</div>
+</div>
+<!-- fragment -->
+<p>Линковка другой модели к текущей, с указанием куда линковать. То
+есть {Подключаемая модель Root-Bone} -&gt; {Текущая модель
+String-Bone}. Данный модификатор действует только для прикрепленной
+модели (пока она не будет снята или выбрана другая).</p>
+
+<div class="fragment">
+<div class="line">Root [3][7]</div>
+</div>
+<!-- fragment -->
+<p>Установка базовой модели для применения других
+модификаторов.</p>
+
+<div class="fragment">
+<div class="line">Anim Anim1Weapon AnimationName AnimFile String
+[1]</div>
+</div>
+<!-- fragment -->
+<p>Данный модификатор используется для связывания имен анимаций с
+индексами, для дальнейшего использования в скриптах.<br />
+В AnimFile указывается имя файла, откуда она будет взята (если
+указать “ModelFile”, то поиск будет производиться в файле
+загружаемой модели)<br />
+В String указывается имя или порядковый номер анимации.</p>
+
+<div class="fragment">
+<div class="line">AnimSpeed Anim1Weapon AnimationName FloatValue
+[1]</div>
+</div>
+<!-- fragment -->
+<p>Модификатор для указания скорости определенной анимации.</p>
+
+<div class="fragment">
+<div class="line">AnimEquals IntegerValue Anim1Weapon AnimationName
+[1]</div>
+</div>
+<!-- fragment -->
+<p>Добавление алиасов для индексов анимации, чтобы не делать лишний
+копи-паст. IntegerValue - номер индекса, 1 или 2;</p>
+
+<div class="fragment">
+<div class="line">RenderFrame AnimFile String IntegerValue
+[2]</div>
+</div>
+<!-- fragment -->
+<p>Отрисовка определенного кадра в спрайт. Используется, когда идет
+вывод пререндеренной модели.<br />
+В AnimFile указывается имя файла, откуда она будет взята (если
+указать “ModelFile”, то поиск будет производиться в файле
+загружаемой модели)<br />
+В String указывается имя или порядковый номер анимации.
+IntegerValue означает процент (0..100) времени анимации, с которого
+и будет произведен рендер.</p>
+
+<div class="fragment">
+<div class="line">RenderFrames AnimFile String IntegerValue
+IntegerValue [2]</div>
+</div>
+<!-- fragment -->
+<p>Отрисовка определенной анимации в спрайт. Используется, когда
+идет вывод пререндеренной модели.<br />
+В AnimFile указывается имя файла откуда она будет взята (если
+указать “ModelFile”, то поиск будет производиться в файле
+загружаемой модели)<br />
+В String указывается имя или порядковый номер анимации. Первый
+IntegerValue означает процент (0..100) начала времени анимации,
+второй IntegerValue процент конечного кадра. Может быть использован
+обратный вывод, когда второе значение меньше первого. Частота
+кадров анимации берется из глобальной переменной __Animation3dFPS,
+если она равна нулю, то берется значение 10.</p>
+
+<div class="fragment">
+<div class="line">StopParsing, ContinueParsing</div>
+</div>
+<!-- fragment -->
+<p>Остановка и возобновление обработки файла.</p>
+
+<p><b>Примечания</b>
+</p>
+
+<ol type="1">
+<li>Имена задаются в файле DefineNames.lst Примеры:
+
+<div class="fragment">
+<div class="line">Anim Anim1Unarmed Anim2PickUp ModelFile
+HumM_Def_Una_Pickup_01</div>
+
+<div class="line">Anim Anim1HeavyRifle Anim2Single
+anim_HumanMaleRifle.x rifle_shoot</div>
+</div>
+<!-- fragment --></li>
+
+<li>Данные модификаторы используются только один раз, при
+многократном использовании данные будут взяты у последнего
+встретившегося.</li>
+</ol>
+
+<ol type="1">
+<li>По умолчанию данные модификаторы влияют на параметры базовой
+модели (см. Model). Модель меняется в следующих случаях:</li>
+</ol>
+
+<ul>
+<li>при модификаторе Attach прикрепленная модель становится
+выбранной;</li>
+
+<li>при модификаторе Root выбирается базовая модель;</li>
+
+<li>при модификаторах Layer, Value выбранная модель снимается и
+другие модификаторы станут работать впустую;</li>
+
+<li>при некоторых ошибках модель может сняться, например, когда
+выбираем Root, но стоит нулевое значение Value.</li>
+</ul>
+
+<ol type="1">
+<li>Данные модификаторы (Mesh, Subset) сбрасываются при применении
+модификаторов Root, Layer, Value, Attach. Значения сброса: Mesh =
+0, Subset = -1.</li>
+</ol>
+
+<ol type="1">
+<li>Данные модификаторы (Texture, Effect) устанавливают необходимое
+значение (текстуру, эффект) для меша и частей меша установленных
+модификаторами Mesh и Subset. Сначала надо указать номер меша и
+части, а потом ставить текстуру или эффект, по умолчанию стоят Mesh
+= 0 и Subset = -1.</li>
+</ol>
+
+<ol type="1">
+<li>При добавлении к имени модификатора знака '+' оно будет
+добавляться к предыдущему значению, а не присваиваться. Например,
+ScaleX 1.5 ScaleX 0.5 в итоге дадут 0.5, а ScaleX 1.5 ScaleX+ 0.5
+дадут 2.0. Аналогично можно использовать знак '*', что означает
+умножение на предыдущее значение.</li>
+</ol>
+
+<ol type="1">
+<li>Данные модификаторы сейчас применяются для описания изменений
+модели при изменении значений слоев, которое происходит в скриптах
+(см. animation3d_process в client_main.fos). Доступно только для
+трехмерных моделей криттеров.</li>
+</ol>
+
+<ol type="1">
+<li>Для чего необходимо отключать определенные слои или части тела
+- для того, что бы они не конфликтовали между собой при стечении
+определенных обстоятельств. Например, если один из слоев отвечает
+за вывод волос, то в слое головных уборов, при определенных его
+значениях (большая шляпа закрывающая всю голову), можно отключит
+слой волос. Или при выводе сапог могут просвечиваться части ног, то
+лучше отключить эту часть тела при их одевании.</li>
+</ol>
+
+<ol type="1">
+<li>В передаваемом аргументе имени файла можно передать строку
+"Parent", что будет означать взятие текстуры у базовой модели.
+Можно дополнительно указывать номер меша и его часть, с которой
+будет взята текстура - Texture X ParentY-Z, где X номер текстуры, Y
+номер меша, Z номер части меша; параметры Y-Z опциональны, можно не
+использовать или использовать частично (то есть Parent, Parent0,
+Parent-5).</li>
+</ol>
+
+<h2>Примеры:</h2>
+
+<p><b>Parsing</b>
+</p>
+
+<div class="fragment">
+<div class="line">Model model.3ds ; Загрузка модели</div>
+
+<div class="line">Scale 2.0 ; Увеличиваем в два раза</div>
+
+<div class="line">
+</div>
+
+<div class="line">StopParsing ; Останавливаем парсинг</div>
+
+<div class="line">
+</div>
+
+<div class="line">Здесь можем писать что угодно, весь текст будет
+пропущен.</div>
+
+<div class="line">
+</div>
+
+<div class="line">Scale 0.5 # Не будет обработано, масштаб
+по-прежнему 2.0</div>
+
+<div class="line">
+</div>
+
+<div class="line">ContinueParsing # Продолжаем парсинг</div>
+
+<div class="line">Scale+ 1.1 # Добавляем к масштабу, теперь там
+3.1</div>
+
+<div class="line">#Scale 1.0 # Обработано не будет, так как
+находится за комментарием</div>
+</div>
+<!-- fragment -->
+<p><b>Include</b><br />
+<br />
+some1.fo3d</p>
+
+<div class="fragment">
+<div class="line">Include _SomeTemplate.fo3d name some1 number
+11</div>
+</div>
+<!-- fragment -->
+<p>some2.fo3d</p>
+
+<div class="fragment">
+<div class="line">Include _SomeTemplate.fo3d name some2 number
+22</div>
+
+<div class="line">Include _SomeTemplate.fo3d name some2aaa number
+33</div>
+</div>
+<!-- fragment -->
+<p>_SomeTemplate.fo3d</p>
+
+<div class="fragment">
+<div class="line">Model ATR_%name%_%number%.3ds</div>
+</div>
+<!-- fragment -->
+<p>После применения модификатора Include файлы будут выглядеть
+следующим образом: some1.fo3d</p>
+
+<div class="fragment">
+<div class="line">Model ATR_some1_11.3ds</div>
+</div>
+<!-- fragment -->
+<p>some2.fo3d</p>
+
+<div class="fragment">
+<div class="line">Model ATR_some2_22.3ds</div>
+
+<div class="line">Model ATR_some2aaa_33.3ds</div>
+</div>
+<!-- fragment -->
+<p><b>Textures, Normal mapping</b><br />
+<br />
+Обычный вывод. "Mesh 0" в данном случае избыточен, он и так
+по-умолчанию 0, поставлен для примера.<br />
+Пример находится в "Client\data\art\misc\3d\box\simple.fo3d"</p>
+
+<div class="fragment">
+<div class="line">Model Box.3ds</div>
+
+<div class="line">Mesh 0 Subset 0 Texture 0 DED.tga</div>
+
+<div class="line">Mesh 0 Subset 1 Texture 0 DrD.tga</div>
+</div>
+<!-- fragment -->
+<p>Рисование с использованием карты нормалей.<br />
+Пример находится в "Client\data\art\misc\3d\box\nmap.fo3d"</p>
+
+<div class="fragment">
+<div class="line">Model Box.3ds</div>
+
+<div class="line">CalculateTangentSpace</div>
+
+<div class="line">Subset 0 Texture 0 DED.tga</div>
+
+<div class="line">Subset 0 Texture 1 DEN.tga</div>
+
+<div class="line">Subset 1 Texture 0 DrD.tga</div>
+
+<div class="line">Subset 1 Texture 1 DIntrN.tga</div>
+
+<div class="line">Subset -1 Effect 3D_NormalMapping.fx</div>
+</div>
+<!-- fragment -->
+<p><b>Frames render</b><br />
+<br />
+Рендер одного спрайта в середине анимации использования. Без
+тени.<br />
+Пример находится в "Client\data\art\misc\3d\dclaw\frame.fo3d"</p>
+
+<div class="fragment">
+<div class="line">Model ..\..\..\critters\CR_Deathclaw.x</div>
+
+<div class="line">DisableShadow</div>
+
+<div class="line">RenderFrame ModelFile CR_Deathclaw_Def_Una_Use_01
+50</div>
+</div>
+<!-- fragment -->
+<p>Рендер анимации, с начала и до конца. Увеличена в два
+раза.<br />
+Пример находится в "Client\data\art\misc\3d\dclaw\frames.fo3d"</p>
+
+<div class="fragment">
+<div class="line">Model ..\..\..\critters\CR_Deathclaw.x</div>
+
+<div class="line">Scale 2.0</div>
+
+<div class="line">RenderFrames ModelFile
+CR_Deathclaw_Com_Una_Knock_ProneB_01 0 100</div>
+</div>
+<!-- fragment -->
+<p><b>Effects</b><br />
+<br />
+Установка эффекта, передача параметров</p>
+
+<div class="fragment">
+<div class="line">Model SomeModel.3ds</div>
+
+<div class="line">Effect 3D_MyEffect.fx</div>
+
+<div class="line">EffDef Floats MyValues 1.4-0.05-6-7.7</div>
+
+<div class="line">EffDef Floats AnotherValue 59.51243</div>
+</div>
+<!-- fragment -->
+<p>В самом эффекте данные переменные будут иметь вышеуказанные
+значения</p>
+
+<div class="fragment">
+<div class="line">float4 MyValues; <span class="comment">//
+MyValues.x == 1.4f</span></div>
+
+<div class="line"><span class="comment">// MyValues.y ==
+0.05f</span>
+</div>
+
+<div class="line"><span class="comment">// MyValues.z ==
+6.0f</span>
+</div>
+
+<div class="line"><span class="comment">// MyValues.w ==
+7.7f</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="keywordtype">float</span>
+AnotherValue; <span class="comment">// == 59.51243</span></div>
+</div>
+<!-- fragment -->
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

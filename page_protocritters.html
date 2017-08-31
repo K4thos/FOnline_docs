@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Прототипы персонажей</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_protocritters.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_protocritters.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_protocritters.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_proto.html">Прототипы</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Прототипы персонажей</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Прототипы персонажей хранятся в текстовом виде в файлах в
+директории Server/Proto/Critters/.</p>
+
+<p>Редактируются вручную.</p>
+
+<p>Файл critters.lst содержит список файлов, содержащих данные о
+прототипах существ. В составе SDK это всего один файл:
+all.fopro.</p>
+
+<p><b>Формат:</b>
+</p>
+
+<div class="fragment">
+<div class="line">[<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a> proto]</div>
+
+<div class="line">Pid=&lt;Номер прототипа&gt;</div>
+
+<div class="line">&lt;Имя стата 1&gt;=&lt;Значение стата&gt;</div>
+
+<div class="line">&lt;Имя стата 2&gt;=&lt;Значение стата&gt;</div>
+</div>
+<!-- fragment -->
+<p><b>Пример:</b><br />
+</p>
+
+<div class="fragment">
+<div class="line">[<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a> proto]</div>
+
+<div class="line">Pid=72</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga730c66ac6cedc6e6c10734a38f952adc">ST_BASE_CRTYPE</a>=5</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga9d0c356afc867b9c26f151a4567c7033">ST_AI_ID</a>=12</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gaff4a0490def9f41bef644cd6e5672670" title=
+"Сила.">ST_STRENGTH</a>=5</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga7c6e1cf8d7c460e058f3b5cba4727846" title=
+"Восприятие.">ST_PERCEPTION</a>=6</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gaf7e3db6413d824354d6ceb094955295f" title=
+"Выносливость.">ST_ENDURANCE</a>=5</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gadad26575980b5bceed59234a3a7479c8" title=
+"Харизма.">ST_CHARISMA</a>=5</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga9012fc0e8a7589bf6f2e051d438708eb" title=
+"Интеллект.">ST_INTELLECT</a>=4</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga4602a4a4cad651b232bc474ab9f3929e" title=
+"Ловкость.">ST_AGILITY</a>=6</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gab9fadb9aa221a3290f877701f302917c" title=
+"Удача.">ST_LUCK</a>=5</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga3ec53e4240579796e11dda6b21eb50e4" title=
+"Максимальное количество очков здоровья.">ST_MAX_LIFE</a>=16</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga553889ee659c53cf11984fa1bce72c54" title=
+"Класс брони.">ST_ARMOR_CLASS</a>=15</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gabfc3fc90e78855abd253c4d0bd4322af">ST_NORMAL_ABSORB</a>=2</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga63be10644a5eb14a9d262892f633f0a5">ST_NORMAL_RESIST</a>=25</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga75594eb3766ce586e440fe53126672bd">ST_LASER_RESIST</a>=20</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gaf1be70ee0325d57aeb98927fdaf7fea7">ST_FIRE_RESIST</a>=20</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga1cb73bc7d787f386482538d0a63e9a51">ST_PLASMA_RESIST</a>=10</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gab8f8b3b427314e7f53d82ad49fdcc624">ST_ELECTRO_RESIST</a>=30</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gab621b8e53c42cfb95d50b2f3c1b99cdc">ST_EMP_RESIST</a>=500</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#gafae28896de4c89b13f2fdff3aaeb7a3d">ST_EXPLODE_RESIST</a>=20</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga46784b6933fec741d80f6c872e5e9bb8">ST_AGE</a>=25</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga19b710d83af0087b57c1989008367dc2">ST_GENDER</a>=1</div>
+
+<div class="line"><a class="code" href=
+"group___skills.html#gacfe1e668dc9c34a574ca248e4d995712" title=
+"Легкое оружие.">SK_SMALL_GUNS</a>=27</div>
+
+<div class="line"><a class="code" href=
+"group___skills.html#ga9fd2107125ea41eda1ff8212bd28fa7d" title=
+"Тяжелое оружие.">SK_BIG_GUNS</a>=13</div>
+
+<div class="line"><a class="code" href=
+"group___skills.html#ga696783df914febc5e486faf37d0e74d3" title=
+"Энергетическое оружие.">SK_ENERGY_WEAPONS</a>=5</div>
+
+<div class="line"><a class="code" href=
+"group___skills.html#ga8ae14a27b25c5dd1a385a9591240c8f3" title=
+"Рукопашное оружие.">SK_MELEE_WEAPONS</a>=8</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga57a8f4f6836e880bd5b1cbd871928893">ST_KILL_EXPERIENCE</a>=75</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga4b70c84a598ccb995570c737f82dd849" title=
+"Тип тела криттера.">ST_BODY_TYPE</a>=1</div>
+
+<div class="line"><a class="code" href=
+"group___stats.html#ga219c1a0e3acca15f432084dd98f90bff">ST_DAMAGE_TYPE</a>=1</div>
+
+<div class="line"><a class="code" href=
+"group___modes.html#gab76c154bd62a82ce6a35337792bd7712" title=
+"Режим, при котором невозможна торговля.">MODE_NO_BARTER</a>=1</div>
+</div>
+<!-- fragment -->
+<p><b>Основные статы</b>:<br /></p>
+
+<table class="doxtable">
+<tr>
+<td><a class="el" href=
+"group___stats.html#ga730c66ac6cedc6e6c10734a38f952adc">ST_BASE_CRTYPE</a>
+</td>
+<td>хранит номер анимации (смотрите <a class="el" href=
+"page_crittertypes.html">CritterTypes.cfg</a>)</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#gaff4a0490def9f41bef644cd6e5672670">ST_STRENGTH</a><br />
+
+<a class="el" href=
+"group___stats.html#ga7c6e1cf8d7c460e058f3b5cba4727846">ST_PERCEPTION</a><br />
+
+<a class="el" href=
+"group___stats.html#gaf7e3db6413d824354d6ceb094955295f">ST_ENDURANCE</a><br />
+
+<a class="el" href=
+"group___stats.html#gadad26575980b5bceed59234a3a7479c8">ST_CHARISMA</a><br />
+
+<a class="el" href=
+"group___stats.html#ga9012fc0e8a7589bf6f2e051d438708eb">ST_INTELLECT</a><br />
+
+<a class="el" href=
+"group___stats.html#ga4602a4a4cad651b232bc474ab9f3929e">ST_AGILITY</a><br />
+
+<a class="el" href=
+"group___stats.html#gab9fadb9aa221a3290f877701f302917c">ST_LUCK</a>
+</td>
+<td>Параметры SPECIAL</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#gab621b8e53c42cfb95d50b2f3c1b99cdc">ST_EMP_RESIST</a>
+</td>
+<td>Сопротивление урону от электромагнитного оружия. У всех, кроме
+роботов, параметр должен быть очень высоким, чаще всего это
+значение 500</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#ga3ec53e4240579796e11dda6b21eb50e4">ST_MAX_LIFE</a>
+</td>
+<td>Максимальное количество очков здоровья</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#ga46784b6933fec741d80f6c872e5e9bb8">ST_AGE</a>
+</td>
+<td>Возраст</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#ga19b710d83af0087b57c1989008367dc2">ST_GENDER</a>
+</td>
+<td>Пол (0-муж, 1-жен)</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#ga57a8f4f6836e880bd5b1cbd871928893">ST_KILL_EXPERIENCE</a>
+</td>
+<td>Опыт за убийство</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#ga4b70c84a598ccb995570c737f82dd849">ST_BODY_TYPE</a>
+</td>
+<td>Тип тела криттера. Смотрите <a class="el" href=
+"group___body_types.html">Body types</a>.</td>
+</tr>
+
+<tr>
+<td><a class="el" href=
+"group___stats.html#ga219c1a0e3acca15f432084dd98f90bff">ST_DAMAGE_TYPE</a>
+</td>
+<td>Тип повреждений при безоружной атаке</td>
+</tr>
+</table>
+
+<p><br />
+<br />
+В прототипах можно указывать только параметры, имеющиеся в файле
+Server/Data/ParamNames.lst<br />
+Значение любого стата можно изменять динамически с помощью
+скриптов.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

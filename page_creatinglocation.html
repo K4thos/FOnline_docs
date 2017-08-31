@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Создание локации</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_creatinglocation.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_creatinglocation.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_creatinglocation.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_manuals.html">Пособия</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Создание локации</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p><b>Создание локации</b>
+</p>
+
+<p>В данном документе объясняется, как создать свою локацию и
+вставить ее затем в игру.</p>
+
+<ol type="1">
+<li>Соберите вместе все необходимые вам карты. Сделайте им
+одинаковые имена, вроде "testloc_entrance.map" и
+"testloc_bunker.map".</li>
+</ol>
+
+<ol type="1">
+<li>Откройте свои карты, расставьте там гексы выхода или лестницы с
+параметрами, соответствующими номерам карт, которые вы
+выбрали.</li>
+</ol>
+
+<ol type="1">
+<li>Найдите в той же папке Server\Maps файл <a class="el" href=
+"page_locationscfg.html">Locations.cfg</a>. Откройте, найдите
+свободную позицию. Статичные локации обычно идут в начале списка,
+квестовые, которые создаются скриптом - в конце. Впишите туда свою
+локацию и ее две карты.
+
+<div class="fragment">
+<div class="line">[Area 200]</div>
+
+<div class="line">name=Testloc</div>
+
+<div class="line">max_copy=1</div>
+
+<div class="line">size=12</div>
+
+<div class="line">map_0=testloc_entrance</div>
+
+<div class="line">map_1=testloc_bunker</div>
+
+<div class="line">entrance=0 (вход на локацию только один, на карту
+testloc_entrance,</div>
+
+<div class="line">visible=1 не забудьте там оставить точку входа с
+номером 0.)</div>
+
+<div class="line">auto_garbage=0</div>
+</div>
+<!-- fragment -->Если вы хотите иметь возможность доступа к картам
+через скрипты (в частности - для телепортации на нужню карту),
+следует в Server\scripts\_maps.fos в блоке Maps внести по образцу
+свои карты, а их номера указать в конце строк map_0 и map_1</li>
+</ol>
+
+<ol type="1">
+<li>Если вы хотите, чтобы ваша локация была на глобале с самого
+начала игры, найдите в папке Server\Maps файл <a class="el" href=
+"page_generateworldcfg.html">GenerateWorld.cfg</a> и впишите туда
+номер своей локации с координатами, на которых она будет
+генерироваться при запуске сервера. Вроде того:
+
+<div class="fragment">
+<div class="line">@ 200 777 466 # Test loc. (первое число - номер,
+дальше координаты X и Y глобальной карты)</div>
+</div>
+<!-- fragment -->Локация уже физически присутствует на карте, и
+туда можно зайти, но пока не хватает многих важных деталей, вроде
+звукового оформления карт и названия локации, которое будет
+отображаться на глобале. Чтобы сделать все это, лезем в файл
+<a class="el" href="page_fogmmsg.html">FOGM.MSG</a>, который
+находится в директории Server\Text, по одному файлу на каждый
+используемый язык.</li>
+</ol>
+
+<p>Для начала, прописываем звуки каждой карте по отдельности. Ищем,
+куда вписать # <a class="el" href="class_map.html" title=
+"Карта.">Map</a> 90 и 91, выбираем им названия, музыку и звуки.
+Проще всего это сделать копированием звукового окружения других
+карт.</p>
+
+<p>Далее - прокручиваем список вниз, до строки "# Global map".
+Внимательно изучаем формат записи. Тут оформляется уже сама локация
+- кружок на глобальной карте и все, что с ним связано.
+Обязательными для каждой локации являются поля Name и Info. Также
+тут можно выбрать:</p>
+
+<ul>
+<li>Заставку локации, которая показывается при выборе точек
+входа;</li>
+
+<li>Картинку, которая будет отображаться в списке локаций на
+глобальной карте;</li>
+
+<li>Названия и координаты точек входа.</li>
+</ul>
+
+<p><b>Пример:</b>
+</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor"># Test loc, pid 200,
+base 300000</span>
+</div>
+
+<div class="line">{300000}{}{Тестовая локация.} - название</div>
+
+<div class="line">{300005}{}{Не заходи - убьет!} - информация под
+названием.</div>
+
+<div class="line">{300020}{}{art\intrface\twntestloc.frm} -
+заставка.</div>
+
+<div class="line">{300030}{}{art\intrface\WM_TSTLC.FRM} - картинка
+для списка.</div>
+
+<div class="line">{300090}{}{1} - посчитали точки входа. У нас она
+одна.</div>
+
+<div class="line">{300101}{}{Вход} - назвали точку входа.</div>
+
+<div class="line">{300102}{}{200} - координата Х.</div>
+
+<div class="line">{300103}{}{255} - координата Y.</div>
+</div>
+<!-- fragment -->
+<p>Готово!<br />
+Локация сгенерировалась на карте и оформлена.</p>
+
+<p>Наиболее частые ошибки:</p>
+
+<ul>
+<li>Опечатки в номерах строк в файле FOGM.MSG. Исправляется с
+опытом.</li>
+
+<li>Перед тестовым запуском сервера не очищены сейвы мира. Без
+этого локация не сгенерится.</li>
+
+<li>Локации не выставлен параметр visible=1.</li>
+</ul>
+
+<p>Также не пугайтесь, если все сделано правильно, но локации не
+видно на карте. Проблема может быть в том, что персонаж создан до
+появления локации, у него ее еще нет в памяти. Попробуйте сначала
+подойти на то место, где она должна быть - она появится. Если нет -
+то проблема где-то в файлах сервера.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Глобальная карта</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_globalmap.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_globalmap.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_globalmap.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_cartography.html">Картография</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Глобальная карта</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Глобальная карта состоит из изображения карты и маски
+рельефа.</p>
+
+<h2>Изображение</h2>
+
+<p>Путь, по которому находятся базовые изображения глобальной карты
+(она состоит из 20 так называемых плиток):
+master.dat\art\intrface\WRLDMPXX.FRM.<br />
+Может быть как в формате .FRM, так и в формате .png. Изображение
+карты для удобства можно нарезать на несколько кусков одинакового
+размера - тайлы (плитки). Далее, в default.ini в соответствующем
+месте указываете ваши изменения (если они были):</p>
+
+<div class="fragment">
+<div class="line">GmapTilesPic = WRLDMP%02d.FRM # Название
+изображений глобальной карты</div>
+
+<div class="line">GmapTilesX = 4 # Количество изображений в
+ширину</div>
+
+<div class="line">GmapTilesY = 5 # Количество изображений в
+высоту</div>
+
+<div class="line">GmapReliefMask = wmdef.msk # Маска рельефа
+глобальной карты</div>
+</div>
+<!-- fragment -->
+<p>Ключ GmapTilesPic - если ваша карта одним изображением, то
+достаточно просто имя указать, если несколькими тайлами - то
+указывается маска имени.<br />
+Ключи GmapTilesX и GmapTilesY - если ваша карта одним куском, то их
+значения равны 1, в ином случае указываете количество изображений в
+ширину и высоту.<br />
+Ключ GmapReliefMask - имя маски рельефа для вашей карты. Об этом
+читайте ниже.</p>
+
+<p>Размеры вашей карты указываются в скрипте config.fos:</p>
+
+<div class="fragment">
+<div class="line"><a class="code" href=
+"group___server.html#gaff2c7af6060088c349900661e70f1fbb" title=
+"Ширина глобальной карты мира.">__GlobalMapWidth</a> = 28;
+<span class="comment">// Maximum 100</span></div>
+
+<div class="line"><a class="code" href=
+"group___server.html#gade971677199a34dfd629c10d5012000a" title=
+"Высота глобальной карты мира.">__GlobalMapHeight</a> = 30;
+<span class="comment">// Maximum 100</span></div>
+
+<div class="line"><a class="code" href=
+"group___server.html#gabe7857d4644e0bfafb603209c2dba7c4" title=
+"Длина зоны на глобальной карте.">__GlobalMapZoneLength</a> = 50;
+<span class="comment">// Maximum 500</span></div>
+</div>
+<!-- fragment -->
+<p>Первым идет количество <b>секторов</b> в ширину, вторым - в
+высоту, а третьим - размер сектора в пикселях. Минимальные значения
+= 1. Таким образом, глобальная карта может быть размером от 1х1
+пиксель до 50000х50000 пикселей.<br />
+Аналогичные изменения надо сделать и в скрипте worldmap.fos, если
+вы хотите изменить <a class="el" href=
+"page_encounters.html">случайные встречи</a>:</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#define ZONE_COUNT_X
+(28)</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define ZONE_COUNT_Y
+(30)</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define ZONE_LENGTH
+(50)</span>
+</div>
+</div>
+<!-- fragment -->
+<h2>Маска</h2>
+
+<p>Файл маски содержит сведения о рельефе местности, тем самым
+влияя на проходимость. Это графический файл, индексы цветов
+которого и несут в себе информацию о проходимости.</p>
+
+<p>После создания маски, одна копия должна лежать в папке
+Client\data\maps. Имя маски, как описвалось выше, указывается в
+default.ini.<br />
+Вторая копия - в папке сервера Server\maps. Имя маски должно быть
+wm.msk. Серверная копия нужна для синхронизации данных.</p>
+
+<p><b>И не забывайте, что изменив карту, вам надо менять и
+<a class="el" href="page_encounters.html">случайные
+встречи</a>!</b>
+</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

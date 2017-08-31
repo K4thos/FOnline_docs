@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Препроцессор</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_preprocessor.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_preprocessor.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_preprocessor.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_scripts.html">Скрипты</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Препроцессор</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Прежде чем подвергать компиляции исходный код скрипта, скрипт
+передается на обработку встроенному препроцессору.</p>
+
+<p>Препроцессор на входе получает иходный код, написанный
+программистом, а на выходе выдает переработанный код, полученный с
+учетом указанных в скрипте директив.<br /></p>
+
+<p><b>Директивы препроцессора:</b><br />
+</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#include</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define</span>
+</div>
+
+<div class="line"><span class="preprocessor">#ifdef</span>
+</div>
+
+<div class="line"><span class="preprocessor">#ifndef</span>
+</div>
+
+<div class="line"><span class="preprocessor">#endif</span>
+</div>
+</div>
+<!-- fragment -->
+<p>Директива "#include" включает в состав исходного файла
+содержимое указанного файла. Таким образом, после обработки
+препроцессором, все строки:</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#include
+"filename"</span>
+</div>
+</div>
+<!-- fragment -->
+<p>будут заменены содержимым указанного файла.</p>
+
+<p>Директива "#define" в основном используется для создания
+констант и макросов:</p>
+
+<p><b>Пример константы:</b>
+</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#define MONEY_PID
+(41)</span>
+</div>
+</div>
+<!-- fragment -->
+<p>После такого объявления, в коде скрипта можно использовать
+строку MONEY_PID вместо прямого указания номера 41, в тех местах,
+где необходимо указать пид, используемый в качестве денег. После
+обработки препроцессором, все строки "MONEY_PID" будут заменены на
+"(41)"</p>
+
+<p><b>Пример макроса:</b>
+</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#define _CritMoveItem
+#(cr,item,toSlot)
+cr.MoveItem(item.Id,item.GetCount(),toSlot)</span>
+</div>
+</div>
+<!-- fragment -->
+<p>После такого объявления, встреченные в исходном коде строки:</p>
+
+<div class="fragment">
+<div class="line">_CritMoveItem(player,weapon,<a class="code" href=
+"group___slots.html#gaa3b7d772c5e226378f1d007222d17fa9" title=
+"Слот брони.">SLOT_ARMOR</a>);</div>
+</div>
+<!-- fragment -->
+<p>будут заменены на:</p>
+
+<div class="fragment">
+<div class="line">player.<a class="code" href=
+"class_critter.html#abeac4ad01f8d9210ba23c6568529da51" title=
+"Перемещает предмет из одного слота в другой.">MoveItem</a>(weapon.Id,weapon.GetCount(),(3))</div>
+</div>
+<!-- fragment -->
+<p>При этом, строка SLOT_ARMOR будет заменена на (3), так как в
+файле _defines.fos объявлена директива "#define SLOT_ARMOR (3) //
+Armor slot"<br />
+<br />
+"#ifdef" - открытие блока "если определено"<br />
+"#ifndef" - открытие блока "если не определено"<br />
+"#endif" - закрытие блока<br />
+Директивы #ifdef, #ifndef и #endif существуют для еще большего
+удобства скриптера.</p>
+
+<p><b>Пример исползования:</b>
+</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#define
+__DEBUG__</span>
+</div>
+
+<div class="line"><span class="preprocessor">#ifdef
+__DEBUG__</span>
+</div>
+
+<div class="line"><a class="code" href=
+"group___client.html#ga68c124305bbaadd9bdd13356e4ef3c40" title=
+"Заносит запись в лог-файл клиента.">Log</a>(.......);</div>
+
+<div class="line"><span class="preprocessor">#endif</span>
+</div>
+
+<div class="line">....</div>
+
+<div class="line">....</div>
+
+<div class="line"><span class="preprocessor">#ifdef
+__DEBUG__</span>
+</div>
+
+<div class="line">SayId(.......);</div>
+
+<div class="line"><span class="preprocessor">#endif</span>
+</div>
+
+<div class="line">....</div>
+
+<div class="line">....</div>
+
+<div class="line"><span class="preprocessor">#ifndef
+__DEBUG__</span>
+</div>
+
+<div class="line">StartAttack(.......);</div>
+
+<div class="line"><span class="preprocessor">#endif</span>
+</div>
+</div>
+<!-- fragment -->
+<p>В данном примере в исходном коде после обработки препроцессором
+встретятся строки "Log(.......);" и "SayId(.......);", однако, если
+убрать или закомментировать строку "#define
+&lt;strong&gt;DEBUG&lt;/strong&gt;", то в коде будет только строка
+"StartAttack(.......);"<br />
+<br />
+Помимо обработки директив, препроцессор убирает из исходного кода
+все комментарии, так как они не важны для компилятора.<br />
+Стоит так же отметить, что при сообщении компилятором об ошибках в
+коде, он выдает номера строк и символов в коде после обработки
+препроцессором.<br />
+Обработанные препроцессором скрипты появляются при запуске сервера
+и находятся в папке скриптов с расширениями "fosp", если необходимо
+посмотреть полученный код при ручном компилировании, необходимо
+передать компилятору имя файла, куда будет помещен полученный код,
+с помощью параметра "-p".</p>
+
+<p><b>Типичная функция после обработки препроцессором</b>:</p>
+
+<div class="fragment">
+<div class="line">uint GetKeyId(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp;cr,uint
+lockerId)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(lockerId==0||(0x80000000|(cr.<a class=
+"code" href="class_critter.html#a2793b8b1084170e116ea76cea38c73a4"
+title=
+"Уникальный идентификатор криттера.">Id</a>))==lockerId||(0x40000000|(cr.<a class="code"
+href="class_critter.html#a2793b8b1084170e116ea76cea38c73a4" title=
+"Уникальный идентификатор криттера.">Id</a>))==lockerId)<span class="keywordflow">return</span>
+0;</div>
+
+<div class="line"><a class="code" href="class_item.html" title=
+"Предмет.">Item</a>@[]keys;</div>
+
+<div class="line"><span class="keywordflow">for</span>(uint
+i=0,j=cr.<a class="code" href=
+"class_critter.html#ae1835e4d44ff815a84df22ae6d554c31" title=
+"Позволяет получить все предметы указанного типа, находящиеся в инвентаре криттера.">GetItemsByType</a>((7),keys);i&lt;j;i++)<span class="keywordflow">if</span>(keys[i].LockerId==lockerId)<span class="keywordflow">return</span>
+keys[i].<a class="code" href=
+"class_item.html#a2793b8b1084170e116ea76cea38c73a4" title=
+"Уникальный идентификатор предмета.">Id</a>;</div>
+
+<div class="line"><span class="keywordflow">return</span> 0;</div>
+
+<div class="line">}</div>
+</div>
+<!-- fragment -->
+<p><b>Исходный вид функции</b>:</p>
+
+<div class="fragment">
+<div class="line">uint GetKeyId(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; cr, uint
+lockerId) <span class="comment">// Export</span></div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="keywordflow">if</span>(lockerId==0
+|| _CritFingersDoorId(cr.<a class="code" href=
+"class_critter.html#a2793b8b1084170e116ea76cea38c73a4" title=
+"Уникальный идентификатор криттера.">Id</a>)==lockerId ||
+_CritEyesDoorId(cr.<a class="code" href=
+"class_critter.html#a2793b8b1084170e116ea76cea38c73a4" title=
+"Уникальный идентификатор криттера.">Id</a>)==lockerId)
+<span class="keywordflow">return</span> 0;</div>
+
+<div class="line"><a class="code" href="class_item.html" title=
+"Предмет.">Item</a>@[] keys;</div>
+
+<div class="line"><span class="keywordflow">for</span>(uint
+i=0,j=cr.<a class="code" href=
+"class_critter.html#ae1835e4d44ff815a84df22ae6d554c31" title=
+"Позволяет получить все предметы указанного типа, находящиеся в инвентаре криттера.">GetItemsByType</a>(ITEM_KEY,keys);i&lt;j;i++)
+<span class="keywordflow">if</span>(keys[i].LockerId==lockerId)
+<span class="keywordflow">return</span> keys[i].<a class="code"
+href="class_item.html#a2793b8b1084170e116ea76cea38c73a4" title=
+"Уникальный идентификатор предмета.">Id</a>;</div>
+
+<div class="line"><span class="keywordflow">return</span> 0;</div>
+
+<div class="line">}</div>
+</div>
+<!-- fragment -->
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

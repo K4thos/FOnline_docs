@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: FOGM.MSG</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_fogmmsg.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_fogmmsg.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_fogmmsg.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+
+<li class="navelem"><a class="el" href="page_msg_files.html">MSG
+файлы</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">FOGM.MSG</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>FOGM.MSG - файл, в котором содержатся описания для всего, что
+связано с картами, локациями и глобальной картой.</p>
+
+<p>Состоит из трех частей:</p>
+
+<ol type="1">
+<li>Звуки и описания локальных карт.</li>
+
+<li>Описания локаций.</li>
+
+<li>Тексты для сообщений при случайных встречах ("Вы желаете
+встретить... ?").</li>
+</ol>
+
+<h1><a class="anchor" id="section_sounds" name=
+"section_sounds"></a> Звуки</h1>
+
+<p><b>Формат:</b>
+</p>
+
+<div class="fragment">
+<div class="line">Имя карты: строка номер (pid + 1) * 10 + 0</div>
+
+<div class="line">Музыка на карте: строка номер (pid + 1) * 10 +
+5</div>
+
+<div class="line">Звуки окружения: строка номер (pid + 1) * 10 +
+6</div>
+
+<div class="line">NoLogOut: строка номер (pid + 1) * 10 + 7</div>
+</div>
+<!-- fragment -->
+<p><b>Пример:</b>
+</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor"># Map 6, base
+70</span>
+</div>
+
+<div class="line">{70}{}{Den Business}</div>
+
+<div class="line">{75}{}{05raider}</div>
+
+<div class="line">{76}{}{dogbark:10, dogbark1:10, gntlwind:20,
+gntlwin1:20, blank:40}</div>
+</div>
+<!-- fragment -->
+<p>Для музыки и звуков можно использовать форматы .acm и .ogg. Если
+используется формат .acm, расширения в описании упоминать не надо
+(как в примере выше). Если используется .ogg, название пишется
+полностью, с расширением. Например:</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor"># Map 218, base
+2190</span>
+</div>
+
+<div class="line">{2190}{}{Replication Bank SF}</div>
+
+<div class="line">{2195}{}{09 - D.S.Brudge.ogg}</div>
+</div>
+<!-- fragment -->
+<p>Звуки окружения берутся из папки /sound/SFX/, музыка - из
+/sound/music/. Первые можно найти в файле master.dat.</p>
+
+<p>Число после двоеточия в записи звуков обозначает процент
+проигрыша того или иного звука (в сумме проценты составляют
+100).</p>
+
+<p>NoLogOut - не используется.</p>
+
+<h1><a class="anchor" id="section_locations" name=
+"section_locations"></a> Описания локаций</h1>
+
+<p><b>Формат:</b>
+</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor"># Den, pid 1, base
+101000</span>
+</div>
+
+<div class="line">{101000}{}{Яма}</div>
+
+<div class="line">{101005}{}{Город бандитов и работорговцев.}</div>
+
+<div class="line">{101020}{}{art\intrface\twnden.frm}</div>
+
+<div class="line">{101030}{}{art\intrface\WM_DEN.FRM}</div>
+
+<div class="line">{101090}{}{3}</div>
+
+<div class="line">{101101}{}{Западная сторона}</div>
+
+<div class="line">{101102}{}{140}</div>
+
+<div class="line">{101103}{}{278}</div>
+
+<div class="line">{101111}{}{Стоянка}</div>
+
+<div class="line">{101112}{}{80}</div>
+
+<div class="line">{101113}{}{260}</div>
+
+<div class="line">{101121}{}{Восточная сторона}</div>
+
+<div class="line">{101122}{}{280}</div>
+
+<div class="line">{101123}{}{380}</div>
+</div>
+<!-- fragment -->
+<p>Расшифровка:</p>
+
+<ul>
+<li>Название локации, (pid + 100) * 1000</li>
+
+<li>Описание локации, (pid + 100) * 1000 + 5</li>
+
+<li>Картинка локации (при выборе точки входа), (pid + 100) * 1000 +
+20</li>
+
+<li>Картинка названия в списке городов на глобале, (pid + 100) *
+1000 + 30</li>
+
+<li>Количество точек входа, (pid + 100) * 1000 + 90</li>
+
+<li>Название точки входа Х, (pid + 100) * 1000 + 100 + X*10 +
+1</li>
+
+<li>Координата х точки входа Х, (pid + 100) * 1000 + 100 + X*10 +
+2</li>
+
+<li>Координата y точки входа Х, (pid + 100) * 1000 + 100 + X*10 +
+3</li>
+</ul>
+
+<p>Последние три строки дублируются необходимое количество раз по
+количеству точек входа.</p>
+
+<p>Отсчет координат ведется от левого верхнего угла.</p>
+
+<p>Для локаций обязательны только первые две строки (название и
+описание).</p>
+
+<h1><a class="anchor" id="section_globaltext" name=
+"section_globaltext"></a> Тексты сообщений глобальной карты</h1>
+
+<p>Тут все строки напрямую связаны с номерами энкаунтеров из таблиц
+в скрипте worldmap_init.fos. Начинаются с 10030000, идут по-порядку
+с шагом 10.</p>
+
+<p>Подробнее читайте в описаниях этого скрипта.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

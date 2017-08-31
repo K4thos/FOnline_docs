@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Взаимодействие между персонажами</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "critters_interaction.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=critters_interaction.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=critters_interaction.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_scripts.html">Скрипты</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Взаимодействие между персонажами</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="critters_interaction_whole" name=
+"critters_interaction_whole"></a> Взаимодействие между НПЦ и
+другими персонажами</h1>
+
+<p>Для взаимодействия между персонажами используется метод –
+<a class="el" href=
+"class_critter.html#aca1cc5cd0df9aa1f8402271dd9ca329b">Critter::SendMessage</a>.
+В параметрах функции необходимо указать:</p>
+
+<ul>
+<li>Уникальный номер сообщения. Номер сообщения устанавливается по
+усмотрению разработчика скрипта и используется для идентификации
+этого сообщения.
+
+<dl class="section remark">
+<dt>Прим.</dt>
+
+<dd>Если номера сообщений, относящихся к разным скриптам, будут
+совпадать, то это может привести к некорректной работе этих
+скриптов.</dd>
+</dl></li>
+
+<li>Передаваемое значение. Например, ID персонажа, которого следует
+атаковать.</li>
+
+<li>Кому отсылается сообщение.</li>
+</ul>
+
+<p>Когда персонаж принимает сообщение, у него происходит событие
+<a class="el" href=
+"group___critter_events.html#ga616fa0ce5b0789231d126f6fe9fb2b5f">CRITTER_EVENT_MESSAGE</a>.
+При инициализации персонажа необходимо задать функцию,
+срабатываемую при данном событии, в ней необходимо выполнять
+ответные действия. Сообщение принимается в момент его отправки.</p>
+
+<p>При организации сложной ситуации, в которой участвует множество
+персонажей и у каждого есть своя роль, используйте поле <a class=
+"el" href=
+"class_critter.html#a892198a9d4614b79d52e48de5362564a">Critter::NpcRole</a>.</p>
+
+<p>Пример написания скрипта с использованием функции <a class="el"
+href=
+"class_critter.html#aca1cc5cd0df9aa1f8402271dd9ca329b">Critter::SendMessage</a>.
+В этом примере организован диалог между двумя НПЦ, который будет
+происходить каждый день ровно в 12 часов.</p>
+
+<div class="fragment">
+<div class="line"><span class="comment">// Один скрипт на обоих
+НПЦ, в принципе, можно посадить на него и большее количество
+НПЦ</span>
+</div>
+
+<div class="line"><span class="preprocessor">#include
+"_macros.fos"</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="preprocessor">#define NUM_OF_MSG
+(300) // Номер сообщения</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define ROLE_NPCA
+(150)</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define ROLE_NPCB
+(151)</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// StatBase[ST_VAR0] -
+Индекс фразы</span>
+</div>
+
+<div class="line"><span class="comment">// StatBase[ST_VAR1] -
+Callback для подтверждения готовности к разговору</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Фразы для обоих
+НПЦ</span>
+</div>
+
+<div class="line"><span class="comment">// В идеале, это должны
+были быть массивы номеров фраз, которые находятся в файле с
+текстами</span>
+</div>
+
+<div class="line"><span class="keywordtype">string</span>[]
+DialogsForNpcA = {<span class="stringliteral">"О!
+Привет."</span>,<span class="stringliteral">"Как
+дела?"</span>,<span class="stringliteral">"А чего
+так?"</span>,<span class="stringliteral">"Уууу..."</span>,</div>
+
+<div class="line"><span class="stringliteral">"Да уж,
+бывает..."</span>, <span class="stringliteral">"Ну ладно, пойду
+я."</span>};</div>
+
+<div class="line"><span class="keywordtype">string</span>[]
+DialogsForNpcB = {<span class=
+"stringliteral">"Привет."</span>,<span class="stringliteral">"Ой,
+плохи мои дела. Совсем плохи."</span>,</div>
+
+<div class="line"><span class="stringliteral">"Да опять в казино
+все свои деньги продул."</span>,<span class=
+"stringliteral">""</span>,<span class="stringliteral">""</span>,
+<span class="stringliteral">"Пока."</span>};</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+DialogsProcess = <span class="keyword">false</span>;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="keywordtype">void</span>
+_CritterAInit(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; npc, <span class=
+"keywordtype">bool</span> firstTime)</div>
+
+<div class="line">{</div>
+
+<div class="line">npc.StatBase[<a class="code" href=
+"group___stats.html#ga4936a5e9adcb4d09897a80ef1b916589">ST_NPC_ROLE</a>]
+= ROLE_NPCA;</div>
+
+<div class="line">npc.<a class="code" href=
+"class_critter.html#ac1ea2400f3e2a635ba1dfd89c344703e" title=
+"Биндит функцию-обработчика определенного события.">SetEvent</a>(<a class="code"
+href=
+"group___critter_events.html#ga616fa0ce5b0789231d126f6fe9fb2b5f"
+title=
+"Вызывается, когда приходит сообщение, отправленное с помощью метода Critter::SendMessage.">CRITTER_EVENT_MESSAGE</a>,
+<span class="stringliteral">"_NpcOnMessage"</span>);</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Начинаем через минуту
+после инициализации</span>
+</div>
+
+<div class="line"><a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(<a class="code"
+href="group___server.html#gaa2c438139212b38c6c77b7fb67b063ae"
+title="Полная текущая секунда, учитывающая текущие год, месяц, день, час, минуту и секнуду.">__FullSecond</a>+REAL_MINUTE(1),
+<span class="stringliteral">"e_StartDialog"</span>, npc,
+<span class="keyword">false</span>);</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="keywordtype">void</span>
+_CritterBInit(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; npc, <span class=
+"keywordtype">bool</span> firstTime)</div>
+
+<div class="line">{</div>
+
+<div class="line">npc.StatBase[<a class="code" href=
+"group___stats.html#ga4936a5e9adcb4d09897a80ef1b916589">ST_NPC_ROLE</a>]
+= ROLE_NPCB;</div>
+
+<div class="line">npc.<a class="code" href=
+"class_critter.html#ac1ea2400f3e2a635ba1dfd89c344703e" title=
+"Биндит функцию-обработчика определенного события.">SetEvent</a>(<a class="code"
+href=
+"group___critter_events.html#ga616fa0ce5b0789231d126f6fe9fb2b5f"
+title=
+"Вызывается, когда приходит сообщение, отправленное с помощью метода Critter::SendMessage.">CRITTER_EVENT_MESSAGE</a>,
+<span class="stringliteral">"_NpcOnMessage"</span>);</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="keywordtype">void</span>
+_NpcOnMessage(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; npcB, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; npcA,
+<span class="keywordtype">int</span> num, <span class=
+"keywordtype">int</span> val)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="comment">// Если принятое сообщение
+не относится к диалогу, то завершаем выполнение функции</span>
+</div>
+
+<div class="line"><span class="keywordflow">if</span>(num !=
+NUM_OF_MSG) <span class="keywordflow">return</span>;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Проверяем, совпадают ли
+роли обоих НПЦ</span>
+</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(npcA.StatBase[<a class="code" href=
+"group___stats.html#ga4936a5e9adcb4d09897a80ef1b916589">ST_NPC_ROLE</a>]
+!= ROLE_NPCA || npcB.StatBase[<a class="code" href=
+"group___stats.html#ga4936a5e9adcb4d09897a80ef1b916589">ST_NPC_ROLE</a>]
+!= ROLE_NPCB) <span class="keywordflow">return</span>;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Проверяем готов ли NPC
+"B" произнести фразу</span>
+</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+npcB.<a class="code" href=
+"class_critter.html#afb185591118d20896318a763904d3a7d" title=
+"Проверяет, жив ли криттер.">IsLife</a>() || not npcB.<a class=
+"code" href="class_critter.html#a28c705ddee22bfcd19916d49057e22a3"
+title=
+"Позволяет проверить, есть ли у криттера запланированные действия.">IsNoPlanes</a>())
+<span class="keywordflow">return</span>;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Начинаем вести
+беседу</span>
+</div>
+
+<div class="line">npcA.StatBase[<a class="code" href=
+"group___stats.html#ga14ba95b85cae0d50b4489ec1c3f50ae8" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR1</a>]
+= 0; <span class="comment">// Callback НПЦ_A что бы понял что все
+нормально</span></div>
+
+<div class="line">npcA.StatBase[<a class="code" href=
+"group___stats.html#ga4ea11c38c7200eedd2c430fc84b3dff2" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR0</a>]
+= 0;</div>
+
+<div class="line">npcB.StatBase[<a class="code" href=
+"group___stats.html#ga4ea11c38c7200eedd2c430fc84b3dff2" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR0</a>]
+= 0;</div>
+
+<div class="line">DialogsProcess = <span class=
+"keyword">true</span>;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Создаем события в
+которых и будем общаться</span>
+</div>
+
+<div class="line"><a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(<a class="code"
+href="group___server.html#gaa2c438139212b38c6c77b7fb67b063ae"
+title="Полная текущая секунда, учитывающая текущие год, месяц, день, час, минуту и секнуду.">__FullSecond</a>+REAL_SECOND(2),
+<span class="stringliteral">"e_SayDialog"</span>, npcA,
+<span class="keyword">false</span>);</div>
+
+<div class="line"><a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(<a class="code"
+href="group___server.html#gaa2c438139212b38c6c77b7fb67b063ae"
+title="Полная текущая секунда, учитывающая текущие год, месяц, день, час, минуту и секнуду.">__FullSecond</a>+REAL_SECOND(4),
+<span class="stringliteral">"e_SayDialog"</span>, npcB,
+<span class="keyword">false</span>);</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line">uint e_StartDialog(uint[]@ values)</div>
+
+<div class="line">{</div>
+
+<div class="line"><a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ npcA = <a class="code" href=
+"group___client.html#ga0cce275b1bf81ef480a82494ba4530d7" title=
+"Ищет криттера с указанным уникальным идентификатором.">GetCritter</a>(values[0]);</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+valid(npcA)) <span class="keywordflow">return</span> 0;
+<span class="comment">// НПЦ больше не существует, удаляем
+событие</span></div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Если НПЦ_А не готов к
+началу диалога, то откладываем событие на 20 игровых минут</span>
+</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+npcA.<a class="code" href=
+"class_critter.html#afb185591118d20896318a763904d3a7d" title=
+"Проверяет, жив ли криттер.">IsLife</a>() || not npcA.<a class=
+"code" href="class_critter.html#a28c705ddee22bfcd19916d49057e22a3"
+title=
+"Позволяет проверить, есть ли у криттера запланированные действия.">IsNoPlanes</a>())
+<span class="keywordflow">return</span> 20*60;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Перед началом диалога
+проверяем, готов ли собеседник к диалогу</span>
+</div>
+
+<div class="line">npcA.StatBase[<a class="code" href=
+"group___stats.html#ga14ba95b85cae0d50b4489ec1c3f50ae8" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR1</a>]
+= -1;</div>
+
+<div class="line">npcA.<a class="code" href=
+"class_critter.html#aca1cc5cd0df9aa1f8402271dd9ca329b" title=
+"Отправляет сообщение другим криттерам.">SendMessage</a>(NUM_OF_MSG,
+0, <a class="code" href=
+"group___in_send_message.html#gad86316dc1145ee11c5438bd0da8f1070"
+title=
+"Отослать сообщения всем, кого видит криттер.">MESSAGE_TO_I_SEE</a>);</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Если после отправки
+сообщения НПЦ_B не поменял значение переменной
+StatBase[ST_VAR1],</span>
+</div>
+
+<div class="line"><span class="comment">// то это значит что он не
+готов к диалогу</span>
+</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(npcA.StatBase[<a class="code" href=
+"group___stats.html#ga14ba95b85cae0d50b4489ec1c3f50ae8" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR1</a>]
+== -1) <span class="keywordflow">return</span> 20*60;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Переносим событие на
+следующие 12 часов</span>
+</div>
+
+<div class="line"><span class="keywordflow">return</span>
+12*60*60;</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line">uint e_SayDialog(uint[]@ values)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="comment">// Смотрим не прекратился
+ли диалог досрочно</span>
+</div>
+
+<div class="line"><a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ npc = <a class="code" href=
+"group___client.html#ga0cce275b1bf81ef480a82494ba4530d7" title=
+"Ищет криттера с указанным уникальным идентификатором.">GetCritter</a>(values[0]);</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+valid(npc)) <span class="keywordflow">return</span> 0;</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+DialogsProcess) <span class="keywordflow">return</span> 0;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Проверим, не появились
+ли новые планы у НПЦ</span>
+</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+npc.<a class="code" href=
+"class_critter.html#a28c705ddee22bfcd19916d49057e22a3" title=
+"Позволяет проверить, есть ли у криттера запланированные действия.">IsNoPlanes</a>())</div>
+
+<div class="line">{</div>
+
+<div class="line">DialogsProcess=<span class=
+"keyword">false</span>;</div>
+
+<div class="line"><span class="keywordflow">return</span> 0;</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Выберем нужные строки
+диалога</span>
+</div>
+
+<div class="line"><span class="keywordtype">string</span>[]@
+dialogs;</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(npc.StatBase[<a class="code" href=
+"group___stats.html#ga4936a5e9adcb4d09897a80ef1b916589">ST_NPC_ROLE</a>]
+== ROLE_NPCA) @dialogs = @DialogsForNpcA;</div>
+
+<div class="line"><span class="keywordflow">else</span>
+<span class="keywordflow">if</span>(npc.StatBase[<a class="code"
+href=
+"group___stats.html#ga4936a5e9adcb4d09897a80ef1b916589">ST_NPC_ROLE</a>]
+== ROLE_NPCB) @dialogs = @DialogsForNpcB;</div>
+
+<div class="line"><span class="keywordflow">else</span>
+<span class="keywordflow">return</span> 0;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Проверим до и после на
+предмет окончания диалогов, между этим говорим</span>
+</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(uint(npc.StatBase[<a class="code" href=
+"group___stats.html#ga4ea11c38c7200eedd2c430fc84b3dff2" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR0</a>])
+&gt;= dialogs.<a class="code" href=
+"classstring.html#ab0edbf251efc0562d70132e931e3cf06" title=
+"Возвращает длину строки.">length</a>()) <span class=
+"keywordflow">return</span> 0;</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(dialogs[npc.StatBase[<a class="code" href=
+"group___stats.html#ga4ea11c38c7200eedd2c430fc84b3dff2" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR0</a>]]
+!= <span class="stringliteral">""</span>) npc.<a class="code" href=
+"class_critter.html#a122edebc4747ee930162b5dccd2e40c1" title=
+"Заставляет криттера сказать что-либо.">Say</a>(<a class="code"
+href="group___say_types.html#gace01c660416f6ce00340db2aab9fbfe8"
+title=
+"Нормальное произношение фразы, при котором текст отображается только над головой криттера.">SAY_NORM_ON_HEAD</a>,
+dialogs[npc.StatBase[<a class="code" href=
+"group___stats.html#ga4ea11c38c7200eedd2c430fc84b3dff2" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR0</a>]]);</div>
+
+<div class="line">npc.StatBase[<a class="code" href=
+"group___stats.html#ga4ea11c38c7200eedd2c430fc84b3dff2" title=
+"Вспомогательный стат, который может быть использован для сохранения какой-либо информации.">ST_VAR0</a>]++;</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(uint(npc.StatBase[ST_VAR0]) &gt;=
+dialogs.<a class="code" href=
+"classstring.html#ab0edbf251efc0562d70132e931e3cf06" title=
+"Возвращает длину строки.">length</a>()) <span class=
+"keywordflow">return</span> 0;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Следующая фраза
+произойдет через 4 секунды (через 2 секунды будет говорить
+оппонент)</span>
+</div>
+
+<div class="line"><span class="keywordflow">return</span>
+REAL_SECOND(4);</div>
+
+<div class="line">}</div>
+</div>
+<!-- fragment -->
+<p>При этом, диалог между НПЦ будет выглядеть так:<br />
+A: О! Привет.<br />
+B: Привет.<br />
+A: Как дела?<br />
+B: Ой, плохи мои дела. Совсем плохи.<br />
+A: А чего так?<br />
+B: Да опять в казино все свои деньги продул.<br />
+A: Уууу...<br />
+A: Да уж, бывает...<br />
+A: Ну ладно, пойду я.<br />
+B: Пока.</p>
+
+<p>Диалог будет происходить при условии, что:</p>
+
+<ul>
+<li>НПЦ видят друг друга;</li>
+
+<li>Во время начала диалога контекст обоих НПЦ будет свободен;</li>
+</ul>
+
+<p>Если во время начала диалога оба NPC будут мертвы или будут
+выполнять запланированные действия, то начало диалога будет
+отложено на 20 игровых минут.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

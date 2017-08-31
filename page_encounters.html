@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Случайные встречи</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_encounters.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_encounters.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_encounters.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_cartography.html">Картография</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Случайные встречи</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Механика случайных встреч находится в скрипте worldmap.fos, а
+описание самих встреч - в worldmap_init.fos (оба находятся в
+Server\scripts).</p>
+
+<p>Для простого изменения встреч потребуется редактирование только
+второго скрипта.<br />
+Скрипт можно условно поделить на три части - блок составов групп
+(группа криттеров, генерируемых на карте), блок таблиц встреч (в
+каком секторе какие встречи) и блок зон (задается соответствие
+сектор-таблица).</p>
+
+<h2>Составы групп</h2>
+
+<p>Под составом группы подразумевается не только группа живых
+криттеров, генерируемых на карте, но и трупы, а так же
+предметы.<br />
+Описание группы производится с помощью класса CEncounterGroup:</p>
+
+<ul>
+<li><b>TeamNum</b> - Номер команды из _teams.fos</li>
+
+<li><b>Position</b> - Вариант расстановки криттеров на энкаунтере,
+подробнее смотрите в worldmap.fos</li>
+
+<li><b>Spacing</b> - Расстояние между генерируемыми криттерами</li>
+
+<li><b>AddCritter</b> - Возвращает экземпляр класса
+CEncounterObject. Добавляет описание криттера в группу. Параметр
+Pid - прототип криттера (см. Server\proto\critters\all.fopro).
+После добавления можно настраивать свойства криттера:
+
+<ul>
+<li>Ratio - Процентная доля криттеров с таким описанием в составе
+группы</li>
+
+<li>Dead - Если true, то труп, по умолчанию false</li>
+</ul></li>
+
+<li><b>AddItem</b> - Возвращает экземпляр класса CEncounterObject.
+Добавляет описание предмета, который может появиться у криттера или
+на локации. Параметр Pid - номер прототипа предмета. Через точку
+можно настроить некоторые параметры:
+
+<ul>
+<li>Minimum - Минимальное количество генерируемых предметов</li>
+
+<li>Maximum - Максимальное количество</li>
+
+<li>Slot - Слот рук\инвентаря</li>
+</ul></li>
+
+<li><b>Общее</b> (и для криттера, и для предмета):
+
+<ul>
+<li>Dialog - Номер диалога из dialog.lst</li>
+
+<li>Script - Скрипт, присваиваемый объекту</li>
+
+<li>Distance - Расстояние от игрока до объекта</li>
+</ul></li>
+
+<li><b>Checks</b> - Различные проверки
+
+<ul>
+<li>CheckRandom - Шанс на появление данного криттера в составе
+команды, трупа или предмета на земле</li>
+
+<li>CheckParam - Проверка на различные параметры игрока</li>
+
+<li>CheckLVar - Проверка локальной переменной</li>
+
+<li>CheckGVar - Проверка глобальной переменной</li>
+
+<li>CheckHour - Проверка игрового времени</li>
+</ul></li>
+
+<li>CEncounterObject[] Objects - Массив объектов случайных встреч,
+криттеров, предметов Все это легко изменить, убрать, добавить в
+скрипте worldmap.fos.</li>
+</ul>
+
+<p>Пример 1:</p>
+
+<div class="fragment">
+<div class="line"><span class="comment">// ARRO_Spore_Plants</span>
+</div>
+
+<div class="line">
+@group=@EncounterGroups[GROUP_ARRO_Spore_Plants];</div>
+
+<div class="line">group.TeamNum=0;</div>
+
+<div class="line">group.Position=POSITION_SURROUNDING;</div>
+
+<div class="line">group.Spacing=3;</div>
+
+<div class="line">
+group.AddCritter(16).Ratio(100).Dialog(0).Script(<span class=
+"stringliteral">"mob@_MobInit"</span>)</div>
+
+<div class="line">.AddItem(PID_PLANT_SPIKE,2,6,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>);</div>
+
+<div class="line">
+group.AddItem(PID_BROC_FLOWER).Distance(10).CheckRandom(10);</div>
+
+<div class="line">
+group.AddItem(PID_XANDER_ROOT).Distance(15).CheckRandom(10);</div>
+
+<div class="line">group.AddCritter(4).Dead(<span class=
+"keyword">true</span>).Dialog(0).CheckRandom(5)</div>
+
+<div class="line">.AddItem(PID_BOTTLE_CAPS,0,10,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>);</div>
+</div>
+<!-- fragment -->
+<p>GROUP_ARRO_Spore_Plants - это название генерируемой группы
+(объявляется в worldmap.fos), на карте генерируются криттеры с
+номером прототипа 16 (хищный цветок) и 4 (труп дикарки),
+расстановка будет круговой с расстоянием в 3 гекса между
+криттерами. При этом все живые криттеры будут иметь прототип 16.
+Инициализация этих криттеров будет производиться функцией _MobInit
+из скрипта mob.fos. В инвентаре криттера будут шипы растения
+(которыми хищные цветки плюются). На расстоянии 10 гексов от игрока
+с 10% шансом появления будет цветок брока и в 15 - корень зандера.
+У каждого предмета отдельная проверка на рандом. Так же с 5% шансом
+будет труп дикарки с деньгами в инвентаре в количестве от 0 до 10
+штук (тоже рандом).</p>
+
+<p>Пример 2:</p>
+
+<div class="fragment">
+<div class="line"><span class="comment">//
+RDRC_Broken_Hills_Caravan</span>
+</div>
+
+<div class="line">
+@group=@EncounterGroups[GROUP_RDRC_Broken_Hills_Caravan];</div>
+
+<div class="line">group.TeamNum=40;</div>
+
+<div class="line">group.Position=POSITION_HUDDLE;</div>
+
+<div class="line">group.Spacing=2;</div>
+
+<div class="line">
+group.AddCritter(61).Dialog(DIALOG_enc_brok_trader).Script(<span class="stringliteral">"encounter_npc@_NpcInit"</span>)</div>
+
+<div class="line">.AddItem(PID_HK_CAWS,1,1,<a class="code" href=
+"group___slots.html#ga98afb2e5d204e7e77fd64f3bce626af4" title=
+"Оружейный слот #1.">SLOT_HAND1</a>)</div>
+
+<div class="line">.AddItem(PID_BOTTLE_CAPS,0,40,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>)</div>
+
+<div class="line">.AddItem(PID_URANIUM_ORE,2,10,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>)</div>
+
+<div class="line">.AddItem(PID_SLEDGEHAMMER,1,1,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>)</div>
+
+<div class="line">.AddItem(PID_DYNAMITE,2,4,<a class="code" href=
+"group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>)</div>
+
+<div class="line">.AddItem(PID_FIRST_AID_KIT,1,1,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>);</div>
+
+<div class="line">
+group.AddCritter(48).Ratio(50).Dialog(0).Script(<span class=
+"stringliteral">"encounter_npc@_NpcInit"</span>)</div>
+
+<div class="line">.AddItem(PID_MINIGUN,1,1,<a class="code" href=
+"group___slots.html#ga98afb2e5d204e7e77fd64f3bce626af4" title=
+"Оружейный слот #1.">SLOT_HAND1</a>)</div>
+
+<div class="line">.AddItem(PID_5MM_JHP,20,80,<a class="code" href=
+"group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>)</div>
+
+<div class="line">.AddItem(PID_BOTTLE_CAPS,0,30,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>);</div>
+
+<div class="line">
+group.AddCritter(49).Ratio(50).Dialog(0).Script(<span class=
+"stringliteral">"encounter_npc@_NpcInit"</span>)</div>
+
+<div class="line">.AddItem(PID_MINIGUN,1,1,<a class="code" href=
+"group___slots.html#ga98afb2e5d204e7e77fd64f3bce626af4" title=
+"Оружейный слот #1.">SLOT_HAND1</a>)</div>
+
+<div class="line">.AddItem(PID_BOTTLE_CAPS,0,30,<a class="code"
+href="group___slots.html#ga964e5c17d0f83e69e1ce027a8165f5d6" title=
+"Рюкзак.">SLOT_INV</a>);</div>
+</div>
+<!-- fragment -->
+<p>В отличие от примера 1, здесь группа криттеров (караван) имеет
+40 номер команды и расстановка кучкой\толпой с промежутками в 2
+гекса. Криттер с прототипом 61 имеет диалог (торговец). Поскольку у
+этого криттера нет Ratio, он будет генерироваться всегда, тогда как
+количество остальных будет зависеть от Ratio.</p>
+
+<h2>Таблицы встреч</h2>
+
+<p>На самом деле это больше похоже на список, содержащий информацию
+о случайных встречах, попадающихся игроку при путешествии по
+глобальной карте.<br />
+Описание таблицы производится с помощью класса CEncounterTable:</p>
+
+<ul>
+<li>uint16[] LocationPids - Массив локаций, доступных для загрузки
+при попадании на локацию</li>
+
+<li>CEncounter[] Encounters - Массив описаний случайных встреч</li>
+
+<li>void AddLocationPid(uint16 locationPid) - Метод добавления
+локации в массив</li>
+
+<li>CEncounter@ AddEncounter - Возвращает экземпляр класса
+CEncounter. Функция добавления описания случайной встречи в таблицу
+
+<ul>
+<li>uint chance - Шанс попадания именно этой случайной встречи</li>
+
+<li>uint strNum - Номер строки из <a class="el" href=
+"page_fogmmsg.html">FOGM.MSG</a></li>
+</ul>
+Сама случайная описывается с помощью класса CEncounter:</li>
+
+<li>AddGroup - Функция добавления группы криттеров на локацию
+
+<ul>
+<li>uint group - Название группы из блока составов групп</li>
+
+<li>uint ratioMin - Минимальное количество генерируемых
+криттеров</li>
+
+<li>uint ratioMax - Максимальное количество генерируемых
+криттеров</li>
+</ul></li>
+
+<li>Fighting - Инициация атаки
+
+<ul>
+<li>uint fromGroup - номер атакующей группы</li>
+
+<li>uint toGroup - номер атакуемой группы</li>
+</ul></li>
+
+<li>LocationPid - Прототип локации, имя берётся из _maps.fos)</li>
+
+<li>Special - если true, то уникальная встреча</li>
+
+<li>CCheck[] Checks - Массив различных проверок
+
+<ul>
+<li>CheckRandom - Шанс на появление данной случайной встречи</li>
+
+<li>CheckParam - Проверка на различные параметры игрока</li>
+
+<li>CheckLVar - Проверка локальной переменной</li>
+
+<li>CheckGVar - Проверка глобальной переменной</li>
+
+<li>CheckHour - Проверка игрового времени</li>
+</ul></li>
+
+<li>AssignLVar - установка нового значения локальной
+переменной</li>
+</ul>
+
+<p>Пример:</p>
+
+<div class="fragment">
+<div class="line"><span class="comment">// Nav_M (Areas around
+Navarro)</span>
+</div>
+
+<div class="line">@table=@EncounterTables[TABLE_Nav_M];</div>
+
+<div class="line">
+table.AddLocationPid(LOCATION_MountainEncounter1);</div>
+
+<div class="line">
+table.AddLocationPid(LOCATION_MountainEncounter2);</div>
+
+<div class="line">table.AddEncounter(100,
+10051500).AddGroup(GROUP_NAV_Enclave_Patrol , 4,
+7).AddGroup(GROUP_Player, 0,
+0).Fighting(0,1).CheckLVar(LVAR_enc_loyality_enclave,<span class=
+"charliteral">'&lt;'</span>,10);</div>
+
+<div class="line">table.AddEncounter(100,
+10051500).AddGroup(GROUP_NAV_Enclave_Patrol , 4,
+7).CheckLVar(LVAR_enc_loyality_enclave,<span class=
+"charliteral">'&gt;'</span>,9);</div>
+
+<div class="line">table.AddEncounter( 5,
+10051600).Special(<span class=
+"keyword">true</span>).LocationPid(LOCATION_SpecialBridgeEncounter).CheckParam(<a class="code"
+href=
+"group___stats.html#ga3478aec39f790d648d2f1f548e5eb06e">ST_LEVEL</a>,<span class="charliteral">'&gt;'</span>,9).CheckLVar(LVAR_special_encounter_bridge,<span class="charliteral">'&lt;'</span>,1).AssignLVar(LVAR_special_encounter_bridge,<span class="charliteral">'='</span>,1);</div>
+
+<div class="line">table.AddEncounter( 1,
+10051610).Special(<span class=
+"keyword">true</span>).LocationPid(LOCATION_SpecialHolyEncounter2).CheckLVar(LVAR_special_encounter_holy1,<span class="charliteral">'&gt;'</span>,0).CheckLVar(LVAR_special_encounter_holy2,<span class="charliteral">'&lt;'</span>,1).AssignLVar(LVAR_special_encounter_holy2,<span class="charliteral">'='</span>,1);</div>
+</div>
+<!-- fragment -->
+<p>TABLE_Nav_M - название таблицы (объявляется в worldmap.fos),
+далее идёт список локаций, доступных для загрузки. Потом список
+возможных встреч. То, что Ratio=100, ещё не означает, что локация
+попадётся со 100% вероятностью, формула имеет более сложный вид.
+Как видим из проверки локальной переменной, встреча делится на две
+- с атакой игрока группой криттеров GROUP_NAV_Enclave_Patrol и без
+неё (но при любом значении переменной будет попадаться только одна
+из них).<br /></p>
+
+<ul>
+<li><b>Важно:</b> Если группа криттеров агрессивна к игроку по
+умолчанию, но инициация атаки отсутствует, то эта группа атакует
+игрока сразу, как он появится на карте, а не по истечении таймаута
+неагрессивности.<br />
+Далее идут уникальные встречи, для того, чтобы они действительно
+были уникальными, идёт проверка переменной, попадалась ли эта
+локация раньше, и если нет - то встреча происходит и значение
+переменной меняется на нужное. Для того, чтобы встреча состоялась,
+должны выполняться все условия.</li>
+</ul>
+
+<h2>Зоны</h2>
+
+<p>Это уже гораздо больше похоже на таблицу, где каждому сектору
+глобальной карты присваивается одна из таблиц встреч. То есть это
+значит, что в определённом секторе карты будет лишь тот набор
+встреч и локаций, что описаны в соответствующей таблице.<br />
+Описание таблицы производится с помощью функции SetZone:</p>
+
+<ul>
+<li>uint zx - Номер сектора по оси X</li>
+
+<li>uint zy - Номер сектора по оси Y</li>
+
+<li>uint table - Название таблицы</li>
+
+<li>int difficulty - Коэффициент сложности (исползуется в формуле
+начисления опыта за возможность отмены встречи)</li>
+
+<li>uint terrain - Тип местности
+(пустыня\горы\город\побережье\вода)</li>
+
+<li>uint morningChance - Шанс на встречу в утреннее время</li>
+
+<li>uint afternoonChance - Шанс на встречу в дневное время</li>
+
+<li>uint nightChance - Шанс на встречу в вечернее время</li>
+</ul>
+
+<p>Пример:</p>
+
+<div class="fragment">
+<div class="line">SetZone(3 ,17 ,TABLE_Nav_M ,-40 ,TERRAIN_Mountain
+,CHANCE_Frequent );</div>
+
+<div class="line">SetZone(3 ,17 ,TABLE_Ocean2_O ,0 ,TERRAIN_Water
+,CHANCE_Rare );</div>
+
+<div class="line">SetZone(3 ,18 ,TABLE_Nav_O ,-25 ,TERRAIN_Coast
+,CHANCE_Common );</div>
+</div>
+<!-- fragment -->
+<p>Как видим, в одном и том же секторе (3:17) могут встретиться
+энкаунтеры из таблиц TABLE_Nav_M и TABLE_Ocean2_O. Всё зависит от
+типа местности и от изображения на картинке глобальной карты. Если
+там вода - то будут встречи из таблицы TABLE_Ocean2_O, в ином
+случае - из таблицы TABLE_Nav_M.<br />
+Подробнее о шансах можно узнать из скрипта worldmap.fos:</p>
+
+<div class="fragment">
+<div class="line"><span class="comment">// Encounter frequency
+percentages</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define CHANCE_Forced
+(100) // This shouldn't change</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define
+CHANCE_Frequent (38) // Was 9/3d6</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define CHANCE_Common
+(22) // Was 8/3d6</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define
+CHANCE_Uncommon (12) // Was 6/3d6</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define CHANCE_Rare
+(4) // Was 5/3d6</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define CHANCE_None
+(0) // This shouldn't change</span>
+</div>
+</div>
+<!-- fragment -->
+<p>И его влияние на возможность случайной встречи:</p>
+
+<div class="fragment">
+<div class="line"><span class="comment">// Check chance</span>
+</div>
+
+<div class="line">uint chance;</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(IS_MORNING(<a class="code" href=
+"group___server.html#gae20e17fed53bd0665384359f004dda31" title=
+"Текущий час.">__Hour</a>)) chance=zone.MorningChance;</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(IS_AFTERNOON(<a class="code" href=
+"group___server.html#gae20e17fed53bd0665384359f004dda31" title=
+"Текущий час.">__Hour</a>)) chance=zone.AfternoonChance;</div>
+
+<div class="line"><span class="keywordflow">else</span>
+chance=zone.NightChance;</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(uint(<a class="code" href=
+"group___client.html#ga17589926f9e334b671331d9e0f5bb9d4" title=
+"Возвращает рандомное значение.">Random</a>(1,100))&gt;chance)
+<span class="keywordflow">return</span>;</div>
+</div>
+<!-- fragment -->
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

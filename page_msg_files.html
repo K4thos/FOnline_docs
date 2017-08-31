@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: MSG файлы</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_msg_files.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_msg_files.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_msg_files.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">MSG файлы</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Данные файлы содержат различную текстовую информацию,
+разделенную на различные категории.</p>
+
+<p>Для каждого языкового пака должен существовать свой комплект
+данных файлов, расположенный в соответствующей папке.</p>
+
+<p>Кодировка – ANSI.</p>
+
+<p>Формат каждой записи следующий:</p>
+
+<div class="fragment">
+<div class="line">{&lt;<span class=
+"keywordtype">id</span>&gt;}{}{&lt;text&gt;}</div>
+</div>
+<!-- fragment -->
+<p>где <em>id</em> – номер строки; <em>text</em> – текст.</p>
+
+<p>Номер строки может повторяться. В таком случае строка выбирается
+случайно.</p>
+
+<p>Для редактирования данных файлов можно использовать любой
+текстовый редактор.</p>
+
+<h1><a class="anchor" id="lang_pack" name="lang_pack"></a> Языковые
+паки</h1>
+
+<p>Имя языкового пака должно состоять из четырех букв и указываться
+в файле-конфигурации сервера. Пак под номером ноль является паком
+по умолчанию.</p>
+
+<p>Например:</p>
+
+<div class="fragment">
+<div class="line">Language_0=russ</div>
+
+<div class="line">Language_1=engl</div>
+
+<div class="line">Language_2=germ</div>
+</div>
+<!-- fragment -->
+<p>Соответственно должно быть три директории:</p>
+
+<div class="fragment">
+<div class="line">text\russ\</div>
+
+<div class="line">text\engl\</div>
+
+<div class="line">text\germ\</div>
+</div>
+<!-- fragment -->
+<p>Работать с содержимым данных файлов возможно только в скриптах
+клиента/маппера. Так же их можно использовать в тегах диалога или
+лексемах.</p>
+
+<p><a class="el" href=
+"page_focombatmsg.html">FOCOMBAT.MSG</a><br />
+Строки, используемые для боевки – сообщения о повреждении, выкрики
+НПЦ.</p>
+
+<p><a class="el" href="page_focraftmsg.html">FOCRAFT.MSG</a><br />
+Информация для крафта, редактируется с помощью редактора
+MrFixit.</p>
+
+<p><a class="el" href="page_fodlgmsg.html">FODLG.MSG</a><br />
+Содержит имена прототипов НПЦ, а так же строки диалогов, которые
+автозаполняются в процессе загрузки сервера из файлов диалогов.</p>
+
+<p><a class="el" href="page_fogamemsg.html">FOGAME.MSG</a><br />
+Содержит строки общего назначения, читайте комментарии в самом
+файле.</p>
+
+<p><a class="el" href="page_fogmmsg.html">FOGM.MSG</a><br />
+Информация по глобальной карте, локациям, картам, тексту
+энкаунтеров.</p>
+
+<p><a class="el" href="page_foholomsg.html">FOHOLO.MSG</a><br />
+Тексты голодисков.</p>
+
+<p><a class="el" href=
+"page_fointernalmsg.html">FOINTERNAL.MSG</a><br />
+Используется для внутренних нужд движка.</p>
+
+<p><a class="el" href="page_foobjmsg.html">FOOBJ.MSG</a><br />
+Содержит имена и описание предметов, сценери. Формат записи:<br />
+Имя объекта = Номер прототипа * 100<br />
+Описание объекта = Номер прототипа * 100 + 1<br />
+Плюс, если объект типа <a class="el" href="class_item.html" title=
+"Предмет.">Item</a>, прибавляется uint8 <a class="el" href=
+"class_item.html#a2a0624e5a2d33708ce7288b889abc31f" title=
+"Используется в формуле для определения номера строки с описанием предмета.">
+Item::Info</a>.</p>
+
+<p><a class="el" href="page_foquestmsg.html">FOQUEST.MSG</a><br />
+Строки квестовых переменных. Текст автоматически выводится в окне
+квест-лога. Формат записи:<br />
+Номер переменной * 1000 + Значение переменной (1-100) - Текст
+который появится у игрока при данном значении переменной.<br />
+Номер переменной * 1000 + 101 - Название вкладки квеста.<br />
+Номер переменной * 1000 + 102 - Постоянное описание квеста.</p>
+
+<p>FOTEXT.MSG Содержит строки для различных скриптовых нужд -
+игровой механике, квестах.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

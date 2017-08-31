@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Базовые команды серверу</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "commands.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=commands.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=commands.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Базовые команды серверу</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="commands_info" name="commands_info"></a>
+Общая информация</h1>
+
+<p>Данные команды нужны для облегчения тестирования, отладки
+игрового процесса. Текущий набор является базовым, встроенным в
+движок, но с помощью скриптов вы можете существенно расширить
+функционал до необходимых вам пределов.</p>
+
+<p>Для запуска команды перед ней должен стоять знак "~" (тильда).
+Так же возможен вызов команды по номеру, для этого наберите два
+данных знака, а затем номер команды.<br />
+После отправки команды на выполнение сервер ответит вам о
+результате выполнения операции.</p>
+
+<h1><a class="anchor" id="commands_list" name="commands_list"></a>
+Список команд</h1>
+
+<dl class="section user">
+<dt>1. exit</dt>
+
+<dd>Уровень доступа: любой.<br />
+Выход из игры.</dd>
+</dl>
+
+<dl class="section user">
+<dt>2. myinfo</dt>
+
+<dd>Уровень доступа: любой.<br />
+Запрос отображения некоторой информации о текущем персонаже -
+идентификатор, имя, пароль, уровень доступа.</dd>
+</dl>
+
+<dl class="section user">
+<dt>3. gameinfo &lt;type&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Запрос отображения информации об игре, где тип запрашиваемой
+информации (type) может быть следующим:<br />
+
+<ul>
+<li>0) статистика использования памяти;<br /></li>
+
+<li>1) сводка по текущим игрокам в игре;<br /></li>
+
+<li>2) статистика локаций и карт;<br /></li>
+
+<li>3) текущие временные события;<br /></li>
+
+<li>4) текущее состояние данных AnyData;<br /></li>
+
+<li>5) статистика предметов в игре;</li>
+</ul></dd>
+</dl>
+
+<dl class="section user">
+<dt>4. id &lt;name&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Запрос идентификатора криттера по его имени (name).</dd>
+</dl>
+
+<dl class="section remark">
+<dt>Прим.</dt>
+
+<dd>На данный момент не активна.</dd>
+</dl>
+
+<dl class="section user">
+<dt>5. movecrit &lt;id&gt; &lt;hx&gt; &lt;hy&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Передвинуть персонажа (id) в определенный гекс (hx, hy).</dd>
+</dl>
+
+<dl class="section user">
+<dt>6. kill &lt;id&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Убить персонажа (id).</dd>
+</dl>
+
+<dl class="section user">
+<dt>7. disconnect &lt;id&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Отсоединить персонажа (id) от сервера.</dd>
+</dl>
+
+<dl class="section user">
+<dt>8. toglobal</dt>
+
+<dd>Уровень доступа: тестер.<br />
+Выйти текущим персонажем на глобальную карту.</dd>
+</dl>
+
+<dl class="section user">
+<dt>9. respawn &lt;id&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Воскресить персонажа (id). Если id равен 0, то значит воскресить
+текущего персонажа.</dd>
+</dl>
+
+<dl class="section user">
+<dt>10. param &lt;type&gt; &lt;num&gt; &lt;value&gt;</dt>
+
+<dd>Уровень доступа: тестер.<br />
+Изменить параметр у текущего персонажа.<br />
+type должен быть равен нулю, num номеру параметра, value его новому
+значению.</dd>
+</dl>
+
+<dl class="section user">
+<dt>11. getaccess &lt;access name&gt; &lt;access password&gt;</dt>
+
+<dd>Уровень доступа: любой.<br />
+Изменить уровень доступа.<br />
+access name - имя доступа (client, tester, moder, admin).<br />
+access password - пароль доступа.</dd>
+</dl>
+
+<dl class="section user">
+<dt>12. crash</dt>
+
+<dd>Уровень доступа: имплементор.<br />
+Уронить серверное приложение.</dd>
+</dl>
+
+<dl class="section user">
+<dt>13. additem &lt;hx&gt; &lt;hy&gt; &lt;pid&gt;
+&lt;count&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Добавить предмет (pid, count) на определенный гекс (hx, hy).</dd>
+</dl>
+
+<dl class="section user">
+<dt>14. additemself, ais &lt;pid&gt; &lt;count&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Добавить предмет (pid, count) в инвентарь.</dd>
+</dl>
+
+<dl class="section user">
+<dt>15. addnpc &lt;hx&gt; &lt;hy&gt; &lt;dir&gt; &lt;pid&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Добавить НПЦ (pid, dir) на определенный гекс (hx, hy).</dd>
+</dl>
+
+<dl class="section user">
+<dt>16. addloc &lt;wx&gt; &lt;wy&gt; &lt;pid&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Добавить локацию (pid) в определенную точку (wx, wy) на <a class=
+"el" href="terms.html#term_global_map">глобальной карте</a>.</dd>
+</dl>
+
+<dl class="section user">
+<dt>17. reloadscripts</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перезагрузить все серверные скрипты.</dd>
+</dl>
+
+<dl class="section user">
+<dt>18. loadscript, load &lt;script name&gt;</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Загрузить или перезагрузить определенный серверный скрипт (script
+name).</dd>
+</dl>
+
+<dl class="section user">
+<dt>19. reloadclientscripts, rcs</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перезагрузить клиентские скрипты.</dd>
+</dl>
+
+<dl class="section user">
+<dt>20. runscript, run &lt;module name&gt; &lt;func name&gt;
+&lt;param0&gt; &lt;param1&gt; &lt;param2&gt;</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Запустить специальную серверную функцию (module name, func name), с
+определенными параметрами (param0, param1, param2).</dd>
+</dl>
+
+<dl class="section user">
+<dt>21. reloadlocations</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перезагрузить прототипы локаций.</dd>
+</dl>
+
+<dl class="section user">
+<dt>22. loadlocation &lt;pid&gt;</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Загрузить определенный прототип (pid) локации.</dd>
+</dl>
+
+<dl class="section user">
+<dt>23. reloadmaps</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перезагрузить прототипы карт.</dd>
+</dl>
+
+<dl class="section user">
+<dt>24. loadmap &lt;pid&gt;</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Загрузить определенный прототип (pid) карты.</dd>
+</dl>
+
+<dl class="section user">
+<dt>25. regenmap</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перегенерировать карту на которой в текущий момент находится
+персонаж.</dd>
+</dl>
+
+<dl class="section remark">
+<dt>Прим.</dt>
+
+<dd>На данный момент работает со сбоями.</dd>
+</dl>
+
+<dl class="section user">
+<dt>26. reloaddialogs</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перезагрузить все диалоги.</dd>
+</dl>
+
+<dl class="section user">
+<dt>27. loaddialog &lt;dialog name&gt; &lt;dialog id&gt;</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Загрузить определенный диалог (dialog name), под определенным
+идентификатором (dialog id).</dd>
+</dl>
+
+<dl class="section user">
+<dt>28. reloadtexts</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перезагрузить все MSG файлы.</dd>
+</dl>
+
+<dl class="section user">
+<dt>29. reloadai</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Перезагрузить сумки НПЦ (Bags.cfg).</dd>
+</dl>
+
+<dl class="section user">
+<dt>30. checkvar, cvar &lt;tid var&gt; &lt;master is npc&gt;
+&lt;master id&gt; &lt;slave id&gt; &lt;full_info&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Проверить состояние определенной игровой переменной.<br />
+tid var - номер переменной;<br />
+master is npc - является ли master id от НПЦ, 0 - нет, остальное -
+да. Если да, то к master id автоматически добавляется 5kk, т.к.
+индексация НПЦ начинается с этого числа;<br />
+master id - первичный идентификатор;<br />
+slave id - вторичный идентификатор;<br />
+full_info - выводить ли полную информацию по переменной, 0 - нет,
+остальное - да.</dd>
+</dl>
+
+<dl class="section user">
+<dt>31. setvar, svar &lt;tid var&gt; &lt;master is npc&gt;
+&lt;master id&gt; &lt;slave id&gt; &lt;value&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Установить состояние определенной игровой переменной.<br />
+tid var - номер переменной;<br />
+master is npc - является ли master id от НПЦ, 0 - нет, остальное -
+да. Если да, то к master id автоматически добавляется 5kk, т.к.
+индексация НПЦ начинается с этого числа;<br />
+master id - первичный идентификатор;<br />
+slave id - вторичный идентификатор;<br />
+value - новое значение переменной.</dd>
+</dl>
+
+<dl class="section user">
+<dt>32. settime &lt;tmul&gt; &lt;year&gt; &lt;month&gt; &lt;day&gt;
+&lt;hour&gt; &lt;minute&gt; &lt;second&gt;</dt>
+
+<dd>Уровень доступа: администратор.<br />
+Изменить игровое время.<br />
+tmul - ускорение времени, 0 - не менять;<br />
+year - год, 0 - не менять;<br />
+month - месяц, 0 - не менять;<br />
+day - день, 0 - не менять;<br />
+hour - час;<br />
+minute - минута;<br />
+second - секунда;<br /></dd>
+</dl>
+
+<dl class="section user">
+<dt>33. ban &lt;add,add+,delete,list&gt; &lt;user&gt; &lt;hours&gt;
+&lt;comment&gt;</dt>
+
+<dd>Уровень доступа: модератор.<br />
+Забанить определенного игрока.<br />
+add - добавить в бан персонажа;<br />
+add+ - добавить в бан персонажа и IP адрес;<br />
+delete - удалить из списка забаненных;<br />
+list - вывести список забаненных;<br />
+user - имя персонажа;<br />
+hours - время блокировки, в часах;<br />
+comment - комментарий, можно не писать.</dd>
+</dl>
+
+<dl class="section user">
+<dt>34. deleteself &lt;password&gt;</dt>
+
+<dd>Уровень доступа: любой.<br />
+Удалить текущего персонажа.</dd>
+</dl>
+
+<dl class="section user">
+<dt>35. changepassword, changepass &lt;password&gt; &lt;new
+password&gt;</dt>
+
+<dd>Уровень доступа: любой.<br />
+Изменить пароль для текущего персонажа.</dd>
+</dl>
+
+<dl class="section user">
+<dt>36. dropuid, drop</dt>
+
+<dd>Уровень доступа: тестер.<br />
+Сбросить антиальт таймер для данного персонажа, что бы можно было
+перезайти за другого персонажа без ожидания истечения
+таймаута.</dd>
+</dl>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

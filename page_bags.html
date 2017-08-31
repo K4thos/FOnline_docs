@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Сумки</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_bags.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_bags.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_bags.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Сумки</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Термин <a class="el" href="terms.html#term_bag">Сумка</a> -
+другое название инвентаря NPC.</p>
+
+<p>Его можно выставлять двумя способами:</p>
+
+<ol type="1">
+<li>Через маппер, помещая предметы вручную в инвентарь каждому
+NPC.</li>
+
+<li>Прописывая содержимое инвентаря в файле "Bags.cfg"
+(\server\data\Bags.cfg), а затем присваивая в маппере/скриптом NPC
+параметр <a class="el" href=
+"group___stats.html#ga140084ed67b98c0cd484eaa99f69500d" title=
+"Номер сумки криттера.">ST_BAG_ID</a>, который означает номер сумки
+из этого файла.</li>
+</ol>
+
+<p>Суть использования Bags.cfg:</p>
+
+<ul>
+<li>Оптимизация работы: проще создать один набор предметов и
+присваивать NPC только номер сумки с этим набором, чем выставлять
+каждому отдельно одни и те же предметы в маппере.</li>
+
+<li>Наличие рандома: можно создать несколько наборов предметов для
+одного NPC, чтобы потом при генерации выбирался случайным образом
+один из них.</li>
+
+<li>Простота редактирования: изменениями в одном файле можно
+вызывать глобальные изменения, нет необходимости лезть в карты, для
+вступления обновления в силу не нужна очистка БД (как в случае с
+картами).</li>
+</ul>
+
+<p>Содержимое сумок постоянно обновляется. Период обновления сумок
+записан в переменной <a class="el" href=
+"group___server.html#ga0d6f08528d3e590dc8bd50aa72aa8ee7" title=
+"Время обновления сумок, используемое по-умолчанию.">__BagRefreshTime</a>
+(config.fos). По умолчанию сумки обновляются каждый час реального
+времени. Обновление происходит в том случае, если в инвентаре NPC
+не найдено какого-то предмета из его базового набора.</p>
+
+<p>Для выставление инвентаря через маппер:</p>
+
+<ol type="1">
+<li>Выделите NPC.</li>
+
+<li>Убедитесь, что ST_BAG_ID равен нулю (ST_BAG_ID=0 обозначает,
+что данные для инвентаря берутся из маппера).</li>
+
+<li>Поместите нужные предметы в инвентарь NPC (alt+click).</li>
+
+<li>При необходимости поместите нужное в слоты рук или брони
+(shift+click по предметам в инвентаре).</li>
+</ol>
+
+<p>При старте сервера набор будет записан.</p>
+
+<p>Важно учитывать то, что сохраняется только PID предметов, без
+каких-либо дополнительных параметров. Скажем, если вы хотите
+поместить в инвентарь ключ с определенным номером, то после первого
+обновления сумки он уже будет обнулен. Поэтому для респауна
+подобных предметов надо писать специальные скрипты.</p>
+
+<h1><a class="anchor" id="section_bagscfg" name=
+"section_bagscfg"></a> Bags.cfg</h1>
+
+<p>Структура файла Bags.cfg простая: тут объявляются массивы двух
+типов, условно назовем их "наборы" и "сумки".</p>
+
+<p>Наборы - хранят PID и количество предметов. У каждого набора
+свое уникальное название.</p>
+
+<p>Сумки - составляются из наборов, названия нет, есть номер - тот
+самый, что надо присваивается NPC через параметр ST_BAG_ID.</p>
+
+<p>Чтобы было понятнее, приведу пример:</p>
+
+<div class="fragment">
+<div class="line"><span class=
+"preprocessor">###################################</span>
+</div>
+
+<div class="line">BCapsSmall=PID_BOTTLE_CAPS:0-50</div>
+
+<div class="line">BCapsMedium=PID_BOTTLE_CAPS:100-200</div>
+
+<div class="line">BCapsLarge=PID_BOTTLE_CAPS:350-500</div>
+
+<div class="line">GuardWeapon=PID_ASSAULT_RIFLE^m:1</div>
+
+<div class="line">
+</div>
+
+<div class="line">bag_101=BCapsSmall GuardWeapon</div>
+
+<div class="line">bag_102=BCapsMedium GuardWeapon</div>
+
+<div class="line">bag_103=BCapsLarge GuardWeapon</div>
+
+<div class="line"><span class=
+"preprocessor">###################################</span>
+</div>
+</div>
+<!-- fragment -->
+<p>Первые 4 строки - это наборы. Последние 3 - сумки.</p>
+
+<p>Комбинируя 4 набора, мы составили сумки для трех охранников - у
+каждого из них разное количество денег, но одинаковое вооружение.
+Потом надо запомнить эти три номера и прописать охранникам в
+маппере, выставляя понравившимся сумку получше. А добавив побольше
+наборов (скажем, медикаментов или выпивки), можно комбинировать из
+них разные сумки, не расписывая каждый раз отдельные предметы.</p>
+
+<h2><a class="anchor" id="section_format" name=
+"section_format"></a> Формат записи</h2>
+
+<p><b>Наборы:</b>
+</p>
+
+<ol type="1">
+<li>Объявляются в любом месте файла</li>
+
+<li>Имеют уникальное название</li>
+
+<li>Не могут быть пустыми</li>
+
+<li>Перечисление предметов: через "+" (=AND) или пробел (=OR)</li>
+</ol>
+
+<p><b>Формат:</b>
+</p>
+
+<div class="fragment">
+<div class="line">
+ИмяНабора=PID_ПРЕДМЕТА^местоположение:количество(min-max)</div>
+</div>
+<!-- fragment -->
+<p><b>Пример:</b>
+</p>
+
+<div class="fragment">
+<div class="line">GuardGun=PID_ASSAULT_RIFLE^m:0-1</div>
+</div>
+<!-- fragment -->
+<p>Количество и местоположение указывать необязательно.</p>
+
+<p>Базовое местоположение - в инвентаре. Также можно указать:</p>
+
+<ul>
+<li>^m - главный слот</li>
+
+<li>^e - внешний слот</li>
+
+<li>^a - слот брони</li>
+</ul>
+
+<p>Для количества можно указать как и точное число
+(PID_ASSAULT_RIFLE:1), так и диапазон (PID_BOTTLE_CAPS:0-30).</p>
+
+<p>Пример набора, содержащего несколько групп предметов:</p>
+
+<div class="fragment">
+<div class="line">AllGuardMelee=PID_SLEDGEHAMMER^e
+PID_POWER_FIST^m+PID_SMALL_ENERGY_CELL^e:5-15</div>
+</div>
+<!-- fragment -->
+<p>Из этого набора будет выбираться: ЛИБО кувалда, ЛИБО силовой
+кулак ПЛЮС батарейки (две группы перечислены через пробел, в одной
+стоит два предмета).</p>
+
+<p>Магазины оружия заполняются автоматически.</p>
+
+<p><b>Сумки:</b>
+</p>
+
+<ol type="1">
+<li>Идут по-порядку</li>
+
+<li>Название строго "bag_#"</li>
+
+<li>Могут быть пустыми</li>
+
+<li>Перечисление: через пробел (=AND), рандома нет</li>
+</ol>
+
+<p><b>Формат:</b>
+</p>
+
+<div class="fragment">
+<div class="line">bag_#=Набор1 Набор2 Набор3</div>
+</div>
+<!-- fragment -->
+<p><em>bag_0</em> не используется.</p>
+
+<p><em>bag_1</em> оставляется пустым и означает пустую сумку по
+умолчанию.</p>
+
+<p>Для большего количества примеров просто откройте сам файл
+<em>bags.cfg</em>, он прост и интуитивно понятен.</p>
+
+<p>Принцип оформления сумок FOnline: tLA описан в комментариях к
+файлу.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

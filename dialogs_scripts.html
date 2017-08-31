@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Работа с диалогом</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dialogs_scripts.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=dialogs_scripts.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=dialogs_scripts.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_scripts.html">Скрипты</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Работа с диалогом</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="dialogs_scripts_info" name=
+"dialogs_scripts_info"></a> Общая информация</h1>
+
+<p>Функции скриптов могут вызываться на различных этапах работы
+диалога.<br />
+Различают 3 типа диалоговых функций</p>
+
+<h1><a class="anchor" id="d_funcs" name="d_funcs"></a>
+Функции-условия</h1>
+
+<p>Данные функции применяются как условия для появления реплик,
+доступных игроку.<br />
+Если функция возвращает true, значит реплика доступна игроку и
+наоборот.<br />
+Для установки скриптового условия выберите в редакторе диалогов
+реплику, на которую необходимо поставить условие, перейдите на
+вкладку "Условия", выберите пункт "Скрипт (модуль@функция)",
+установите количество параметров, которые необходимо передать в
+функцию и заполните их, нажмите кнопку "добавить".<br />
+<br />
+Возможные варианты функций</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">bool</span>
+d_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave)</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+d_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val)</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+d_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val0, <span class=
+"keywordtype">int</span> val1,)</div>
+
+<div class="line">bool d_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; master,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ slave, <span class="keywordtype">int</span>
+val0, <span class="keywordtype">int</span> val1, <span class=
+"keywordtype">int</span> val2)</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+d_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val0, <span class=
+"keywordtype">int</span> val1, <span class="keywordtype">int</span>
+val2, <span class="keywordtype">int</span> val3)</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+d_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val0, <span class=
+"keywordtype">int</span> val1, <span class="keywordtype">int</span>
+val2, <span class="keywordtype">int</span> val3, <span class=
+"keywordtype">int</span> val4)</div>
+</div>
+<!-- fragment -->
+<p><br />
+Количество параметров типа int в функции выбирается в зависимости
+от количества параметров указанных при добавлении условия в
+редакторе диалогов.<br />
+По умолчанию функция вызывается 2 раза, в первый раз перед показом
+диалога, а второй раз при выборе игроком реплики с заданным в
+условиях скриптом.<br />
+Сделано это для защиты, например, на случай, если кто-то украдет у
+игрока все деньги после того, как ему высветился вариант ответа, но
+до того, как он на него нажал.<br />
+По этим причинам желательно избегать выполнения каких-либо
+действий, кроме проверки рвзличных условий, внутри функции проверки
+условия.<br />
+Однако, для тех случаев, когда внутри функции-условия необходимо
+единожды выполнить какое-либо действие, повторную проверку можно
+отключить (установка флага на условие производится в редакторе
+диалогов).<br />
+Так же, можно воспользоваться глобальной переменной bool
+__DialogDemandRecheck, при повторной проверке, значение переменной
+будет равно true.</p>
+
+<h1><a class="anchor" id="r_funcs" name="r_funcs"></a>
+Функции-результаты</h1>
+
+<p>Данные функции выполняются один раз, после выбора игроком
+реплики, для которой в результате указана данная функция.<br />
+Добавление происходит по тому же принципу, что добавление функций
+для проверки условий.<br />
+<br />
+Возможные варианты функций<br /></p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">void</span>
+r_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave)</div>
+
+<div class="line">uint r_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; master,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ slave)</div>
+
+<div class="line"><span class="keywordtype">void</span>
+r_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val)</div>
+
+<div class="line">uint r_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; master,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ slave, <span class="keywordtype">int</span>
+val)</div>
+
+<div class="line"><span class="keywordtype">void</span>
+r_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val0, <span class=
+"keywordtype">int</span> val1,)</div>
+
+<div class="line">uint r_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; master,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ slave, <span class="keywordtype">int</span>
+val0, <span class="keywordtype">int</span> val1,)</div>
+
+<div class="line"><span class="keywordtype">void</span>
+r_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val0, <span class=
+"keywordtype">int</span> val1, <span class="keywordtype">int</span>
+val2)</div>
+
+<div class="line">uint r_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; master,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ slave, <span class="keywordtype">int</span>
+val0, <span class="keywordtype">int</span> val1, <span class=
+"keywordtype">int</span> val2)</div>
+
+<div class="line"><span class="keywordtype">void</span>
+r_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val0, <span class=
+"keywordtype">int</span> val1, <span class="keywordtype">int</span>
+val2, <span class="keywordtype">int</span> val3)</div>
+
+<div class="line">uint r_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; master,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ slave, <span class="keywordtype">int</span>
+val0, <span class="keywordtype">int</span> val1, <span class=
+"keywordtype">int</span> val2, <span class="keywordtype">int</span>
+val3)</div>
+
+<div class="line"><span class="keywordtype">void</span>
+r_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; master, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ slave,
+<span class="keywordtype">int</span> val0, <span class=
+"keywordtype">int</span> val1, <span class="keywordtype">int</span>
+val2, <span class="keywordtype">int</span> val3, <span class=
+"keywordtype">int</span> val4)</div>
+
+<div class="line">uint r_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; master,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ slave, <span class="keywordtype">int</span>
+val0, <span class="keywordtype">int</span> val1, <span class=
+"keywordtype">int</span> val2, <span class="keywordtype">int</span>
+val3, <span class="keywordtype">int</span> val4)</div>
+</div>
+<!-- fragment -->
+<p>Количество параметров типа int в функции так же выбирается в
+зависимости от количества параметров, указанных при добавлении
+функции в редакторе диалогов. Функции, возвращающие числовое
+значение, должны возвращать номер ветки диалога, на которую нужно
+перейти после выполнения функции или одно из специальных значений,
+приводящих к закрытию диалога, открытию бартера, началу атаки или
+возращению к предыдущему диалогу (<a class="el" href=
+"group___dialog_links.html">Dialog links</a>).</p>
+
+<h1><a class="anchor" id="dlg_funcs" name="dlg_funcs"></a> Функции
+диалога</h1>
+
+<p>Данные функции вызываются в трех случаях:<br /></p>
+
+<ol type="1">
+<li>При формировании ветки диалога, к которой привязан
+скрипт<br /></li>
+
+<li>При уходе из ветки диалога, к которой привязан
+скрипт<br /></li>
+
+<li>При использовании функции "Сказать о" в ветке диалога, к
+которой привязан скрипт.<br />
+<br />
+Спецификация функции<br />
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">void</span>
+dlg_FuncName(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; player, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ npc,
+<span class="keywordtype">string</span>@ text)</div>
+
+<div class="line">uint dlg_FuncName(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; player,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ npc, <span class=
+"keywordtype">string</span>@ text)</div>
+</div>
+<!-- fragment --></li>
+</ol>
+
+<p>Для проверки в каком из случаев запущена данная функция,
+существует 3 макроса</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#define IS_DIALOG_END
+#(str) (not valid(str))</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define
+IS_DIALOG_GENERATED #(str) (valid(str) &amp;&amp;
+str.length()==0)</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define
+IS_DIALOG_SAY_MODE #(str) (valid(str) &amp;&amp;
+str.length()&gt;0)</span>
+</div>
+</div>
+<!-- fragment -->
+<p>Если была использована функция "Сказать о", то строка text будет
+содержать текст, сказанный игроком.<br />
+В случае, если функция вызвана при генерации диалога, в строку text
+можно будет поместить текст для определения <a class="el" href=
+"terms.html#term_lexem">лексем</a>, использованых в текущем диалоге
+(как для самого диалога, так и для реплик игрока)</p>
+
+<p><b>Примечание:</b> При использовани функции, возращающей
+числовое значение, можно перенаправить игрока на другую ветку
+диалога в случае использования функции "Сказать о", возращаемое
+значение должно содержать номер ветки диалога или одно из
+специальных значений, приводящих к закрытию диалога, открытию
+бартера, началу атаки или возращению к предыдущему диалогу
+(<a class="el" href="group___dialog_links.html">Dialog
+links</a>)</p>
+
+<h1><a class="anchor" id="dialogfuncs_sample" name=
+"dialogfuncs_sample"></a> Пример</h1>
+
+<p>Для примера рассмотрим несколько диалоговых веток диалога
+nr_t-ray.fodlg</p>
+
+<p>T-Ray: "Могу предложить: Хаммер за @lex hummer@, Багги за @lex
+buggy@, Скаут за @lex scout@, Хайвемен за @lex highwayman@." (на
+ветку "повешена" функция nr_t-ray@dlg_PrepareBuy)<br />
+Игрок: "Покупаю Хайвеймен." (В результате выбора данной реплики
+запускается функция nr_t-ray@r_BuyHighwayman)</p>
+
+<div class="fragment">
+<div class="line">.....</div>
+
+<div class="line">.....</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="keywordtype">void</span>
+dlg_PrepareBuy(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; player, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ tray,
+<span class="keywordtype">string</span>@ lexems)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+IS_DIALOG_GENERATED(lexems)) <span class=
+"keywordflow">return</span>;</div>
+
+<div class="line"><span class="comment">// Функция запускается в
+трех случаях, так как мы хотим получить в тексте диалога цены за
+машины разных типов, то нам интересен только тот случай, когда
+функция запускается до генерации текста диалога</span>
+</div>
+
+<div class="line"><span class="comment">// Во всех остальных
+случаях прекращаем выполнение функции</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line">lexems+=<span class=
+"stringliteral">"$hummer"</span>+GetCarCost(PID_HUMMER);</div>
+
+<div class="line">lexems+=<span class=
+"stringliteral">"$buggy"</span>+GetCarCost(PID_BUGGY);</div>
+
+<div class="line">lexems+=<span class=
+"stringliteral">"$scout"</span>+GetCarCost(PID_SCOUT);</div>
+
+<div class="line">lexems+=<span class=
+"stringliteral">"$highwayman"</span>+GetCarCost(PID_HIGHWAYMAN);</div>
+
+<div class="line"><span class="comment">// Функциия GetCarCost
+расчитывает стоимость машины по номеру ее прототипа, саму функцию
+можете посмотреть в файле car.fos</span>
+</div>
+
+<div class="line"><span class="comment">// В результате 4ех
+запусков функции, строка lexems будет выглядеть примерно так:
+"$hummer50000$buggy15000$scout20000$highwayman120000"</span>
+</div>
+
+<div class="line"><span class="comment">// Данная строка будет
+использована при генерации текста диалога "Могу предложить: Хаммер
+за @lex hummer@, Багги за @lex buggy@, Скаут за @lex scout@,
+Хайвемен за @lex highwayman@."</span>
+</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line">uint r_BuyHighwayman(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; player,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ tray, <span class="keywordtype">int</span>
+val) <span class="comment">// Данная функция вызывается каждый раз,
+когда игрок жмет на строку "Покупаю Хайвеймен."</span></div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="keywordflow">return</span>
+TryCreateCar(player,PID_HIGHWAYMAN);</div>
+
+<div class="line"><span class="comment">// Вызываем функцию
+TryCreateCar, которая должна вернуть номер ветки диалога, на
+которую нужно будет перейти после завершения ее выполнения.</span>
+</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line">uint TryCreateCar(<a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>&amp; player,
+uint16 protoCar)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(protoCar!=PID_HUMMER &amp;&amp;
+protoCar!=PID_BUGGY &amp;&amp; protoCar!=PID_SCOUT &amp;&amp;
+protoCar!=PID_HIGHWAYMAN) <span class="keywordflow">return</span>
+FD_GENERIC_ERROR;</div>
+
+<div class="line"><span class="comment">// Проверяем номер
+прототипа машины, если прототип неверный, перенаправляем игрока на
+ветку с номером FD_GENERIC_ERROR</span>
+</div>
+
+<div class="line"><span class="comment">// FD_GENERIC_ERROR
+задается в начале скрипта и имеет номер 100, то есть игрок будет
+перенаправлен на ветку "Извини, у меня срочные дела, подойди
+позже."</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line">uint cost=GetCarCost(protoCar); <span class=
+"comment">// Получаем стоимость машины по прототипу</span></div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(_CritCountItem(player,PID_BOTTLE_CAPS)&lt;cost)
+<span class="keywordflow">return</span> FD_NO_MONEY; <span class=
+"comment">// Проверяем, хватает ли игроку денег и, если не хватает,
+перенаправляем его на ветку FD_NO_MONEY</span></div>
+
+<div class="line"><span class="comment">// то есть на ветку с
+номером 5: "Нет денег - нет машины. Приходи как найдешь нужную
+сумму."</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Если денег достаточно,
+пытаемся добавить машину</span>
+</div>
+
+<div class="line"><a class="code" href="class_map.html" title=
+"Карта.">Map</a>@ map=player.<a class="code" href=
+"class_critter.html#ac4ca8085664e272f38954699a4a80890" title=
+"Возвращает указатель на объект карты, на которой находится криттер.">GetMap</a>();</div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+valid(map)) <span class="keywordflow">return</span>
+FD_GENERIC_ERROR; <span class="comment">// В случае ошибки
+получения указателя на карту, перебрасываем игрока на ветку диалога
+с номером 100</span></div>
+
+<div class="line">
+</div>
+
+<div class="line">Entire[] entires;</div>
+
+<div class="line">ParseEntires(map,entires,ENTIRE_WORKSHOP);</div>
+
+<div class="line">ParseEntires(map,entires,ENTIRE_CAR);</div>
+
+<div class="line">
+</div>
+
+<div class="line">uint16 hx,hy,entNum;</div>
+
+<div class="line"><span class="keywordflow">for</span>(<span class=
+"keywordtype">int</span> i=0,j=entires.length();i&lt;=j;i++)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="keywordflow">if</span>(i==j)
+<span class="keywordflow">return</span> FD_NO_PLACES; <span class=
+"comment">// Если не удалось найти свободного места для машины,
+перенаправляем игрока на ветку с номером FD_NO_PLACES</span></div>
+
+<div class="line"><span class="comment">// то есть на диалог с
+номером 6: "Сейчас вся мастерская и стоянка забита машинами, некуда
+подогнать, подойди, когда будут свободные места.".</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line">Entire@ ent=entires[i];</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(map.CheckPlaceForCar(ent.HexX,ent.HexY,protoCar))</div>
+
+<div class="line">{</div>
+
+<div class="line">hx=ent.HexX;</div>
+
+<div class="line">hy=ent.HexY;</div>
+
+<div class="line">entNum=ent.Number;</div>
+
+<div class="line"><span class="keywordflow">break</span>;</div>
+
+<div class="line">}</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line">uint keyId=<a class="code" href=
+"group___client.html#ga17589926f9e334b671331d9e0f5bb9d4" title=
+"Возвращает рандомное значение.">Random</a>(10000,50000);
+<span class="comment">// Генерация номера замка</span></div>
+
+<div class="line">
+</div>
+
+<div class="line"><a class="code" href="class_item.html" title=
+"Предмет.">Item</a>@ car=map.<a class="code" href=
+"class_map.html#a236edfd8aabe6416a66217e7e8975ec3" title=
+"Добавляет предмет в указанный гексагон на карте.">AddItem</a>(hx,hy,protoCar,1);
+<span class="comment">// Добавляем машину на карту</span></div>
+
+<div class="line"><span class="keywordflow">if</span>(not
+valid(car)) <span class="keywordflow">return</span>
+FD_GENERIC_ERROR; <span class="comment">// если создание автомобиля
+все-таки не вышло, перенаправляем игрока на ветку диалога с номером
+100</span></div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Настраиваем параметры
+автомобиля</span>
+</div>
+
+<div class="line">car.<a class="code" href=
+"class_item.html#abaf20d26735e7715ebaa0c01f8da9232" title=
+"Номер замка.">LockerId</a>=keyId;</div>
+
+<div class="line">car.Charge=car.<a class="code" href=
+"class_item.html#a8f0a76240735ea5afe1c677433257614" title=
+"Указатель на прототип предмета.">Proto</a>.Car_FuelTank;</div>
+
+<div class="line">car.<a class="code" href=
+"class_item.html#a149590fda708942667239f708a1f7a40" title=
+"Степень износа">Deterioration</a>=0;</div>
+
+<div class="line">car.<a class="code" href=
+"class_item.html#aec0783b5a136e042adcc47bae4fe5291" title=
+"Обновление инфы об предмете у игроков.">Update</a>();</div>
+
+<div class="line">
+</div>
+
+<div class="line"><a class="code" href="class_item.html" title=
+"Предмет.">Item</a>@ bag=car.CarGetBag(0);</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(valid(bag))</div>
+
+<div class="line">{</div>
+
+<div class="line">bag.<a class="code" href=
+"class_item.html#abaf20d26735e7715ebaa0c01f8da9232" title=
+"Номер замка.">LockerId</a>=keyId;</div>
+
+<div class="line">bag.<a class="code" href=
+"class_item.html#aa0277849d9088675ef746992edf79e08" title=
+"Сложность замка (штраф к навыку Взлом).">LockerComplexity</a>=<a class="code"
+href="group___client.html#ga17589926f9e334b671331d9e0f5bb9d4"
+title="Возвращает рандомное значение.">Random</a>(50,100);</div>
+
+<div class="line">bag.<a class="code" href=
+"class_item.html#aec0783b5a136e042adcc47bae4fe5291" title=
+"Обновление инфы об предмете у игроков.">Update</a>();</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line"><a class="code" href="class_item.html" title=
+"Предмет.">Item</a>@ key=player.<a class="code" href=
+"class_critter.html#a8804bf4e54728b94d66600cca0f63ba5" title=
+"Добавляет предмет в инвентарь криттера.">AddItem</a>(PID_KEY,1);
+<span class="comment">// Добавляем ключ от машины игроку в
+инвентарь</span></div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(valid(key))</div>
+
+<div class="line">{</div>
+
+<div class="line">key.<a class="code" href=
+"class_item.html#abaf20d26735e7715ebaa0c01f8da9232" title=
+"Номер замка.">LockerId</a>=keyId;</div>
+
+<div class="line">key.<a class="code" href=
+"class_item.html#aec0783b5a136e042adcc47bae4fe5291" title=
+"Обновление инфы об предмете у игроков.">Update</a>();</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line">player.<a class="code" href=
+"class_critter.html#aae570a35a62b996aea54813f93d27f63" title=
+"Удаляет предмет из инвентаря криттера.">DeleteItem</a>(PID_BOTTLE_CAPS,cost);
+<span class="comment">// Удаляем деньги игрока</span></div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(entNum==ENTIRE_WORKSHOP) <span class=
+"keywordflow">return</span> FD_BUY_SUCCESS_WORKSHOP; <span class=
+"comment">// Если машина установлена в магазине, перенаправляем
+игрока на ветку диалога с номером FD_BUY_SUCCESS_WORKSHOP
+(7)</span></div>
+
+<div class="line"><span class="comment">// то есть на ветку "Держи
+ключ, машина ждет тебя в мастерской. Если потребуется ремонт или
+модификация, то обращайся."</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// В противном случае
+перенаправляем игрока на ветку FD_BUY_SUCCESS_CARSTOP (8): "Держи
+ключ, машина ждет тебя снаружи, на стоянке. Если потребуется ремонт
+или модификация, то обращайся."</span>
+</div>
+
+<div class="line"><span class="keywordflow">return</span>
+FD_BUY_SUCCESS_CARSTOP;</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line">.....</div>
+
+<div class="line">.....</div>
+</div>
+<!-- fragment -->
+<p>В данном примере на реплике "Покупаю Хайвеймен." не стоит
+никаких условий, то есть игрок всегда может на нее нажать, проверка
+наличия денег происходит в функции TryCreateCar. Однако эту же
+проверку можно было провести и в скриптовой функции-условии.</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">bool</span>
+d_CheckMoneyForCar(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; player, <a class="code" href=
+"class_critter.html" title="Криттер.">Critter</a>@ tray,
+<span class="keywordtype">int</span> protoCar)</div>
+
+<div class="line">{</div>
+
+<div class="line">uint cost=GetCarCost(protoCar);</div>
+
+<div class="line"><span class=
+"keywordflow">if</span>(_CritCountItem(player,PID_BOTTLE_CAPS)&lt;cost)</div>
+
+<div class="line"><span class="keywordflow">return</span>
+<span class="keyword">false</span>;</div>
+
+<div class="line"><span class="keywordflow">else</span>
+</div>
+
+<div class="line"><span class="keywordflow">return</span>
+<span class="keyword">true</span>;</div>
+
+<div class="line">}</div>
+</div>
+<!-- fragment -->
+<p>Если мы добавим эту функцию (с параметром, равным номеру
+прототипа машины) в условие реплики игрока "Покупаю Хайвеймен.", то
+при недостаточном количестве денег игрок не увидит данной реплики и
+не сможет по ней перейти.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

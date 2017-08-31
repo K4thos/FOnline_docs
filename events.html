@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: События</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "events.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=events.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=events.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_scripts.html">Скрипты</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">События</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="event_info" name="event_info"></a> Общая
+информация</h1>
+
+<p>Данный механизм нужнен для того, чтобы отследить момент
+наступления определенных событий у карт, персонажей, предметов.
+События связываются с помощью следующего метода, определенного в
+классах <a class="el" href="class_map.html" title="Карта.">Map</a>,
+<a class="el" href="class_critter.html" title=
+"Криттер.">Critter</a> и <a class="el" href="class_item.html"
+title="Предмет.">Item</a>:</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">bool</span>
+SetEvent(<span class="keywordtype">int</span> eventType,
+<span class="keywordtype">string</span>@ funcName)</div>
+</div>
+<!-- fragment -->
+<p>Где:</p>
+
+<ul>
+<li><em>eventType</em> – тип события,</li>
+
+<li><em>funcName</em> – имя функции-обработчика события, при
+передаче пустой строки или null событие выключается.</li>
+</ul>
+
+<dl class="section user">
+<dt>Использование предметов</dt>
+
+<dd>
+<ul>
+<li>Если цель сценери, то вызывается обработчик сценери.</li>
+
+<li>Если цель предмет, то у него вызывается <a class="el" href=
+"group___item_events.html#ga612f4ff9e87ea3ae58681677fff93191">ITEM_EVENT_USE_ON_ME</a>.</li>
+
+<li>Если цель персонаж, то у него ничего не вызывается.</li>
+
+<li><a class="el" href=
+"group___item_events.html#ga7d12c48f1447328e879d54abc5d1f221">ITEM_EVENT_USE</a>
+для предмета.</li>
+
+<li><a class="el" href=
+"group___critter_events.html#ga7af10ccfccd0767e3e1adf7b741397b7">CRITTER_EVENT_USE_ITEM</a>
+для игрока + <a class="el" href=
+"group___critter_events.html#ga1f3dcea1c59fa9c2499b6c05354c0d16">CRITTER_EVENT_SMTH_USE_ITEM</a>
+для тех, кто видит игрока.</li>
+
+<li>Глобальный обработчик <a class="el" href=
+"group___server_reserved_main.html#ga16a9c516c81a58056fbdf33dfb8a1241"
+title=
+"Глобальный обработчик использования предметов.">critter_use_item</a>.</li>
+
+<li>Если предмет PID_HOLODISK, то обработка его использования.</li>
+
+<li>В обратном случае вывод сообщения STR_USE_NOTHING.</li>
+</ul>
+</dd>
+</dl>
+
+<dl class="section user">
+<dt>Использование навыков</dt>
+
+<dd>
+<ul>
+<li>Eсли цель сценери, то вызывается обработчик сценери.</li>
+
+<li>Eсли цель предмет, то у него вызывается <a class="el" href=
+"group___item_events.html#ga7794cd03630ad81ae2a17adca92de730">ITEM_EVENT_SKILL</a>.</li>
+
+<li>Eсли цель персонаж, то у него ничего не вызывается.</li>
+
+<li><a class="el" href=
+"group___critter_events.html#gab0fcdeaebc66147bb6cc96b5147dd6fe">CRITTER_EVENT_USE_SKILL</a>
+для игрока + <a class="el" href=
+"group___critter_events.html#ga30b3e90e33862d4a6e69599d7dbb732d">CRITTER_EVENT_SMTH_USE_SKILL</a>
+для тех, кто видит игрока.</li>
+
+<li>Глобальный обработчик <a class="el" href=
+"group___server_reserved_main.html#ga9bbb7d65b5db0a035fd7765579432e48"
+title=
+"Глобальный обработчик использования скиллов.">critter_use_skill</a>.</li>
+
+<li>Обработка специальных навыков <a class="el" href=
+"group___special_skill_values.html#ga322a7dd77ad9f08cfdfdc5679236df4b">
+SKILL_PUT_CONT</a>, <a class="el" href=
+"group___special_skill_values.html#ga203671ab62ca691d7afc9d344ff93043">
+SKILL_TAKE_CONT</a>, <a class="el" href=
+"group___special_skill_values.html#ga911959466f4eb035b419c76f2528db9e">
+SKILL_TAKE_ALL_CONT</a>, <a class="el" href=
+"group___special_skill_values.html#ga16e074bc3567ef3b4fba0f6349b700b3">
+SKILL_LOOT_CRITTER</a>.</li>
+</ul>
+</dd>
+</dl>
+
+<p>Прекратить обработку можно в любом месте, возвратив
+<code>true</code>.</p>
+
+<p><a class="el" href="group___map_events.html">Оформление
+функций-событий карты</a>
+</p>
+
+<p><a class="el" href="group___critter_events.html">Оформление
+функций-событий персонажа</a>
+</p>
+
+<p><a class="el" href="group___item_events.html">Оформление
+функций-событий предмета</a>
+</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

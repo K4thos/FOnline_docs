@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Временные события</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "time_events.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=time_events.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=time_events.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_scripts.html">Скрипты</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Временные события</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="te_info" name="te_info"></a> Общая
+информация</h1>
+
+<p>Скриптовый механизм позволяет создавать события, которые
+произойдут в указанное игровое время. В событиях могут участвовать
+как персонажи, так и итемы, причем это могут быть целые массивы
+персонажей или итемов.</p>
+
+<p>Для создания события необходимо вызвать одну из функций
+CreateTimeEvent:</p>
+
+<div class="fragment">
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+<span class="keywordtype">bool</span> save)</div>
+
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+<span class="keywordtype">int</span> value, <span class=
+"keywordtype">bool</span> save)</div>
+
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+uint value, <span class="keywordtype">bool</span> save)</div>
+
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+uint[]&amp; values, <span class="keywordtype">bool</span>
+save)</div>
+
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+<span class="keywordtype">int</span>[]&amp; values, <span class=
+"keywordtype">bool</span> save)</div>
+
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; cr, <span class=
+"keywordtype">bool</span> save)</div>
+
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+<a class="code" href="class_item.html" title=
+"Предмет.">Item</a>&amp; item, <span class=
+"keywordtype">bool</span> save)</div>
+
+<div class="line">uint <a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(uint
+beginSecond, <span class="keywordtype">string</span>&amp; funcName,
+<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@[]@+ critters, <a class="code" href=
+"class_item.html" title="Предмет.">Item</a>@[]@+ items,
+<span class="keywordtype">bool</span> save)</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">beginSecond</td>
+<td>Игровое время (в полных секундах), когда должно произойти
+событие. Чтобы получить полную секунду, можно воспользоваться
+функцией <a class="el" href=
+"group___server.html#ga988eeddfd38834a7edb6927e97b4869c" title=
+"Возвращает значение года, месяца, дня, часа и минуты в полных минутах.">
+GetFullSecond</a> и глобальными переменными <a class="el" href=
+"group___server.html#gaa2c438139212b38c6c77b7fb67b063ae" title=
+"Полная текущая секунда, учитывающая текущие год, месяц, день, час, минуту и секнуду.">
+__FullSecond</a>, <a class="el" href=
+"group___server.html#ga3bb2066c54c24153ac0df9a2f4d4117a" title=
+"Текущий год.">__Year</a>, <a class="el" href=
+"group___server.html#ga0c2ffd9608ae03f9c550e0935ecb050b" title=
+"Текущий месяц.">__Month</a>, <a class="el" href=
+"group___server.html#ga5dd2f06e78930b7571300ea9cd1ff0ee" title=
+"Текущий день.">__Day</a>, <a class="el" href=
+"group___server.html#gae20e17fed53bd0665384359f004dda31" title=
+"Текущий час.">__Hour</a>, <a class="el" href=
+"group___server.html#ga1b64cb1f750181df000686d1f0c98e30" title=
+"Текущая минута.">__Minute</a>, <a class="el" href=
+"group___server.html#gaab5e6cbe7e36fe0056b5a3c8ec444e56" title=
+"Текущая секунда.">__Second</a>. Если игровое время заданно
+некорректно, то будет взято текущее игровое время.</td>
+</tr>
+
+<tr>
+<td class="paramname">funcName</td>
+<td><a class="el" href="terms.html#term_func_link">Строка ссылка на
+функцию</a>.</td>
+</tr>
+
+<tr>
+<td class="paramname">cr,item,value,values...</td>
+<td><a class="el" href="terms.html#term_critter">Персонаж</a> или
+<a class="el" href="terms.html#term_item">Предмет</a> (либо
+<a class="el" href="terms.html#term_array">Массив</a>), который
+будет участвовать в событии.</td>
+</tr>
+
+<tr>
+<td class="paramname">save</td>
+<td>Флаг, который определяет, необходимо ли сохранять событие в
+базе данных сервера. Важные события (например, связанные с
+квестами) лучше сохранять, потому как любой рестарт сервера
+прекратит существование события, которое не сохраняется в базе
+данных и его будет необходимо создавать заново при инициализации
+сервера (функции инициализации у <a class="el" href=
+"terms.html#term_map">карт</a>, <a class="el" href=
+"terms.html#term_critter">персонажей</a>, <a class="el" href=
+"terms.html#term_item">предметов</a>).</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<p>По оформлению функции читайте <a class="el" href=
+"specialized_functions.html">Оформление специализированных
+функций</a>. Такая функция должна иметь один параметр – массив
+переданных при создании события данных (uint[]@ values). В процессе
+работы этот <a class="el" href="terms.html#term_array">массив</a>
+можно модифицировать - изменять значения элементов, размерность
+массива. Если при создании события данные не передавались, то
+values будет равен null. Тип возвращаемого значения - uint.
+Функция-событие должна возвращать полную секунду, которая
+определяет, через какой промежуток времени событие повторится (0 –
+не повторять событие, удалить). Функция CreateTimeEvent, в случае
+успешного создания события, возвратит его номер. Впоследствии по
+этому номеру можно удалить это событие, вызвав функцию
+EraseTimeEvent.</p>
+
+<p>Пример скрипта, с использованием событий:</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#include
+"_macros.fos"</span>
+</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="keyword">import</span> uint
+GetNearFullSecond(uint16 year, uint16 month, uint16 day, uint16
+hour, uint16 minute, uint16 second) from <span class=
+"stringliteral">"time"</span>;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Инициализация НПЦ</span>
+</div>
+
+<div class="line"><span class="keywordtype">void</span>
+_BoyInit(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ boy, <span class="keywordtype">bool</span>
+firstTime)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="comment">// Создаем событие, в
+котором мальчик зазывает покупать у него рации</span>
+</div>
+
+<div class="line"><span class="comment">// Событие произойдет через
+10-50 минут</span>
+</div>
+
+<div class="line"><a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(<a class="code"
+href="group___server.html#gaa2c438139212b38c6c77b7fb67b063ae"
+title="Полная текущая секунда, учитывающая текущие год, месяц, день, час, минуту и секнуду.">__FullSecond</a>+<a class="code"
+href="group___client.html#ga17589926f9e334b671331d9e0f5bb9d4"
+title="Возвращает рандомное значение.">Random</a>(10, 50)*60,
+<span class="stringliteral">"e_Announcement"</span>, boy,
+<span class="keyword">false</span>);</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Создаем событие, в
+котором мальчик приветствует с добрым утром</span>
+</div>
+
+<div class="line"><span class="comment">// Событие произойдет в
+ближайшие 8 часов утра</span>
+</div>
+
+<div class="line"><a class="code" href=
+"group___server.html#ga60283cdefc960ce088fddc55b18372ef" title=
+"Создает событие, которое произойдет в указанное игровое время.">CreateTimeEvent</a>(GetNearFullSecond(0,
+0, 0, 8, 0, 0), <span class=
+"stringliteral">"e_AnnouncementMorning"</span>, boy, <span class=
+"keyword">false</span>);</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Событие 1</span>
+</div>
+
+<div class="line">uint e_Announcement(uint[]@ values)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="comment">// Ночью не говорим, ждем
+до утра</span>
+</div>
+
+<div class="line"><span class="keywordflow">if</span>(<a class=
+"code" href=
+"group___server.html#gae20e17fed53bd0665384359f004dda31" title=
+"Текущий час.">__Hour</a> &gt; 20 || <a class="code" href=
+"group___server.html#gae20e17fed53bd0665384359f004dda31" title=
+"Текущий час.">__Hour</a> &lt; 8) <span class=
+"keywordflow">return</span> GetNearFullSecond(0, 0, 0, 8, <a class=
+"code" href=
+"group___client.html#ga17589926f9e334b671331d9e0f5bb9d4" title=
+"Возвращает рандомное значение.">Random</a>(20, 40), 0) - <a class=
+"code" href=
+"group___server.html#gaa2c438139212b38c6c77b7fb67b063ae" title=
+"Полная текущая секунда, учитывающая текущие год, месяц, день, час, минуту и секнуду.">
+__FullSecond</a>;</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Зазываем</span>
+</div>
+
+<div class="line"><a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ boy = <a class="code" href=
+"group___client.html#ga0cce275b1bf81ef480a82494ba4530d7" title=
+"Ищет криттера с указанным уникальным идентификатором.">GetCritter</a>(values[0]);</div>
+
+<div class="line"><span class="keywordflow">if</span>(valid(boy))
+boy.<a class="code" href=
+"class_critter.html#a122edebc4747ee930162b5dccd2e40c1" title=
+"Заставляет криттера сказать что-либо.">Say</a>(<a class="code"
+href="group___say_types.html#gace01c660416f6ce00340db2aab9fbfe8"
+title=
+"Нормальное произношение фразы, при котором текст отображается только над головой криттера.">SAY_NORM_ON_HEAD</a>,
+<span class="stringliteral">"Рации, кому рации..."</span>);</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Ждем около часа</span>
+</div>
+
+<div class="line"><span class="keywordflow">return</span> <a class=
+"code" href=
+"group___client.html#ga17589926f9e334b671331d9e0f5bb9d4" title=
+"Возвращает рандомное значение.">Random</a>(50, 70)*60;</div>
+
+<div class="line">}</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Событие 2</span>
+</div>
+
+<div class="line">uint e_AnnouncementMorning(uint[]@ values)</div>
+
+<div class="line">{</div>
+
+<div class="line"><span class="comment">// Приветствуем</span>
+</div>
+
+<div class="line"><a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ boy = <a class="code" href=
+"group___client.html#ga0cce275b1bf81ef480a82494ba4530d7" title=
+"Ищет криттера с указанным уникальным идентификатором.">GetCritter</a>(values[0]);</div>
+
+<div class="line"><span class="keywordflow">if</span>(valid(boy))
+boy.<a class="code" href=
+"class_critter.html#a122edebc4747ee930162b5dccd2e40c1" title=
+"Заставляет криттера сказать что-либо.">Say</a>(<a class="code"
+href="group___say_types.html#gace01c660416f6ce00340db2aab9fbfe8"
+title=
+"Нормальное произношение фразы, при котором текст отображается только над головой криттера.">SAY_NORM_ON_HEAD</a>,
+<span class="stringliteral">"С добрым утром!"</span>);</div>
+
+<div class="line">
+</div>
+
+<div class="line"><span class="comment">// Ждем сутки</span>
+</div>
+
+<div class="line"><span class="keywordflow">return</span>
+24*60*60;</div>
+
+<div class="line">}</div>
+</div>
+<!-- fragment -->
+<p>В этом примере организованны два события. В первом, мальчик
+зазывает покупать у него рации, каждые 50-70 минут, строго с 8 до
+20 часов. Во втором, мальчик приветствует всех с добрым утром
+каждый день в 8 часов утра.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

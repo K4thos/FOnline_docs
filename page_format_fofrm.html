@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Формат fofnt</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_format_fofrm.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_format_fofrm.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_format_fofrm.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+
+<li class="navelem"><a class="el" href="page_formats.html">Форматы
+файлов</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Формат fofnt</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Спецификация .fofrm.</p>
+
+<p>Спецификация .fofont</p>
+
+<p>Спецификация .fofrm</p>
+
+<div class="fragment">
+<div class="line">fps</div>
+</div>
+<!-- fragment -->
+<p>Frame Per Second, количество кадров в секунду. Целое,
+беззнаковое. Не обязательный параметр. По умолчанию - 10.</p>
+
+<div class="fragment">
+<div class="line">count</div>
+</div>
+<!-- fragment -->
+<p>Количество кадров в анимации. Целое, беззнаковое. По умолчанию -
+1.</p>
+
+<div class="fragment">
+<div class="line">offs_x</div>
+
+<div class="line">offs_y</div>
+</div>
+<!-- fragment -->
+<p>Базовые смещения. Этот сдвиг нужен для того, чтобы кадры были
+правильно отцентрованы. Используется при отображении кадра, так как
+его логический центр не всегда совпадает с его абсолютным центром
+(width/2, height/2). Например, центром существа будет позиция его
+ног, в то время как центром дерева будет его основание.
+Положительное значение для offs_x означает, что кадр при
+отображении будет сдвинут вправо. Положительное значение для offs_y
+означает, что кадр при отображении будет сдвинут вниз. Целое,
+знаковое. Не обязательный параметр. По умолчанию - 0.</p>
+
+<div class="fragment">
+<div class="line">[dir_?]</div>
+</div>
+<!-- fragment -->
+<p>Перед блоками описаний кадров анимации ставится направление
+анимации. ? - это направление, в диапазоне от 0 до 5. В кадрах без
+учета направления это можно не указывать. Далее следуют элементы
+блока описаний анимации.</p>
+
+<div class="fragment">
+<div class="line">offs_x</div>
+
+<div class="line">offs_y</div>
+</div>
+<!-- fragment -->
+<p>Смещения для направления. Если они не заданы, то берутся
+глобальные базовые смещения. Целое, знаковое. Не обязательный
+параметр. По умолчанию - значение базовых глобальных offs_*.</p>
+
+<div class="fragment">
+<div class="line">next_x_?</div>
+
+<div class="line">next_y_?</div>
+</div>
+<!-- fragment -->
+<p>Смещение кадра относительно предыдущего кадра. ? означает номер
+кадра*. Целое, знаковое. Не обязательный параметр. По умолчанию -
+0.</p>
+
+<div class="fragment">
+<div class="line">frm_?</div>
+</div>
+<!-- fragment -->
+<p>Имя файла изображения. ? означает номер кадра*. Для первого
+кадра номер указывать не обязательно, то есть просто "frm=...".
+Должен включать путь от текущей папки. Строка. Обязательный
+параметр.</p>
+
+<p>Номера должны начинаться с 0 и идти по порядку.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

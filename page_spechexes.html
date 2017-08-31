@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Специальные гексы</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_spechexes.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_spechexes.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_spechexes.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_cartography.html">Картография</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Специальные гексы</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>В маппере, в закладке "Fast", есть 16 объектов под названием
+"Специальные гексы".</p>
+
+<p>Это технические объекты, которые не отображаются в игре и
+выполняют какие-то свои особые функции.</p>
+
+<h1><a class="anchor" id="section_eghex" name="section_eghex"></a>
+EG-гекс</h1>
+
+<p>Гекс выхода. При попадании на него игрок куда-то перемещается,
+если не находится в боевом режиме.</p>
+
+<p>Используемые параметры:</p>
+
+<ul>
+<li><em>ToMapPid</em> (номер карты-цели)</li>
+
+<li><em>ToEntire</em> (точка входа, на которую перемещается
+игрок).</li>
+</ul>
+
+<p>Если параметры равны 0,0, то игрок телепортируется на глобал.
+Чтобы игрок мог перемещаться между картами, они должны быть
+прописаны как части одной локации в файле <a class="el" href=
+"page_locationscfg.html">Locations.cfg</a>.</p>
+
+<ul>
+<li><em>ToMapX</em>, <em>ToMapY</em> - телепортировать на
+определенные координаты.</li>
+</ul>
+
+<p>Не используются, но работают, перешли из оригинала. Удобней
+использовать точки входа, а не координаты, т.к. карты иногда
+перемещают при редактировании.</p>
+
+<h1><a class="anchor" id="section_enthex" name=
+"section_enthex"></a> ENT-гекс</h1>
+
+<p>Точка входа. Используются параметры:</p>
+
+<ul>
+<li><em>EntireNumber</em> - номер точки входа</li>
+
+<li><em>ToDir</em> - в каком направлении будет смотреть персонаж,
+от 0 до 5. 0 - на северо-восток).</li>
+</ul>
+
+<p>EntireNumber=0 - дефолтная точка входа с глобала. Должна быть на
+всех картах, на которые можно заходить с глобальной. Другие особые
+точки входа:</p>
+
+<ul>
+<li>240 - стартовая позиция игрока? первый раз зашедшего в
+игру;</li>
+
+<li>241 - позиция старта у карт с флагом NoLogOff;</li>
+
+<li>242 - репликация;</li>
+
+<li>243 - машины;</li>
+
+<li>245 - большие машины/вертиберд;</li>
+
+<li>246 - лодки.</li>
+</ul>
+
+<p>Для транспорта можно выбирать точки входа, которые он
+использует.</p>
+
+<p>Также ENT-гексы часто используются как маркер для пометки
+определенной территории для использования в скриптах - например,
+пометить двери, которые стоят над определенным гексом, или
+криттеров.</p>
+
+<h1><a class="anchor" id="section_lightsource" name=
+"section_lightsource"></a> Источник света</h1>
+
+<p>Параметры по умолчанию: <em>LightIntensity=50</em>,
+<em>LightDistance=8</em>, <em>LightColor=0</em> (белый).</p>
+
+<p>Их можно изменить в настройках прототипа.</p>
+
+<p>Другие используемые параметры:</p>
+
+<ul>
+<li><em>LightColor</em>, формат: 0xXXRRGGBB (первый байт
+опускается).</li>
+
+<li><em>LigthDirOff</em> - отключение одной из сторон освещения.
+Стороны, битовые маски:
+
+<ul>
+<li>0 - 0x01</li>
+
+<li>1 - 0x02</li>
+
+<li>2 - 0x04</li>
+
+<li>3 - 0x08</li>
+
+<li>4 - 0x10</li>
+
+<li>5 - 0x20</li>
+</ul></li>
+
+<li><em>LightDay</em> - инвертировать освещение. Если параметр = 1,
+то оно яркое днем, угасает ночью.</li>
+</ul>
+
+<h1><a class="anchor" id="section_lightblock" name=
+"section_lightblock"></a> Световая преграда</h1>
+
+<p>Блокирует свет, проходима. Служит для декоративных целей.</p>
+
+<h1><a class="anchor" id="section_sgreen" name=
+"section_sgreen"></a> S (зеленый)</h1>
+
+<p>Блокиратор проходимости. Простреливается. Все объекты блокируют
+только один гекс под собой, поэтому многие надо дополнительно
+обносить S-гексами, чтобы по ним нельзя было ходить.</p>
+
+<h1><a class="anchor" id="section_sai" name="section_sai"></a>
+SAI</h1>
+
+<p>Аналог зеленого S, но не отображается на мини-карте.</p>
+
+<h1><a class="anchor" id="section_wyellow" name=
+"section_wyellow"></a> W (желтый)</h1>
+
+<p>Непроходимый и непростреливаемый блокиратор, пропускает свет.
+Использование: пуленепробиваемые окна.</p>
+
+<h1><a class="anchor" id="section_wgreen" name=
+"section_wgreen"></a> W (зеленый)</h1>
+
+<p>Непроходимый, непростреливаемый, не пропускает свет (W for
+Wall).</p>
+
+<h1><a class="anchor" id="section_scrollblock" name=
+"section_scrollblock"></a> S (скроллблокер)</h1>
+
+<p>Блокиратор прокрутки экрана. Вокруг всех карт должна быть
+рамочка из скроллблокеров, чтобы экран не вылетал за края. Она
+должна быть чуть шире, чем наибольшее допустимое разрешение в игре,
+иначе большие экраны будут застревать или вылетать за карту.
+Наибольшее разрешение по умолчанию - 1280x1024, если вы хотите его
+менять, то всем картам необходимо дорисовывать дополнительные поля.
+Скроллблокеры блокируют проходимость своего гекса и шести гексов
+вокруг себя (сделано для того, чтобы игрок не мог спрятаться за
+верхним краем карты).</p>
+
+<h1><a class="anchor" id="section_trigger" name=
+"section_trigger"></a> T (триггер)</h1>
+
+<p>Триггер - он и в Африке триггер. Активирует какое-то действие по
+наступанию на обозначенный им гекс.</p>
+
+<p>Используемые параметры:</p>
+
+<ul>
+<li><em>ScriptName</em> - имя скрипта</li>
+
+<li><em>FuncName</em> - имя функции</li>
+
+<li><em>ParamsCount</em> - количество передаваемых параметров</li>
+
+<li><em>Paremeter0</em>..4 - сами параметры</li>
+
+<li><em>TriggerNum</em> - служит для группировки триггеров, чтобы
+не активировалось сразу несколько, если игрок ходит по группе
+одинаковых триггеров.</li>
+</ul>
+
+<p>Если используются <em>Paremeter0</em>..4, то надо точно указать
+их число в <em>ParamsCount</em>.</p>
+
+<p>Некоторые стандартные функции для триггеров можно найти в
+stdlib.fos.</p>
+
+<h1><a class="anchor" id="section_wall" name="section_wall"></a>
+Блокираторы стен</h1>
+
+<p>Используются для стен, используемых одним спрайтом. Придает все
+свойства - непроходимость, непростреливаемость, блокирование света.
+Всего 6 типов - для каждого из углов и для двух сторон.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

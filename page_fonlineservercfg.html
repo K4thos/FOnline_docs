@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: FOnlineServer.cfg</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_fonlineservercfg.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_fonlineservercfg.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_fonlineservercfg.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+
+<li class="navelem"><a class="el" href="page_cfgformat.html">Файлы
+конфигурации</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">FOnlineServer.cfg</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Настройки сервера.</p>
+
+<p><b>Ключи:</b>
+</p>
+
+<table class="doxtable">
+<tr>
+<td>PositionX</td>
+<td>Положение окна сервера по горизонтали. 0 - центр экрана</td>
+</tr>
+
+<tr>
+<td>PositionY</td>
+<td>Положение окна сервера по вертикали. 0 - центр экрана</td>
+</tr>
+
+<tr>
+<td>TextFont</td>
+<td>Шрифт</td>
+</tr>
+
+<tr>
+<td>Port</td>
+<td>Порт сервера</td>
+</tr>
+
+<tr>
+<td>GameSleep</td>
+<td>Время простоя после выполнения цикла. В миллисекундах</td>
+</tr>
+
+<tr>
+<td>WorldSaveTime</td>
+<td>Промежуток времени между сохранениями игрового мира. В
+минутах</td>
+</tr>
+
+<tr>
+<td>WorldSaveManager</td>
+<td>Режим сохранения мира. 0 - напрямую на диск, 1 - через
+отдельный поток, в котором так же будет происходить удаление старых
+сохранений</td>
+</tr>
+
+<tr>
+<td>LogicThreadCount</td>
+<td>Количество потоков в игровой логике. При нуле количество
+потоков будет равно количеству процессоров на компьютере</td>
+</tr>
+
+<tr>
+<td>LogicThreadSetAffinity</td>
+<td>Количество потоков на 1 ядро, если 0, то операционная система
+автоматически распределит потоки между ядрами</td>
+</tr>
+
+<tr>
+<td>ScriptConcurrentExecution</td>
+<td>Возможности одновременного выполнения скриптов (0 -
+отключено)</td>
+</tr>
+
+<tr>
+<td>NetWorkThread</td>
+<td>Количество сетевых потоков, если 0, то система определит
+количество потоков по количеству процессоров в системе</td>
+</tr>
+
+<tr>
+<td>MemoryDebugLevel</td>
+<td>Мониторинг использования памяти (0 - отключено, 1 - простой
+мониторинг, 2 - глубокий мониторинг)</td>
+</tr>
+
+<tr>
+<td>Logging</td>
+<td>Вести ли лог (1 - включено, 0 - отключено)</td>
+</tr>
+
+<tr>
+<td>LoggingDebugOutput</td>
+<td>Вести ли лог отладочных сообщений (1 - включено, 0 -
+отключено)</td>
+</tr>
+
+<tr>
+<td>LoggingTime</td>
+<td>Добавлять ли время в лог (1 - включено, 0 - отключено)</td>
+</tr>
+
+<tr>
+<td>LoggingThread</td>
+<td>Добавлять ли метку потока в лог (1 - включено, 0 -
+отключено)</td>
+</tr>
+
+<tr>
+<td>Language_0</td>
+<td>Язык сервера (для мультиязычных серверов добавляются еще ключи
+Language_1, Language_2, Language_3 и т.д. по количеству
+языков)</td>
+</tr>
+
+<tr>
+<td>Access_client</td>
+<td>Пароли, необходимые для смены уровня доступа на Client (пароли
+разделяются пробелом)</td>
+</tr>
+
+<tr>
+<td>Access_tester</td>
+<td>Пароли, необходимые для смены уровня доступа на Tester (пароли
+разделяются пробелом)</td>
+</tr>
+
+<tr>
+<td>Access_moder</td>
+<td>Пароли, необходимые для смены уровня доступа на Moderator
+(пароли разделяются пробелом)</td>
+</tr>
+
+<tr>
+<td>Access_admin</td>
+<td>Пароли, необходимые для смены уровня доступа на Administrator
+(пароли разделяются пробелом)</td>
+</tr>
+</table>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

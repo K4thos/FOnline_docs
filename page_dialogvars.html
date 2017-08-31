@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Редактор переменных</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_dialogvars.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_dialogvars.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_dialogvars.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_dialoguewriting.html">Диалогописание</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Редактор переменных</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Оформление переменных и их использование</p>
+
+<p>Игровые переменные используются для сохранения какой-либо
+игровой информации. Например, для сохранения информации о состоянии
+квестов – прошел игрок квест или провалил, выполнил ли какое-либо
+под-задание или нет, поговорил ли с каким-либо NPC или нет и т.д.
+При этом игровые переменные сохраняются на сервере и им не страшны
+ни рестарты, ни прочие неприятности.</p>
+
+<p>Существует три вида игровых переменных:</p>
+
+<ul>
+<li>Глобальные – используются для контроля над каким-либо
+глобальным процессом. Например, проходит ли кто-либо определенный
+квест или нет. Значение глобальной переменной для всех игроков
+одинаково;</li>
+
+<li>Локальные – чаще всего используются для сохранения информации о
+состоянии квеста, в рамках отдельно взятого игрока. Значение
+локальной переменной для всех игроков индивидуально;</li>
+
+<li>Уникальные – используется для сохранения информации о NPC, в
+рамках отдельно взятого игрока. Значение уникальной переменной
+индивидуально для всех NPC относительно каждого игрока.</li>
+</ul>
+
+<p>Для каждой игровой переменной указываются значения шести
+полей:</p>
+
+<ul>
+<li>Id - уникальный номер, по которому будет определяться игровая
+переменная;</li>
+
+<li>Name - имя переменной;</li>
+
+<li>Start - начальное значение переменной;</li>
+
+<li>Min - минимальное значение переменной;</li>
+
+<li>Max - максимальное значение переменной;</li>
+
+<li>Description - описание переменной.</li>
+</ul>
+
+<p>Также, для каждой переменной можно установить следующие
+флаги:<br />
+<b>Квестовая</b><br />
+Этот флаг показывает, что текущее значение переменной отражает
+статус квеста, который показывается у игрока в пип-бое. Строки,
+описывающие статусы квеста, хранятся в файле <a class="el" href=
+"page_foquestmsg.html">FOQUEST.MSG</a>. В нем также описывается
+схема связывания строк статусов со значениями переменной.<br />
+<b>Рандомная</b><br />
+Cтартовым значением будет случайное число между Min и Max.<br />
+<b>Без проверки</b><br />
+Не учитываются значения Min, Max.<br />
+Все игровые переменные хранятся в файле _vars.fos. Не редактируйте
+этот файл вручную, это делает редактор.</p>
+
+<p><b>Выбор названия переменной</b><br />
+Текущий стандарт названия квестовых переменных:
+q_location_npc_quest</p>
+
+<ul>
+<li>q - quest (указывает на то, что значениям переменной
+соответсвуют строки в файле описании квестов (FOQUEST.MSG). Эти
+строки потом отображаются в пип-бое).</li>
+
+<li>location - название города в сокращенном варианте (den, mod,
+vc, klam etc).</li>
+
+<li>npc - имя НПЦ, с которым связана эта переменная.</li>
+
+<li>quest - непосредственное указание квеста, который регулируется
+переменной.</li>
+</ul>
+
+<p><b>Примеры:</b>
+</p>
+
+<div class="fragment">
+<div class="line">q_den_smitty_boots</div>
+
+<div class="line">q_mod_hose (конкретный квест в данном случае не
+указан, идет просто ссылка на НПЦ)</div>
+
+<div class="line">q_nr_jessy_jet</div>
+</div>
+<!-- fragment -->
+<p>В целом, возможны любые названия переменных, главное чтобы было
+удобно работать как вам, так и последующим возможным
+пользователям.</p>
+
+<p><b>Выбор номера переменной</b><br />
+Для новой переменной, в принципе, можно выбрать любой свободной
+номер. Однако, для удобства идентификации, номера должны быть
+распределены следующим образом:</p>
+
+<p>1...1999 – для глобальных переменных,<br />
+2000...2999 – для уникальных переменных,<br />
+3000+ – для локальных переменных.</p>
+
+<p>Для локальных переменных принято брать номер, начинающийся на
+3000+(Номер локации)*100 (скажем, 4600 для локации №16), но это
+правило зачастую не используется.</p>
+
+<p><b>Полезные уникальные переменные</b><br />
+Данные переменные можно, например, использовать в преддиалоговых
+установках для различных проверок и отсылки к нужным вариантам. В
+скобках указан номер переменной.</p>
+
+<table class="doxtable">
+<tr>
+<td>Название</td>
+<td>Номер</td>
+<td>Описание</td>
+</tr>
+
+<tr>
+<td>last_dialog</td>
+<td>2020</td>
+<td>Номер последнего диалога с НПЦ.</td>
+</tr>
+
+<tr>
+<td>loyality</td>
+<td>2010</td>
+<td>Используется для того, чтобы определить отношение НПЦ к Игроку,
+которое сложилось у него в последствии разговора с Игроком. 5 - это
+средняя лояльность. 0 - НПЦ к Игроку наименее лоялен. 10 -
+наиболее. Не обязательно задействовать в диалоге все 11 состояний
+переменной. Можно ввести, к примеру, проверку только на &lt;3 и
+&gt;7 или &lt;5 и &gt;5, а можно и все 11 расписать.</td>
+</tr>
+
+<tr>
+<td>name_mem_npc_player</td>
+<td>2015</td>
+<td>Используется для того, чтобы определить знает ли НПЦ о имени
+Игрока или нет. Если 0, то нет.</td>
+</tr>
+
+<tr>
+<td>name_mem_player_npc</td>
+<td>2016</td>
+<td>Используется для того, чтобы определить знает ли Игрок о имени
+НПЦ или нет. Если 0, то нет.</td>
+</tr>
+
+<tr>
+<td>click_count</td>
+<td>2020</td>
+<td>Счетчик щелчков по НПЦ со всплывающими фразами вместо диалога.
+Скажем, на 30-ый клик НПЦ может разозлиться или сказать шутку.
+Переменная не имеет границ, поэтому на деле ее можно использовать
+для счета чего угодно.</td>
+</tr>
+</table>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

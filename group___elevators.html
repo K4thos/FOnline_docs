@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Elevators</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "group___elevators.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=group___elevators.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=group___elevators.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="summary"><a href="#define-members">Макросы</a>
+</div>
+
+<div class="headertitle">
+<div class="title">Elevators
+
+<div class="ingroups"><a class="el" href=
+"group___defines.html">Константы</a>
+</div></div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<p>Интерфейсы лифтов. <a href="#details">Подробнее...</a></p>
+
+<table class="memberdecls">
+<tr class="heading">
+<td colspan="2">
+<h2 class="groupheader"><a name="define-members" id=
+"define-members"></a> Макросы</h2>
+</td>
+</tr>
+
+<tr class="memitem:ga08538b7145d4bdfa7bd8046b6a8e2773">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>&nbsp;&nbsp;&nbsp;#(elevator,current_level)
+((uint((current_level)&amp;0xFFFF)&lt;&lt;16)|(elevator)&amp;0xFFFF)</td>
+</tr>
+
+<tr class="separator:ga08538b7145d4bdfa7bd8046b6a8e2773">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:ga5b68d0f95f665ce24e27bb449a192c80">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga5b68d0f95f665ce24e27bb449a192c80">ELEVATOR_BOS_1234</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(0,current_level))</td>
+</tr>
+
+<tr class="separator:ga5b68d0f95f665ce24e27bb449a192c80">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:ga2156dec521e2fba71a8709a7f873f5d0">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga2156dec521e2fba71a8709a7f873f5d0">ELEVATOR_BOS_01</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(1,current_level))</td>
+</tr>
+
+<tr class="separator:ga2156dec521e2fba71a8709a7f873f5d0">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:ga22a0ff83cd02877b64ec68c645e04fef">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga22a0ff83cd02877b64ec68c645e04fef">ELEVATOR_MASTER_123</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(2,current_level))</td>
+</tr>
+
+<tr class="separator:ga22a0ff83cd02877b64ec68c645e04fef">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:ga70c86e094e3414ba7e7abb833dee02fb">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga70c86e094e3414ba7e7abb833dee02fb">ELEVATOR_MASTER_34</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(3,current_level))</td>
+</tr>
+
+<tr class="separator:ga70c86e094e3414ba7e7abb833dee02fb">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:gab0756bace42798922d0b9e2e53d887b7">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#gab0756bace42798922d0b9e2e53d887b7">ELEVATOR_MILITARY_123</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(4,current_level))</td>
+</tr>
+
+<tr class="separator:gab0756bace42798922d0b9e2e53d887b7">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:ga0e6fc08b61e52e0b6f2c91a616e2ad38">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga0e6fc08b61e52e0b6f2c91a616e2ad38">ELEVATOR_MILITARY_34</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(5,current_level))</td>
+</tr>
+
+<tr class="separator:ga0e6fc08b61e52e0b6f2c91a616e2ad38">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:ga632b0a51c25ea6daaeda7214e06b8afc">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga632b0a51c25ea6daaeda7214e06b8afc">ELEVATOR_MILITARY_346</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(6,current_level))</td>
+</tr>
+
+<tr class="separator:ga632b0a51c25ea6daaeda7214e06b8afc">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:gaba6393807a457b57ee42c9d5f890f622">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#gaba6393807a457b57ee42c9d5f890f622">ELEVATOR_MILITARY_456</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(7,current_level))</td>
+</tr>
+
+<tr class="separator:gaba6393807a457b57ee42c9d5f890f622">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+
+<tr class="memitem:ga7a2c2a83ce1fd4716bb795f8cacc4d52">
+<td class="memItemLeft" align="right" valign="top">
+#define&nbsp;</td>
+<td class="memItemRight" valign="bottom"><a class="el" href=
+"group___elevators.html#ga7a2c2a83ce1fd4716bb795f8cacc4d52">ELEVATOR_VAULT_123</a>&nbsp;&nbsp;&nbsp;#(current_level)
+(<a class="el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(8,current_level))</td>
+</tr>
+
+<tr class="separator:ga7a2c2a83ce1fd4716bb795f8cacc4d52">
+<td class="memSeparator" colspan="2">&nbsp;</td>
+</tr>
+</table>
+<a name="details" id="details"></a>
+<h2 class="groupheader">Подробное описание</h2>
+
+<p>Интерфейсы лифтов.</p>
+
+<dl class="section see">
+<dt>См. также</dt>
+
+<dd><a class="el" href=
+"group___show_screen_modes.html#ga31b751c5c21355aaa37953afa8dde4d2"
+title="Интерфейс лифта.">SCREEN_ELEVATOR</a>
+</dd>
+</dl>
+
+<h2 class="groupheader">Макросы</h2>
+<a class="anchor" id="ga08538b7145d4bdfa7bd8046b6a8e2773" name=
+"ga08538b7145d4bdfa7bd8046b6a8e2773"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_X&nbsp;&nbsp;&nbsp;#(elevator,current_level)
+((uint((current_level)&amp;0xFFFF)&lt;&lt;16)|(elevator)&amp;0xFFFF)</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="ga5b68d0f95f665ce24e27bb449a192c80" name=
+"ga5b68d0f95f665ce24e27bb449a192c80"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_BOS_1234&nbsp;&nbsp;&nbsp;#(current_level) (<a class="el"
+href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(0,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="ga2156dec521e2fba71a8709a7f873f5d0" name=
+"ga2156dec521e2fba71a8709a7f873f5d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_BOS_01&nbsp;&nbsp;&nbsp;#(current_level) (<a class="el"
+href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(1,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="ga22a0ff83cd02877b64ec68c645e04fef" name=
+"ga22a0ff83cd02877b64ec68c645e04fef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_MASTER_123&nbsp;&nbsp;&nbsp;#(current_level) (<a class=
+"el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(2,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="ga70c86e094e3414ba7e7abb833dee02fb" name=
+"ga70c86e094e3414ba7e7abb833dee02fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_MASTER_34&nbsp;&nbsp;&nbsp;#(current_level) (<a class="el"
+href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(3,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="gab0756bace42798922d0b9e2e53d887b7" name=
+"gab0756bace42798922d0b9e2e53d887b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_MILITARY_123&nbsp;&nbsp;&nbsp;#(current_level) (<a class=
+"el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(4,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="ga0e6fc08b61e52e0b6f2c91a616e2ad38" name=
+"ga0e6fc08b61e52e0b6f2c91a616e2ad38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_MILITARY_34&nbsp;&nbsp;&nbsp;#(current_level) (<a class=
+"el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(5,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="ga632b0a51c25ea6daaeda7214e06b8afc" name=
+"ga632b0a51c25ea6daaeda7214e06b8afc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_MILITARY_346&nbsp;&nbsp;&nbsp;#(current_level) (<a class=
+"el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(6,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="gaba6393807a457b57ee42c9d5f890f622" name=
+"gaba6393807a457b57ee42c9d5f890f622"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_MILITARY_456&nbsp;&nbsp;&nbsp;#(current_level) (<a class=
+"el" href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(7,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+<a class="anchor" id="ga7a2c2a83ce1fd4716bb795f8cacc4d52" name=
+"ga7a2c2a83ce1fd4716bb795f8cacc4d52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">#define
+ELEVATOR_VAULT_123&nbsp;&nbsp;&nbsp;#(current_level) (<a class="el"
+href=
+"group___elevators.html#ga08538b7145d4bdfa7bd8046b6a8e2773">ELEVATOR_X</a>(8,current_level))</td>
+</tr>
+</table>
+</div>
+
+<div class="memdoc">
+</div>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

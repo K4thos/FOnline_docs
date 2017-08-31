@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Стандарты оформления скриптов</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "code_style.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=code_style.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=code_style.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_scripts.html">Скрипты</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Стандарты оформления скриптов</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="code_style_whole" name=
+"code_style_whole"></a> Стандарты оформления</h1>
+
+<p>Стили использования регистра букв:</p>
+
+<p>Паскаль - указание этого стиля оформления идентификатора
+обозначает, что первая буква заглавная и все последующие первые
+буквы слов тоже заглавные. В этом стиле оформляются глобальные
+переменные, поля класса, функции и методы.</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">int</span>
+BackColor</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+IsLastModified</div>
+
+<div class="line">uint DateTime</div>
+
+<div class="line"><span class="keywordtype">void</span>
+DoSmth(...)</div>
+
+<div class="line">void Hello(...)</div>
+
+<div class="line"><span class="keywordtype">int</span>
+MySuperFunction(...)</div>
+
+<div class="line">SomeClass::GetMapId()</div>
+
+<div class="line">SomeClass::IsBusy()</div>
+</div>
+<!-- fragment -->
+<p>Кэмел - указание этого стиля обозначает, что первая буква
+строчная, а остальные первые буквы слов заглавные. В этом стиле
+оформляются локальные переменные, аргументы методов и функций.</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">int</span>
+borderColor</div>
+
+<div class="line">uint accessTime</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+tempName</div>
+
+<div class="line"><span class="keywordtype">void</span>
+DoSmthFast(<span class="keywordtype">int</span> oneTwoThree,
+<span class="keywordtype">int</span> doIt)</div>
+
+<div class="line"><span class="keywordtype">void</span>
+MyFunc(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>@ cr, <span class="keywordtype">int</span>
+pOne, <span class="keywordtype">int</span> pTwo, <span class=
+"keywordtype">int</span> valNext)</div>
+</div>
+<!-- fragment -->
+<p>Имена <a class="el" href=
+"group___server_reserved_main.html">зарезервированных функций</a>
+пишутся в нижнем регистре, через подчеркивание.</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">void</span> <a class=
+"code" href=
+"group___server_reserved_main.html#ga7282097350909b868fd111a2a3d9de0f"
+title=
+"Вызывается при регистрации/логине игрока или создании/загрузке NPC.">
+critter_init</a>(<a class="code" href="class_critter.html" title=
+"Криттер.">Critter</a>&amp; cr, <span class=
+"keywordtype">bool</span> firstTime)</div>
+
+<div class="line"><span class="keywordtype">bool</span> <a class=
+"code" href=
+"group___client_reserved.html#gaad5997aaaa2d622f0ca57f8b24a51a7b"
+title=
+"Вызывается при запуске клиента или в случае, если придет обновленный скрипт client_main.fos.">
+start</a>()</div>
+
+<div class="line">void <a class="code" href=
+"group___server_reserved_main.html#ga6dfe1abe0d1eb3ddc1ca081de98b5342"
+title="Вызывается при остановке сервера.">finish</a>()</div>
+</div>
+<!-- fragment -->
+<p>Константы должны писаться в верхнем регистре (как минимум первое
+слово), значение обрамляется скобками.</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#define MY_CONST
+(5)</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define MY_CONST2
+(MY_CONST+10)</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define CONST_One
+(0)</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define CONST_Two
+(1)</span>
+</div>
+</div>
+<!-- fragment -->
+<p>Макросы оформляются так же как и константы, но допускается
+оформление в стиле Паскаль с использованием подчеркивания в
+начале.</p>
+
+<div class="fragment">
+<div class="line"><span class="preprocessor">#define _EveryHour
+...</span>
+</div>
+
+<div class="line"><span class="preprocessor">#define _CritInjure
+...</span>
+</div>
+</div>
+<!-- fragment -->
+<p>Не пишите название переменных в русской транслитерации.</p>
+
+<div class="fragment">
+<div class="line"><a class="code" href="class_item.html" title=
+"Предмет.">Item</a>@ mashina; <span class="comment">//
+Неправильно</span></div>
+
+<div class="line"><a class="code" href="class_item.html" title=
+"Предмет.">Item</a>@ car; <span class="comment">//
+Правильно</span></div>
+</div>
+<!-- fragment -->
+<p>Комментарии пишите только на русском или английском языке.
+Грамотно.</p>
+
+<div class="fragment">
+<div class="line"><span class="comment">//ну тут типо делайем всем
+Привед! - Неправильно</span>
+</div>
+
+<div class="line"><span class="comment">// Передаем всем привет. -
+Правильно</span>
+</div>
+</div>
+<!-- fragment -->
+<p>Пользуйтесь зарезервированными константами, а не их числовым
+эквивалентом.</p>
+
+<div class="fragment">
+<div class="line">npc.DeleteItem(236, 1); <span class="comment">//
+Неправильно</span></div>
+
+<div class="line">npc.DeleteItem(PID_COMBAT_KNIFE, 1); <span class=
+"comment">// Правильно</span></div>
+</div>
+<!-- fragment -->
+<p>Памятки:</p>
+
+<ul>
+<li>Не забывайте соблюдать регистр переменных ('Hp' не равно
+'hp');</li>
+
+<li>Не забывайте про стандарты оформления;</li>
+
+<li>Помните, что скрипт делает то, что вы ему говорите, а не то,
+что вы от него хотите.</li>
+</ul>
+
+<h1><a class="anchor" id="code_style_syntax" name=
+"code_style_syntax"></a> Синтаксис</h1>
+
+<p>В целом, синтаксис мало чем отличается от синтаксиса С++.<br />
+Подробнее о ссылках и указателях:</p>
+
+<ul>
+<li>символ указателя - "@", ссылки - "&amp;";</li>
+
+<li>при этом отсутствие символа "@" будет означать разыменование
+указателя. То есть, результаты следующих кусков кода будут
+одинаковы:
+
+<div class="fragment">
+<div class="line">1.</div>
+
+<div class="line">Object@ bag = car.CarGetBag(0);</div>
+
+<div class="line">2.</div>
+
+<div class="line">Object@ bag = null;</div>
+
+<div class="line">@bag = car.CarGetBag(0);</div>
+</div>
+<!-- fragment --></li>
+
+<li>поведение ссылки и указателя идентично, отличие в том, что
+ссылка не может быть равна null и ей нельзя присвоить другое
+значение.</li>
+</ul>
+
+<p><a class="el" href="terms.html#term_array">Массивы</a>.
+Объявление массивов:</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">int</span>[] a;
+<span class="comment">// Пустой массив, нулевой длины.</span></div>
+
+<div class="line"><span class="keywordtype">int</span>[] b(10);
+<span class="comment">// Пустой массив, с длиной равной
+10.</span></div>
+
+<div class="line"><span class="keywordtype">int</span>[] c =
+{,3,4,}; <span class="comment">// Массив с длиной равной 4, где
+второй и третий элемент инициализированы.</span></div>
+</div>
+<!-- fragment -->
+<p>Так же у всех массивов есть следующие методы:</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">void</span> resize(uint
+length) <span class="comment">// Изменяет размер
+массива.</span></div>
+
+<div class="line">uint length() <span class="comment">// Возвращает
+длину массива.</span></div>
+</div>
+<!-- fragment -->
+<p>Явное приведение типов:</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">int</span> a = 5;</div>
+
+<div class="line"><span class="keywordtype">float</span> b =
+float(a);</div>
+
+<div class="line"><span class="keywordtype">float</span> b =
+cast&lt;float&gt;(a);</div>
+</div>
+<!-- fragment -->
+<p>Оператор "?". Синтаксис:<br />
+&lt;значение 1&gt; ? &lt;значение 2&gt; : &lt;значение 3&gt;<br />
+Если &lt;значение 1&gt; == true то оператор возвращает &lt;значение
+2&gt;, иначе &lt;значение 3&gt;<br />
+Пример:</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">int</span> i = 5;</div>
+
+<div class="line"><span class="keywordtype">int</span> j = (i == 5
+? 6 : 7);</div>
+
+<div class="line"><span class="comment">// i == 5, j == 6</span>
+</div>
+</div>
+<!-- fragment -->
+<p>Подробнее о синтаксисе <a class="el" href=
+"terms.html#term_angel_script">AngelScript</a>.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

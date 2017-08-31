@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Locations.cfg</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_locationscfg.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_locationscfg.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_locationscfg.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_content.html">Контент</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Locations.cfg</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>В данном файле находится список всех локаций в игре.</p>
+
+<p>Им в этом файле можно присваивать следующие параметры:</p>
+
+<p><b>name</b><br />
+Имя локации. Не обязательный параметр.</p>
+
+<p><b>size*</b><br />
+Размеры локации.<br />
+Рекомендуемые значения: 6 (small), 12 (medium), 24 (large).<br />
+По умолчанию - 24 (large).</p>
+
+<p><b>max_players</b><br />
+Максимальное количество игроков, способных одновременно находиться
+на локации.<br />
+Целое беззнаковое значение, при нуле количество не
+ограничивается.<br />
+По умолчанию - 0.</p>
+
+<p><b>map_X</b><br />
+Карты в локации. Вместо X подставляется порядковый номер карты.
+Отсчет с 0. X принимает значения от 0 до 49.<br />
+В конце строки прописывается идентификационный номер локации
+(смотрите Server\scripts\_maps.fos - блок Maps).<br />
+Символ '*' в конце имени карты означает возможность просмотра карты
+в меню Automaps.</p>
+
+<p><b>entrance</b><br />
+Точки доступа в локацию.<br />
+Задается двумя способами:<br /></p>
+
+<ol type="1">
+<li>Число, которое обозначает на сколько карт в списке (map_X)
+можно входить с глобальной карты. Гекс-вход равен 0.<br /></li>
+
+<li>'$' и далее, через запятую, перечисляются номер карты и номер
+гекса-входа на карту.<br />
+Например: "entrance=$0 0, 1 1, 0 3" будет означать, что существует
+три входа на локацию - на карту 0, в точку 0; на карту 1, в точку
+1; на карту 0, в точку 3.<br />
+По умолчанию - 1.<br />
+Названия точек входа и их координаты на "карте" локации
+присваиваются в файле FOGM.MSG.</li>
+</ol>
+
+<p><b>entrance_script</b><br />
+Скрипт для проверки точек доступа к локации.<br />
+По умолчанию - ничего.</p>
+
+<p><b>visible*</b><br />
+Видна ли локция на глобале.<br />
+По умолчанию - 0.</p>
+
+<p><b>auto_garbage*</b><br />
+Удалять карту, когда на ней не осталось ни одного игрока, местного
+НПЦ и предмета с флагом ГЕКК (актуально при geck_visible =
+1).<br />
+По умолчанию - 1.</p>
+
+<p><b>geck_visible*</b><br />
+Влияют ли на видимость локации расположенные в ней предметы с
+флагом ГЕКК, если да, то при количестве больше нуля локация
+получает свойство, аналогичное Visible.<br />
+По умолчанию - 0.</p>
+
+<p>Максимальное количество локаций в игре - 500.</p>
+
+<p>Пример городской локации:</p>
+
+<div class="fragment">
+<div class="line">[Area 1]</div>
+
+<div class="line">name = The Den</div>
+
+<div class="line">size = 24</div>
+
+<div class="line">map_0 = den* 6</div>
+
+<div class="line">map_1 = den_carstop* 7</div>
+
+<div class="line">map_2 = repl_bank_den 210</div>
+
+<div class="line">entrance = $0 0, 1 1, 0 3</div>
+
+<div class="line">visible = 1</div>
+
+<div class="line">auto_garbage = 0</div>
+</div>
+<!-- fragment -->
+<p>На этой локации есть три карты. Вход осуществляется на карты 0
+(две точки входа) и 1 (одна точка входа).<br />
+Локацию видно на глобале. Она не удаляется, если там не осталось
+игроков.</p>
+
+<p>Пример локации-энкаунтера:</p>
+
+<div class="fragment">
+<div class="line">[Area 101]</div>
+
+<div class="line">name=Desert 1</div>
+
+<div class="line">size=6</div>
+
+<div class="line">map_0=e_desert1</div>
+
+<div class="line">geck_enabled=1</div>
+</div>
+<!-- fragment -->
+<p>На этой локации одна карта. Она будет удалена, когда ее покинет
+последний игрок.<br />
+Она невидима, если только там не находится предмет с флагом ГЕКК
+(например, машина).</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

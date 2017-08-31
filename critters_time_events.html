@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Временные события персонажей</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "critters_time_events.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=critters_time_events.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=critters_time_events.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_scripts.html">Скрипты</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Временные события персонажей</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="сte_info" name="сte_info"></a> Общая
+информация</h1>
+
+<p>Скриптовый механизм работает примерно так же, как и при
+использовании обычных <a class="el" href=
+"time_events.html">временных событий</a>, но, в отличие от них,
+событие происходит не в определенную указанную игровую секунду, а
+через некоторый промежуток времени, причем данный промежуток
+отсчитывает только тогда, когда персонаж, для которого установлено
+событие, находится в онлайне. Например, данный механизм может быть
+использован для реализации действия наркотиков на игроков.</p>
+
+<p>Для создания события необходимо вызвать один из следующих
+методов класса <a class="el" href=
+"class_critter.html">Critter</a></p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">bool</span>
+AddTimeEvent(<span class="keywordtype">string</span>&amp; funcName,
+uint duration, <span class="keywordtype">int</span>
+identifier)</div>
+
+<div class="line"><span class="keywordtype">bool</span>
+AddTimeEvent(<span class="keywordtype">string</span>&amp; funcName,
+uint duration, <span class="keywordtype">int</span> identifier,
+uint rate)</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">funcName</td>
+<td><a class="el" href="terms.html#term_func_link">Строка ссылка на
+функцию</a>.</td>
+</tr>
+
+<tr>
+<td class="paramname">duration</td>
+<td>Игровое время (в игровых секундах) через которое должно
+произойти событие.</td>
+</tr>
+
+<tr>
+<td class="paramname">identifier</td>
+<td>Идентификатор, для удобного поиска событий в общем списке.</td>
+</tr>
+
+<tr>
+<td class="paramname">rate</td>
+<td>Дополнительный параметр, можно использовать для любых целей,
+если использован метод без указания значения rate, то данный
+параметр в функции обработчике будет равен нулю.</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<p>По оформлению функции читайте <a class="el" href=
+"specialized_functions.html">Оформление специализированных
+функций</a>. Функция-событие должна возвращать полную секунду,
+которая определяет, через какой промежуток времени событие
+повторится (0 – не повторять событие, удалить). Функция
+AddTimeEvent, в случае успешного создания события, возвратит
+true.</p>
+
+<h1><a class="anchor" id="сte_ext_methods" name=
+"сte_ext_methods"></a> Дополнительные методы для работы с
+временными событиями персонажей.</h1>
+
+<p>Получение количесва событий с указанным идентификатором.</p>
+
+<div class="fragment">
+<div class="line">uint GetTimeEvents(<span class=
+"keywordtype">int</span> identifier, uint[]@+ indexes, uint[]@+
+durations, uint[]@+ rates) const</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">identifier</td>
+<td>Идентификатор, указанный при создании события.</td>
+</tr>
+
+<tr>
+<td class="paramname">indexes</td>
+<td>Индексы событий.</td>
+</tr>
+
+<tr>
+<td class="paramname">durations</td>
+<td>Временные промежутки событий.</td>
+</tr>
+
+<tr>
+<td class="paramname">rates</td>
+<td>Значения параметра rate событий.</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="section return">
+<dt>Возвращает</dt>
+
+<dd>Количество найденных событий.</dd>
+</dl>
+
+<p>Получение количества событий с указанными идентификаторами.</p>
+
+<div class="fragment">
+<div class="line">uint GetTimeEvents(<span class=
+"keywordtype">int</span>[]&amp; findIdentifiers, <span class=
+"keywordtype">int</span>[]@+ identifiers, uint[]@+ indexes,
+uint[]@+ durations, uint[]@+ rates) const</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">findIdentifiers</td>
+<td>Идентификаторы найденных событий.</td>
+</tr>
+
+<tr>
+<td class="paramname">identifiers</td>
+<td>Идентификаторы, указанные при создании событий.</td>
+</tr>
+
+<tr>
+<td class="paramname">indexes</td>
+<td>Индексы событий.</td>
+</tr>
+
+<tr>
+<td class="paramname">durations</td>
+<td>Временные промежутки событий.</td>
+</tr>
+
+<tr>
+<td class="paramname">rates</td>
+<td>Значения параметра rate событий.</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="section return">
+<dt>Возвращает</dt>
+
+<dd>Количество найденных событий.</dd>
+</dl>
+
+<p>Изменяет время до запуска и параметр rate указанного события</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">void</span>
+ChangeTimeEvent(uint index, uint newDuration, uint newRate)</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">index</td>
+<td>Индекс события, которое необходимо изменить.</td>
+</tr>
+
+<tr>
+<td class="paramname">newDuration</td>
+<td>Новый интервал до возникновения события.</td>
+</tr>
+
+<tr>
+<td class="paramname">newRate</td>
+<td>Новое значение параметра rate.</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<p>Удаляет событие по индексу</p>
+
+<div class="fragment">
+<div class="line"><span class="keywordtype">void</span> <a class=
+"code" href=
+"group___server.html#gae2a53306898e19a29056ba7ed76c45fb" title=
+"Удаляет событие с указанным номером.">EraseTimeEvent</a>(uint
+index)</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">index</td>
+<td>Индекс события, которое следует удалить</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<p>Удаляет события по идентификатору</p>
+
+<div class="fragment">
+<div class="line">uint EraseTimeEvents(<span class=
+"keywordtype">int</span> identifier)</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">identifier</td>
+<td>Идентификатор, указанный при создании, тех событий, которые
+следует удалить.</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="section return">
+<dt>Возвращает</dt>
+
+<dd>Количество удаленных событий</dd>
+</dl>
+
+<p>Удаляет события с заданными идентификаторами</p>
+
+<div class="fragment">
+<div class="line">uint EraseTimeEvents(<span class=
+"keywordtype">int</span>[]&amp; identifiers)</div>
+</div>
+<!-- fragment -->
+<dl class="params">
+<dt>Аргументы</dt>
+
+<dd>
+<table class="params">
+<tr>
+<td class="paramname">identifiers</td>
+<td>Массив идентификаторов тех событий, которые нужно удалить.</td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="section return">
+<dt>Возвращает</dt>
+
+<dd>Количество удаленных событий.</dd>
+</dl>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:03. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

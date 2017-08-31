@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Инструментарий</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "tools.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=tools.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=tools.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Инструментарий</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<h1><a class="anchor" id="tools_mapper" name="tools_mapper"></a>
+Маппер</h1>
+
+<p>Программа для создания игровых карт.<br />
+Имя исполняемого файла: "Mapper.exe".</p>
+
+<p>Для загрузки карты введите в консоли "~&amp;lt;map
+name&amp;gt;".<br />
+Для сохранения "^&amp;lt;map name&amp;gt; [/text] [/nopack]".
+"/text" - для сохранения в текстовом формате, "/nopack" - для
+сохранения без запаковки.</p>
+
+<p>Другие команды "*":</p>
+
+<div class="fragment">
+<div class="line"><span class="keyword">new</span> создание новой
+карты;</div>
+
+<div class="line">unload выгрузка текущей карты;</div>
+
+<div class="line">scripts перезагрузка скриптов;</div>
+
+<div class="line">size &amp;lt;w&amp;gt; &amp;lt;h&amp;gt;
+установка новых размеров карты;</div>
+
+<div class="line">dupl поиск итемов, которые стоят на одном гексе и
+имеют одинаковый номер прототипа;</div>
+
+<div class="line">scroll поиск скроллблокеров, вокруг которых
+меньше двух скроллблокеров;</div>
+
+<div class="line">pidpos &amp;lt;pid&amp;gt; поиск всех позиций для
+данного номера прототипа;</div>
+
+<div class="line">hex &amp;lt;hx&amp;gt; &amp;lt;hy&amp;gt; поиск
+всех обектов стоящих на заданном гексе.</div>
+</div>
+<!-- fragment -->
+<p>Для выполнения скриптовой функции используйте "#", спецификация
+функции: "string FuncName(string)", аргумент - это передаваемая
+строка из консоли, а результат будет выведен в окне сообщений.
+Модуль по умолчанию "mapper_main", для вызова из других модулей
+допишите его перед функцией с разделителем "@" (пример
+"#module@MyFunc").<br />
+Пример:</p>
+
+<div class="fragment">
+<div class="line">консоль <span class="stringliteral">"#MyFunc
+Hello wo"</span>;</div>
+
+<div class="line">скрипт <span class="stringliteral">"string
+MyFunc(string my) { return my + "</span>rld!<span class=
+"stringliteral">"; }"</span>;</div>
+
+<div class="line">результат в окне сообщений <span class=
+"stringliteral">"Result: Hello world!"</span>.</div>
+</div>
+<!-- fragment -->
+<p>Папка скриптов: "\data\scripts\".<br />
+Список подгружаемых скриптов находится в scripts.lst.<br />
+Главный скрипт - mapper_main.fos, он содержит зарезервированные
+функции, а так же справку по API скриптов маппера.</p>
+
+<p>Маппер не поддерживает форматы F1, F2 и старые форматы карт
+FOnline.</p>
+
+<p>Сверху галавной панели, находится область кнопок объектов,
+которые сгруппированы по типам.<br />
+Ниже этих кнопок находится панель видимости объектов на
+карте.<br />
+Справа находятся кнопки включения выделения объектов на карте.</p>
+
+<p>Дополнительные кнопки:<br />
+Fast - отображает часто используемые объекты.<br />
+Ign - Ignore, показывает игнорируемые объекты, которые не
+отрисовываются на карте.<br />
+Inv - Inventory, показывает инвентарь криттера или
+контейнера.<br />
+Lst - List, показывает загруженные карты, между которыми можно
+переключаться.</p>
+
+<p>При выборе объекта появляется панель редактирования, где можно
+изменить значение некоторых полей (помечены зеленым, не
+редактируемые - белым).</p>
+
+<p>Для добавления/удаления объекта в игнор лист - зажмите контрол и
+кликните на нем (в панели выбора объектов) левой кнопкой
+мыши.<br />
+Для добавления/удаления объекта в инвентарь - зажмите альт и
+кликните на нем (в панели выбора объектов) левой кнопкой
+мыши.<br />
+Для установки криттеру итема в слот - зажмите Shift и выберите
+нужный итем у него в инвентаре.</p>
+
+<p>Для того, чтобы присвоить значение группе однородных объектов
+(по типу объекта) включите функцию To All нажав одноименную кнопку
+в панели редактирования объекта.</p>
+
+<p>Для удаления объекта(-ов) выберите их и нажмите клавишу Del.</p>
+
+<p>Для изменения направления криттеров используйте среднюю кнопку
+мыши.</p>
+
+<p>Для добавления в выделение объектов удерживайте Ctrl.</p>
+
+<p>Для изменения масштаба карты воспользуйтесь колесиком мыши.</p>
+
+<p>Для ускорения пролистывания зажмите следующую клавишу (без
+зажатия - 1):<br />
+Shift - одна страница,<br />
+Ctrl - 100 элементов,<br />
+Alt - 1000 элементов.</p>
+
+<p>Для воспроизведения анимаций криттеров используйте команду '@',
+после которой вводите нужные индексы анимаций для проигрывания, в
+порядке очереди. Например, для проигрывания анимации передвижения,
+а потом анимации использования введите "@abal" (регистр не важен,
+пробелы игнорируются). Анимации проиграются у тех криттеров,
+которые выделены, а если ничего не выделено, то проиграется у всех
+криттеров на карте. Подробнее о индексах анимации читайте здесь
+<a href=
+"http://sampo.ru/~chipset/critter_dat_format.htm">http://sampo.ru/~chipset/critter_dat_format.htm</a>
+.</p>
+
+<p>Для передвижения криттера зажмите Shift и выберите точку
+назначения, для бега кликните еще раз.</p>
+
+<p>Горячие клавиши:<br /></p>
+
+<div class="fragment">
+<div class="line">F1: Вкл./Выкл. отображение итемов.\n</div>
+
+<div class="line">F2: Вкл./Выкл. отображение сценери.\n</div>
+
+<div class="line">F3: Вкл./Выкл. отображение стен.\n</div>
+
+<div class="line">F4: Вкл./Выкл. отображение криттеров.\n</div>
+
+<div class="line">F5: Вкл./Выкл. отображение тайлов.\n</div>
+
+<div class="line">F6: Вкл./Выкл. отображение часто используемых
+объектов.\n</div>
+
+<div class="line">F7: Скрыть/Показать главную панель.\n</div>
+
+<div class="line">Shift + F7: Вкл./Выкл. фиксацию главной панели
+(по умолчанию включено).\n</div>
+
+<div class="line">F8: Вкл./Выкл. скролл мышкой.\n</div>
+
+<div class="line">F9: Скрыть/Показать панель редактирования
+объекта.\n</div>
+
+<div class="line">Shift + F9: Вкл./Выкл. фиксацию панели
+редактирования объекта (по умолчанию выключено).\n</div>
+
+<div class="line">F10: Вкл./Выкл. гексовую сетку.\n</div>
+
+<div class="line">F11: Вкл./Выкл. дождь.\n</div>
+
+<div class="line">Shift + Escape: Выход из редактора.\n</div>
+
+<div class="line">Del: Удалить выбранные объекты.\n</div>
+
+<div class="line">Ctrl + X: Вырезать объекты.\n</div>
+
+<div class="line">Ctrl + C: Копировать объекты.\n</div>
+
+<div class="line">Ctrl + V: Вставить объекты.\n</div>
+
+<div class="line">Ctrl + A: Выделить все.\n</div>
+
+<div class="line">Ctrl + S: Вкл./Выкл. режим ограничения
+скролла.\n</div>
+
+<div class="line">Ctrl + B: Показать непроходимые гексы. Красные -
+непроходимые, непростреливаемые. Зеленые - непроходимые,
+простреливаемые.\n</div>
+
+<div class="line">Ctrl + M: Вывести информацию по настройкам НПЦ
+над их головами.\n</div>
+
+<div class="line">Ctrl + L: Сохранить текущий лог в txt
+файл.\n</div>
+
+<div class="line">Ctrl + Q: Просмотр типов углов (corners).\n</div>
+
+<div class="line">Ctrl + W: Просмотр результата нарезки спрайтов,
+их привязка к гексам.\n</div>
+
+<div class="line">Ctrl + E: Просмотр порядка отрисовки
+спрайтов.\n</div>
+
+<div class="line">Tab: Изменить тип выделения объектов
+(прямоугольник или ромб).\n</div>
+
+<div class="line">+: Увеличить время на 1 час (с зажатым Shift на 1
+минуту).\n</div>
+
+<div class="line">-: Уменьшить время на 1 час (с зажатым Shift на 1
+минуту).\n</div>
+</div>
+<!-- fragment -->
+<p>Соглашения о номерах точек входа:<br /></p>
+
+<div class="fragment">
+<div class="line">0 - по умолчанию;\n</div>
+
+<div class="line">240 - стартовая позиция игрока первый раз
+зашедшего в игру;\n</div>
+
+<div class="line">241 - позиция старта у карт с флагом
+NoLogOff;\n</div>
+
+<div class="line">242 - репликация;\n</div>
+
+<div class="line">243 - машины;\n</div>
+
+<div class="line">245 - вертиберд;\n</div>
+
+<div class="line">246 - лодки.</div>
+</div>
+<!-- fragment -->
+<h1><a class="anchor" id="tools_ascompiler" name=
+"tools_ascompiler"></a> Компилятор скриптов</h1>
+
+<p>Программа предназначена для проверки корректности написанных
+скриптов.<br />
+Имя исполняемого файла: "ASCompiler.exe".<br />
+Он может использоваться из командной строки или интегрироваться в
+различные IDE (примеры интеграции описаны в папке с
+компилятором).<br /></p>
+
+<h1><a class="anchor" id="tools_dialog_editor" name=
+"tools_dialog_editor"></a> Редактор диалогов</h1>
+
+<p>Программа для написания игровых диалогов.<br />
+Имя исполняемого файла: "DialogEditor.exe".<br />
+Для работы необходима установка dotNET Framework.</p>
+
+<dl class="todo">
+<dt><b><a class="el" href="todo.html#_todo000003">Необходимо
+сделать:</a></b>
+</dt>
+
+<dd>Описать Редактор диалогов.</dd>
+</dl>
+
+<h1><a class="anchor" id="tools_object_editor" name=
+"tools_object_editor"></a> Редактор объектов</h1>
+
+<p>Программа для работы с прототипами сценери, предметов.<br />
+Имя исполняемого файла: "ObjectEditor.exe".<br />
+Для работы необходима установка dotNET Framework.</p>
+
+<dl class="todo">
+<dt><b><a class="el" href="todo.html#_todo000004">Необходимо
+сделать:</a></b>
+</dt>
+
+<dd>Описать Редактор объектов.</dd>
+</dl>
+
+<h1><a class="anchor" id="tools_mr_fixit" name=
+"tools_mr_fixit"></a> Редактор крафта</h1>
+
+<p>Программа для работы с крафтом.<br />
+Имя исполняемого файла: "MrFixit.exe".<br />
+Для работы необходима установка dotNET Framework.</p>
+
+<dl class="todo">
+<dt><b><a class="el" href="todo.html#_todo000005">Необходимо
+сделать:</a></b>
+</dt>
+
+<dd>Описать Редактор крафта.</dd>
+</dl>
+
+<h1><a class="anchor" id="tools_updater" name="tools_updater"></a>
+Программа автообновления контента</h1>
+
+<p>Программа для синхронизации игрового контента между сервером и
+клиентом.<br />
+Имя исполняемого файла: сервер "UpdaterServer.exe", клиент
+"Updater.exe".<br /></p>
+
+<p>Список обновляемых файлов заносится в файл UpdateFiles.lst, а
+сами файлы копируются в папку Update, с соблюдением иерархии
+папок.<br />
+При запуске сервера он кеширует в памяти файлы. Перед запуском
+можно изменить номер порта (Listen port).</p>
+
+<p>Активные элементы:<br />
+Поле Listen port - порт для работы программы;<br />
+Кнопка Start/Stop listen - начать/закончить обслуживание
+клиентов;<br />
+Кнопка Refresh files - обновить список файлов из UpdateFiles.lst и
+закешировать их вновь;<br />
+Поле Current - сколько клиентов обслуживается в настоящий
+момент;<br />
+Поле Success - сколько клиентов обслужено успешно;<br />
+Поле Fail - сколько клиентов обслужено с ошибкой;<br />
+Поле All - сумма Current, Success, Fail;<br />
+Верхняя часть - лог работы с клиентами;<br />
+Нижняя часть - список файлов и их контрольная сумма или указание,
+что файл не найден.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>

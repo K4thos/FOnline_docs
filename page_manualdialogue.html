@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta name="generator" content="Doxygen 1.8.3.1" />
+<title>FOnline: Написание диалога</title>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript" src="dynsections.js">
+</script>
+<link rel="stylesheet" href="files/helpindex.css" type=
+"text/css" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+
+<script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "page_manualdialogue.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"index.html?page=page_manualdialogue.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"index.html?page=page_manualdialogue.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<div id="top">
+<!-- do not remove this div, it is closed by doxygen! -->
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="height: 56px;">
+<td id="projectlogo"><img alt="Logo" src="logo.jpg" />
+</td>
+<td style="padding-left: 0.5em;">
+<div id="projectname">FOnline</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.3.1 -->
+
+<div id="navrow1" class="tabs">
+<ul class="tablist">
+<li><a href="index.html"><span>Титульная&nbsp;страница</span></a>
+</li>
+
+<li class="current"><a href="pages.html"><span>Описания</span></a>
+</li>
+
+<li><a href="modules.html"><span>Группы</span></a>
+</li>
+
+<li><a href="annotated.html"><span>Классы</span></a>
+</li>
+</ul>
+</div>
+
+<div id="nav-path" class="navpath">
+<ul>
+<li class="navelem"><a class="el" href="manual.html">Учебник</a>
+</li>
+
+<li class="navelem"><a class="el" href=
+"page_manuals.html">Пособия</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- top -->
+
+<div class="header">
+<div class="headertitle">
+<div class="title">Написание диалога</div>
+</div>
+</div>
+<!--header-->
+
+<div class="contents">
+<div class="textblock">
+<p>Лучше всего начинать создание диалога с написания
+непосредственно фраз в Блокноте.</p>
+
+<p>В редакторе писать менее удобно, так как нельзя вставить реплику
+в ответ на фразу, если нет той фразы НПЦ, к которой она ведет.
+Приходится потом корректировать ссылки, а это почва для множества
+багов. Только помните, что ни там, ни там нет автосохранения,
+поэтому... постоянно сохраняйтесь!</p>
+
+<p>Диалог составляется по следующей маске:</p>
+
+<div class="fragment">
+<div class="line">-Фраза НПЦ.</div>
+
+<div class="line">--Ответ 1</div>
+
+<div class="line">--Ответ 2</div>
+
+<div class="line">--Ответ ...</div>
+</div>
+<!-- fragment -->
+<p>И так много раз.</p>
+
+<p>Диалог всегда начинается со фразы НПЦ. Конечно, этой фразой
+может быть и "НПЦ молчит и внимательно смотрит на вас".</p>
+
+<p>Когда готов текст диалога, можно начинать прогонять его через
+редактор. Это просто: сначала копируются все фразы НПЦ (не выходя
+из закладки "Диалог"), заnем на них навешиваются ответы. Если вам
+не нравится перемешивание фраз в диалогах, не забудьте в самом
+начале поставить галочку "Не перемешивать ответы", после этого
+только начинать добавлять диалоги. После того, как на все диалоги
+повешены ответы, на них можно вешать условия и результаты,
+прописывать преддиалоговые установки. Процесс прогонки диалога со
+сложной структурой через редактор может занять столько же времени,
+сколько заняло само написание. Хорошей комбинацией является
+написание диалога в вечерние-ночные часы (активно творческое
+мышление) и последущая прогонка через редактор в утренние (активна
+логика, острее внимание).</p>
+
+<p>Помните, что в отличие от оригинала, реплика с активацией
+бартера не ведет на другую фразу НПЦ, а оставляет на этой же.
+Однако, на ответ с активацией бартера можно повесить активацию
+какой-нибудь переменной, означающей, что бартер был. Потом создать
+два набора ответов: до бартера и после. Это создаст впечатление
+перехода на другой диалог. Например:</p>
+
+<div class="fragment">
+<div class="line">{}{}{Чего изволите?} <span class=
+"comment">//Фраза НПЦ.</span></div>
+
+<div class="line">{}{}{Давай поторгуем.} <span class=
+"comment">//Показывается только до бартера.</span></div>
+
+<div class="line">{}{}{Ничего, мне пора сваливать.} <span class=
+"comment">//Показывается только до бартера.</span></div>
+
+<div class="line">{}{}{Покажи свое барахло еще раз.} <span class=
+"comment">//Показывается только после бартера.</span></div>
+
+<div class="line">{}{}{Это все, спасибо.} <span class=
+"comment">//Показывается только после бартера.</span></div>
+
+<div class="line">{}{}{Pundmuk good. No harm Pundmuk.} <span class=
+"comment">//Независимо от бартера.</span></div>
+</div>
+<!-- fragment -->
+<p>Старайтесь использовать побольше "опорных пунктов" (hub) и
+циклов в диалогах: это диалог НПЦ, к которому ведут фразы вида
+"Хочу спросить кое о чем", сам диалог выглядит как "О чем вы хотите
+спросить" (обычно со множеством разных вариантов этой фразы через
+теги), снизу дан список вопросов. Замена разных 2-3 вопросов под
+каждой фразой НПЦ на "хочу спросить еще кое о чем" сильно снижает
+времезатраты при написании.</p>
+
+<p>Пример <b>громоздкого</b> диалога:</p>
+
+<div class="fragment">
+<div class="line">--Эй, расскажи мне о деревне.</div>
+
+<div class="line">
+</div>
+
+<div class="line">-В деревне у нас нелады. Бури, гром,
+червие.</div>
+
+<div class="line">--Расскажи мне о бурях.</div>
+
+<div class="line">--Расскажи мне о громе.</div>
+
+<div class="line">--Расскажи мне о червие!</div>
+
+<div class="line">--Ужас, ужас, ухожу.</div>
+
+<div class="line">
+</div>
+
+<div class="line">-Бури как бури.</div>
+
+<div class="line">--Ну а громы?</div>
+
+<div class="line">--А с червием-то что?</div>
+
+<div class="line">--Ну не хочешь говорить, тогда я уйду.</div>
+
+<div class="line">
+</div>
+
+<div class="line">-Гром как гром. Гремит.</div>
+
+<div class="line">--А бури?</div>
+
+<div class="line">--А с червием-то что?</div>
+
+<div class="line">--Ну не хочешь говорить, тогда я уйду.</div>
+
+<div class="line">
+</div>
+
+<div class="line">-Червие точит.</div>
+
+<div class="line">--А бури что?</div>
+
+<div class="line">--А как гром? Гремит, небось?</div>
+
+<div class="line">--Ух, стратотень, ухожу.</div>
+</div>
+<!-- fragment -->
+<p>Пример <b>оптимизированного</b> диалога:</p>
+
+<div class="fragment">
+<div class="line">-В деревне у нас нелады. Бури, гром,
+червие.</div>
+
+<div class="line">--Расскажи мне о бурях.</div>
+
+<div class="line">--Расскажи мне о громе.</div>
+
+<div class="line">--Расскажи мне о червие!</div>
+
+<div class="line">--Не хочу больше ничего знать, ухожу!</div>
+
+<div class="line">
+</div>
+
+<div class="line">-Бури как бури.</div>
+
+<div class="line">--Расскажи еще о деревне.</div>
+
+<div class="line">--Ну не хочешь говорить, тогда я уйду.</div>
+
+<div class="line">
+</div>
+
+<div class="line">-Гром как гром. Гремит.</div>
+
+<div class="line">--Расскажи еще о деревне.</div>
+
+<div class="line">--Ну не хочешь говорить, тогда я уйду.</div>
+
+<div class="line">
+</div>
+
+<div class="line">-Червие точит.</div>
+
+<div class="line">--Расскажи еще о деревне.</div>
+
+<div class="line">--Ух, стратотень, ухожу.</div>
+</div>
+<!-- fragment -->
+<p>В оптимизированном варианте каждый вариант "расскажи еще"
+отсылает на первую фразу.</p>
+
+<p>Первый вариант больше похож на живой диалог, но он очень и очень
+трудозатратный. Второй - некий шаблон компьютерных игр, но он
+удобен. Выбор за вами.</p>
+
+<p><b>Стандарты написания диалогов</b>
+</p>
+
+<p><b>Права сценариста</b><br />
+Сценарист вправе сам выбирать, какими переменными ему пользоваться
+для того, чтобы раскрыть НПЦ и Игроку было наиболее комфортно и
+интересно с ним разговаривать.<br />
+Сценарист вправе придумывать свои переменные для общего
+пользования, только обязан их описать - для чего они нужны и как их
+лучше использовать.</p>
+
+<p>Обязательные требования к оформлению:</p>
+
+<ol type="1">
+<li>Писать грамотно (орфография, пунктуация...).</li>
+</ol>
+
+<ol type="1">
+<li>Комментарии писать в квадратных скобках с большой буквы.</li>
+</ol>
+
+<p>Пример:</p>
+
+<div class="fragment">
+<div class="line">Пока. [Уходите]</div>
+
+<div class="line">[далее] не правильно, правильный вариант
+[Далее]</div>
+
+<div class="line">[Пффф.] не правильно, правильный вариант
+[Пффф]</div>
+</div>
+<!-- fragment -->
+<ol type="1">
+<li>Предложения внутри [] разделяются точкой, в конце точка не
+ставится.</li>
+</ol>
+
+<ol type="1">
+<li>Примерный перечень ответов персонажа с интелектом &lt;4 (или
+делать в подобной стилистике):
+
+<div class="fragment">
+<div class="line"><span class="stringliteral">"Ууугы!"</span>
+<span class="stringliteral">"Уго уго."</span> <span class=
+"stringliteral">"Угуук."</span> <span class="stringliteral">"Моя
+пошел."</span> <span class="stringliteral">"Гым?"</span>
+<span class="stringliteral">"Агу-агу!"</span> - <span class=
+"stringliteral">"Пока."</span></div>
+
+<div class="line"><span class="stringliteral">"Ооо!"</span>
+<span class="stringliteral">"А?"</span> <span class=
+"stringliteral">"Чо?"</span> <span class=
+"stringliteral">"Ыг-ггг!"</span> <span class=
+"stringliteral">"Ага!"</span> <span class=
+"stringliteral">"Моя"</span> - <span class=
+"stringliteral">"Да."</span></div>
+
+<div class="line"><span class="stringliteral">"Мая не
+хотеть"</span> <span class="stringliteral">"Ниа"</span>
+<span class="stringliteral">"Хр-рррррл!"</span> <span class=
+"stringliteral">"Ррр?"</span> - <span class=
+"stringliteral">"Нет."</span></div>
+
+<div class="line"><span class="stringliteral">"Моя нада ба
+раххлооо!"</span> <span class="stringliteral">"[Смотрите на
+прилавок и показываете пальцем] Менять!"</span> - бартер</div>
+</div>
+<!-- fragment -->Также можно применять простые слова с искажениями,
+на усмотрение автора.</li>
+</ol>
+
+<p><b>Некоторые рекомендации</b>
+</p>
+
+<ul>
+<li>Не забывайте, что диалог может вестись с игроком как мужского,
+так и женского пола. Активно используйте тэг <b>@sex@</b> .</li>
+
+<li>При написании диалога также старайтесь внимательно отнестись к
+тому, как НПЦ обращается к игроку, на "ты" или на "вы". Это нужно
+для того, чтобы диалог выглядел целостно. Конечно, обращение можно
+менять, если НПЦ познакомился с игроком, или игрок стал другом НПЦ
+(смотрите уникальную переменную loyality), или выполнилось
+какое-либо другое условие.</li>
+
+<li>Используйте комментарии в квадратных скобках после ответа
+игрока только если его действия после выбора этого ответа
+неочевидны. Пример того, что не стоит использовать: "Пока, я ухожу.
+[Выход из диалога]". Такая фраза отучает игрока думать, он кликает
+по фразам, ориентируясь только по комментариям в скобках. Пример
+того, что можно использовать: "Пока, я ухожу. [Приставить ствол к
+его животу и нажать на курок]".</li>
+
+<li>Описывайте действия в скобках в ответах игрока как "Попытаться
+сделать", "Сделать" (Пример: [Попытаться стянуть у него пропуск из
+кармана] / [Уйти]). Не используйте в ответах фраз вида "Вы
+делаете..." (Реальный пример: [Вы подскакиваете к его компьютеру,
+скачиваете нужные данные, форматируете диск, рисуете в фотошопе
+новые обои, потом убегаете, похлопав его по плечу]). Подобные фразы
+_очень_ раздражают игрока. Особенно, если вариант ответа только
+один. Во-первых, возникает логичный вопрос: "Какого хрена? А если я
+хотел сделать по другому?", во-вторых, игрок ощущает себя не
+участником процесса, а просто зрителем, которому надо нажать на
+кнопку для продолжения кино.</li>
+
+<li>
+<p class="startli">Логично будет, если после заявок на действия их
+можно будет провалить. Самая распространенная ошибка: фраза
+[Попытаться сделать], на которую повешено условие SK_НАВЫК&gt;xx%,
+но при этом отсутствует фраза [Попытаться сделать] c условием
+SK_НАВЫК&lt;xx%, которая будет вести к провалу.</p>
+
+<center>ИЗБЕГАЙТЕ ЭТОГО!</center>
+
+<center>ИЗБЕГАЙТЕ ЭТОГО!</center>
+
+<center>ИЗБЕГАЙТЕ ЭТОГО!</center>
+
+<p>Всегда надо давать игроку шанс попробовать что-то сделать. А
+если это приведет к провалу, то ему надо дать понять, какого навыка
+ему не хватило, чтобы он мог потом попробовать повторить это
+действие прокачавшись, загрузив старый сейв или придя другим
+персонажем в мультиплеере. То, что фраза просто не появляется,
+выглядит больше как баг.</p>
+</li>
+</ul>
+
+<p>FAQ по диалогописанию:</p>
+
+<p><b>1. Какое название у прототипа денег? Весь список перерыл,
+ничего нет.</b><br />
+PID_BOTTLE_CAPS. Название такое из-за того, что разработчикам
+Fallout2 было лень переименовывать все проверки на деньги в
+скриптах из Fallout 1. Прототип настоящих бутылочных крышек так и
+называется: PID_REAL_BOTTLE_CAPS.<br />
+Если у вас есть трудности с нахождением названия какого-то другого
+прототипа, найдите его номер в маппере по картинке, а потом отыщите
+название в файле ItemNames.lst.</p>
+
+<p><b>2. Как поставить проверку на пол персонажа?</b><br />
+Используйте проверку по <a class="el" href=
+"group___stats.html#ga19b710d83af0087b57c1989008367dc2">ST_GENDER</a>.
+0 - мужчина, 1 - женщина. Вопреки распространенному мнению.</p>
+
+<p><b>3. Как сделать всплывающие фразы над головой
+персонажа?</b><br />
+Просто не добавляйте вариантов ответа к реплике НПЦ. Она появится
+над его головой. Для "неразговорчивых" НПЦ, выдающих случайные
+фразы, используется просто переход на диалог №2 с преддиалоговых
+установок, с набором фраз через тег "@@" в диалоге.</p>
+
+<p><b>4. Что надо писать в ответах к преддиалоговым
+установкам?</b><br />
+Ничего, они никак не отображаются в игре. Можно эти поля
+использовать для комментариев ("Эта ветка ведет на квест", "Ветка
+для персонажа, выполнившего квест", и так далее).</p>
+
+<p><b>5. Как тестировать диалоги?</b><br />
+Используйте программу DialogPlayer.</p>
+
+<p><b>6. Почему не работает
+редактор?????!!!!!!!!!111111111</b><br />
+Возможно, не установлен .NET Framework. Возможно, что-то еще.
+Поищите темы с troubleshooting'ом в разделе по редактору диалогов
+на форуме.</p>
+
+<p><b>7. Я хочу, чтобы НПЦ атаковал игрока после того, как тот
+нажмет на финальную фразу. Но игрок может нажать 0, чтобы закрыть
+диалог, и безнаказанно убежать. Как этого избежать?</b><br />
+Выберите опцию "Attack" в поле "Script" в закладке добавления
+диалога. НПЦ будет атаковать игрока, если тот не выбрал ответа на
+этот диалог.</p>
+
+<p><b>8. Надо ли писать "Вы видите..." в кратком
+описании?</b><br />
+Да.</p>
+
+<p><b>9. Можно ли включить в FAQ еще какой-то глупый
+вопрос?</b><br />
+Присылайте - включим.</p>
+</div>
+</div>
+<!-- contents -->
+<!-- start footer part -->
+
+<hr class="footer" />
+
+<address class="footer"><small>Документация по FOnline. Последние
+изменения: Вт 28 Май 2013 01:58:04. Создано системой &nbsp;<a href=
+"http://www.doxygen.org/index.html"><img class="footer" src=
+"doxygen.png" alt="doxygen" /></a> 1.8.3.1</small>
+</address>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+
+<!-- CHM2WEB -->
+<!-- DO NOT DELETE OR MODIFY THIS CODE WITHOUT 
+     WRITTEN PERMISSION OF A!K RESEARCH LABS -->
+<table width="100%" cellspacing="0" cellpadding="0" 
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color:white; border-top: 1px solid gray;"> 
+<a href="http://chm2web.aklabs.com" target="_blank" style="font-family: sans-serif;  font-size: 11px; text-decoration: none;"><font color="gray">Converted from CHM to HTML with <b>chm2web Pro 2.85 (unicode)</b></font></a>
+</td></tr></table> 
+<!-- /CHM2WEB -->
+
+</body>
+</html>
